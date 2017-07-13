@@ -6,6 +6,7 @@ import Slide3 from '../Images/20170712_142523.jpg';
 import Slide4 from '../Images/orange-and-brown-living-room-curtains.jpg';
 import Slide5 from '../Images/eei-645-exp-ora_3_.jpg';
 
+import Sales from './sales';
 
 const styles={
     sliderBox:{
@@ -74,7 +75,7 @@ class Home extends Component {
                         </a>
                     </div>
                 </div>
-                
+                <Sales />
             </div>
         );
     }

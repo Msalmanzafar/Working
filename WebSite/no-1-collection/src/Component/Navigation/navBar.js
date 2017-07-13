@@ -17,7 +17,7 @@ const styles = {
         marginTop: '3px',
         // border: '2px solid black',
         fontWeight: 'bold',
-        
+
     },
     button: {
         color: 'white',
@@ -70,9 +70,11 @@ class NavBar extends Component {
                                 </Link>
                             </span>
                             <span>
-                                <mat.FlatButton style={styles.button}
-                                    onClick={this.logOut} label="Log In"
-                                />
+                                <Link to='/login'>
+                                    <mat.FlatButton style={styles.button}
+                                        label="Log In"
+                                    />
+                                </Link>
                             </span>
 
                         </div>

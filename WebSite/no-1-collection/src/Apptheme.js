@@ -16,7 +16,7 @@ const darkBaseTheme = getMuiTheme({
     primary1Color:'#fe9200',
     // primary2Color: '#01579b',
     // primary3Color: '#01579b',
-    accent1Color: '#3e2723',
+    accent1Color: '#827717',
     // accent2Color: '#01579b',
     accent3Color: '#3f51b5',
     textColor: '#194d48',

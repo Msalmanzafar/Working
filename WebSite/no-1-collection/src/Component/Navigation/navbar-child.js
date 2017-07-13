@@ -1,6 +1,8 @@
 import React from 'react';
 // import { connect } from 'react-redux';
-// import { browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
+import * as mat from 'material-ui';
+
 import { List, ListItem } from 'material-ui/List';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -12,6 +14,7 @@ import MdAddShoppingCart from 'react-icons/lib/md/add-shopping-cart';
 import MdBorderColor from 'react-icons/lib/md/border-color';
 import MdSettings from 'react-icons/lib/md/settings';
 import MdInfoOutline from 'react-icons/lib/md/info-outline';
+import MdHome from 'react-icons/lib/md/home';
 // import { AvailibaleActions, LoaderAction } from '../../Actions/newStoreAction'
 // import { SalesProductsAction, SaledListActions } from '../../Actions/SalesActions'
 
@@ -58,7 +61,12 @@ class DrawerUndockedExample extends React.Component {
         this.AvailibaleStores = this.AvailibaleStores.bind(this);
         this.SaleProduct = this.SaleProduct.bind(this);
         this.SalesDetails = this.SalesDetails.bind(this);
+        this.home = this.home.bind(this);
         this.state = { open: false };
+    }
+    home(){
+        browserHistory.push('/home');
+        this.setState({ open: false });
     }
     SalesDetails() {
         console.log("Store Create");
@@ -66,30 +74,30 @@ class DrawerUndockedExample extends React.Component {
         // this.props.LoaderAction();
         // this.props.SaledListActions();
         // browserHistory.push('/salesdetails');
-        // this.setState({ open: false });
+        this.setState({ open: false });
     }
     SaleProduct() {
         console.log("Store Create");
 
         // this.props.SalesProductsAction();
         // browserHistory.push('/saleproduct');
-        // this.setState({ open: false });
+        this.setState({ open: false });
     }
     AvailibaleStores() {
         console.log("Store Create");
         // this.props.LoaderAction();
         // this.props.AvailibaleActions();
         // browserHistory.push('/availstores');
-        // this.setState({ open: false });
+        this.setState({ open: false });
     }
     CreateStore() {
         console.log("Store Create");
         // browserHistory.push('/newstore')
-        // this.setState({ open: false });
+        this.setState({ open: false });
     }
 
     handleToggle = () => {
-        console.log('working');
+        // console.log('working');
         this.setState({ open: !this.state.open });
     }
 
@@ -110,8 +118,22 @@ class DrawerUndockedExample extends React.Component {
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({ open })}
                 >
-                    <AppBar iconElementLeft={<span></span>} title={<span style={styles.email}>email</span>} />
+                    <AppBar 
+                        iconElementLeft={<mat.Avatar
+                            size={45}
+                            style={{margin: 0}}
+                        />} 
+                        title='email'
+                    />
                     <div>
+                        <MenuItem
+                            style={{  display: 'inline' }}
+                            onClick={this.CreateStore}
+                        >
+                            <List>
+                                <ListItem onClick={this.home} primaryText="Home" leftIcon={<MdHome />} />
+                            </List>
+                        </MenuItem>
                         <MenuItem
                             style={{  display: 'inline' }}
                             onClick={this.CreateStore}

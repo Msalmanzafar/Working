@@ -2,49 +2,31 @@ import React, { Component } from 'react';
 import * as mat from 'material-ui';
 
 const styles = {
-    signup: {
+    login: {
         marginTop: 50
     }
 }
 
 
-class SignUp extends Component {
+class LogIn extends Component {
     render() {
         return (
             <div>
-                <div className="container " style={styles.signup}>
+                <div className="container " style={styles.login}>
                     <mat.Card
                         transitionEnabled={true}
                         zDepth={3}
-                        style={{ position: 'relative', transitionDuration: '0.3s' ,borderRadius: 5}}
+                        style={{ position: 'relative', transitionDuration: '0.3s',borderRadius: 5 }}
 
                     >
                         <mat.AppBar
                             titleStyle={{ textShadow: '1px 1px 2px black' }}
                             showMenuIconButton={false}
-                            title={<h3 className=" text-center">Sign Up</h3>}
+                            title={<h3 className=" text-center">Log In</h3>}
                             style={{borderRadius: '5px 5px 0 0'}}
                         />
                         <mat.CardText>
                             <div className="text-center">
-                                <mat.TextField
-                                    hintText="Enter your first name"
-                                    floatingLabelText="First Name"
-                                    fullWidth={true}
-                                    style={{ width: '97%' }}
-                                /><br />
-                                <mat.TextField
-                                    hintText="Enter your last name"
-                                    floatingLabelText="Last Name"
-                                    fullWidth={true}
-                                    style={{ width: '97%' }}
-                                /><br />
-                                <mat.TextField
-                                    hintText="0321-1234567"
-                                    floatingLabelText="Mobile Number"
-                                    fullWidth={true}
-                                    style={{ width: '97%' }}
-                                /><br />
                                 <mat.TextField
                                     hintText="Enter your register email"
                                     floatingLabelText="Email"
@@ -74,4 +56,4 @@ class SignUp extends Component {
 };
 
 
-export default SignUp;
+export default LogIn;
