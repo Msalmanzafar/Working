@@ -22,6 +22,7 @@ const styles = {
     button: {
         color: 'white',
         fontFamily: 'Verdana',
+        textShadow: '1px 1px 2px black',
     },
     logo: {
         width: '145px',
@@ -64,13 +65,13 @@ class NavBar extends Component {
                     iconElementRight={
                         <div style={styles.headerButton}>
                             <span >
-                                <Link to='/LogIn'>
-                                    <mat.FlatButton style={styles.button} label="Log In" />
+                                <Link to='/signup'>
+                                    <mat.FlatButton style={styles.button} label="Sign Up" />
                                 </Link>
                             </span>
                             <span>
                                 <mat.FlatButton style={styles.button}
-                                    onClick={this.logOut} label="Log Out"
+                                    onClick={this.logOut} label="Log In"
                                 />
                             </span>
 

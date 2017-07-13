@@ -6,6 +6,8 @@ import NavBar from './Component/Navigation/navBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppTheme from "./Apptheme";
 import Home from "./Component/Home/homePage";
+import SignUp from './Component/Authentication/signup';
+
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -30,6 +32,7 @@ export default class Routes extends Component {
                 <Router history={browserHistory}>
                     <Route path="/" component={NavBar}>
                         <IndexRoute component={Home}/>
+                        <Route path='/signup' component={SignUp}/>
                     </Route>
                 </Router>
             </MuiThemeProvider>
