@@ -16,8 +16,7 @@ class SignUp extends Component {
                     <mat.Card
                         transitionEnabled={true}
                         zDepth={3}
-                        style={{ position: 'relative', transitionDuration: '0.3s' ,borderRadius: 5}}
-
+                        style={{ position: 'relative' ,borderRadius: 5}}
                     >
                         <mat.AppBar
                             titleStyle={{ textShadow: '1px 1px 2px black' }}
@@ -31,8 +30,8 @@ class SignUp extends Component {
                                     hintText="Enter your first name"
                                     floatingLabelText="First Name"
                                     fullWidth={true}
-                                    style={{ width: '97%' }}
-                                /><br />
+                                    style={{ width: '97%'}}
+                                /><br/>
                                 <mat.TextField
                                     hintText="Enter your last name"
                                     floatingLabelText="Last Name"
@@ -43,6 +42,7 @@ class SignUp extends Component {
                                     hintText="0321-1234567"
                                     floatingLabelText="Mobile Number"
                                     fullWidth={true}
+                                    maxLength='12'
                                     style={{ width: '97%' }}
                                 /><br />
                                 <mat.TextField
@@ -52,17 +52,18 @@ class SignUp extends Component {
                                     style={{ width: '97%' }}
                                 /><br />
                                 <mat.TextField
-                                    hintText="Enter your password"
+                                    hintText="Enter password maximum 2 chracters with 6 numbers"
                                     floatingLabelText="Password"
                                     fullWidth={true}
                                     type="password"
+                                    maxLength='8'
                                     style={{ width: '97%' }}
                                 /><br />
                             </div>
                             <mat.RaisedButton
                                 label="Sign Up"
                                 secondary={true}
-                                style={{ marginTop: 10, marginLeft: 10 }}
+                                style={{ marginTop: 10, marginLeft: 20 }}
                             />
                         </mat.CardText>
                     </mat.Card>

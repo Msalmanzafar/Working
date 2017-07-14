@@ -13,7 +13,7 @@ import {fade} from 'material-ui/utils/colorManipulator';
 const darkBaseTheme = getMuiTheme({
   palette: {
     // primary1Color: cyan700,
-    primary1Color:'#fe9200',
+    primary1Color:'#ea2d13',
     // primary2Color: '#01579b',
     // primary3Color: '#01579b',
     accent1Color: '#827717',

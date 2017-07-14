@@ -31,7 +31,8 @@ const styles = {
     smallIcon: {
         width: 36,
         height: 36,
-        color: '#f8fdfa'
+        color: '#f8fdfa',
+        marginTop: 5
     },
     small: {
         width: 40,
@@ -110,7 +111,7 @@ class DrawerUndockedExample extends React.Component {
                     iconStyle={styles.smallIcon}
                     style={styles.small}
                 >
-                    <MdMenu onClick={this.handleToggle} />
+                    <MdMenu  onClick={this.handleToggle} />
                 </IconButton>
                 <Drawer
                     docked={false}
@@ -120,8 +121,7 @@ class DrawerUndockedExample extends React.Component {
                 >
                     <AppBar 
                         iconElementLeft={<mat.Avatar
-                            size={45}
-                            style={{margin: 0}}
+                            size={55}
                         />} 
                         title='email'
                     />

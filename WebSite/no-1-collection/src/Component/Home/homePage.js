@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import Slide1 from '../Images/main3.jpg';
-import Slide2 from '../Images/20170712_142450.jpg';
-import Slide3 from '../Images/20170712_142523.jpg';
+import Slide2 from '../Images/Trendz.png';
+import Slide3 from '../Images/Vintage.png';
 import Slide4 from '../Images/orange-and-brown-living-room-curtains.jpg';
 import Slide5 from '../Images/eei-645-exp-ora_3_.jpg';
 
@@ -14,10 +14,16 @@ const styles={
     },
     wel:{
         textShadow: '1px 1px 2px gray, 0 0 25px #ffd54f, 0 0 5px #ffecb3',
-         
         fontWeight: 'bold',
         color: '#e27300',
         // fontSize: '25px'
+    },
+    brandz:{
+        width: 230, 
+        height: 100,
+        marginRight: 10,
+        cursor: 'pointer'
+        
     }
 }
 
@@ -25,6 +31,12 @@ class Home extends Component {
     render() {
         return (
             <div>
+                <div className="container text-center" style={{marginTop: 20}}>
+                    <h4 className="text-center ">Click And Moves Over Brands</h4>
+                    <img src={Slide1} style={styles.brandz} alt="the febric"/>
+                    <img src={Slide2} style={styles.brandz} alt="trendz"/>
+                    <img src={Slide3} style={styles.brandz} alt="vintage"/>
+                </div>
                 <div className="container">
                     <h2 className="text-center " style={styles.wel}>Welcome</h2>
                     <h5 className="text-center h4">Sign in for the best experience</h5>
@@ -45,22 +57,22 @@ class Home extends Component {
                         {/*<!-- Wrapper for slides -->*/}
                         <div className="carousel-inner">
                             <div className="item active">
-                                <img src={Slide1} alt="slide1" style={{width:'100%',height:'400px'}} />
+                                <img src={Slide1} alt="slide1" style={{width:'100%',height:'430px'}} />
                             </div>
 
                             <div className="item">
-                                <img src={Slide2} alt="slide2" style={{width:'100%',height:'400px'}} />
+                                <img src={Slide2} alt="slide2" style={{width:'100%',height:'430px'}} />
                             </div>
 
                             <div className="item">
-                                <img src={Slide3} alt="slide3" style={{width:'100%',height:'400px'}} />
+                                <img src={Slide3} alt="slide3" style={{width:'100%',height:'430px'}} />
                             </div>
 
                             <div className="item">
-                                <img src={Slide4} alt="slide4" style={{width:'100%',height:'400px'}} />
+                                <img src={Slide4} alt="slide4" style={{width:'100%',height:'430px'}} />
                             </div>
                             <div className="item">
-                                <img src={Slide5} alt="slide5" style={{width:'100%',height:'400px'}} />
+                                <img src={Slide5} alt="slide5" style={{width:'100%',height:'430px'}} />
                             </div>
                         </div>
 

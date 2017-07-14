@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import * as mat from 'material-ui';
-// import { connect } from 'react-redux';
-// import { LogOutAction } from '../../Actions/AuthActions';
 import DrawerUndockedExample from './navbar-child'
-// import EventLoader from '../Loader/loader';
+import Logo from '../Images/No1-Collections12.png'
+
 
 const styles = {
     appBar: {
-        boxShadow: '0px 5px 12px gray'
+        boxShadow: '0px 5px 12px gray',
+        height: 70
     },
     title: {
         cursor: 'pointer',
     },
     headerButton: {
-        marginTop: '3px',
+        marginTop: '10px',
         // border: '2px solid black',
         fontWeight: 'bold',
 
@@ -25,8 +25,11 @@ const styles = {
         textShadow: '1px 1px 2px black',
     },
     logo: {
-        width: '145px',
-        height: '32px'
+        width: 175 , 
+        height: 58,
+        marginTop: -14,
+        marginBottom: -12,
+        marginLeft: 10
     },
     loader: {
         position: 'relative',
@@ -56,7 +59,15 @@ class NavBar extends Component {
 
                 <mat.AppBar
                     style={styles.appBar}
-                    title={<span className="colors">Logo</span>}
+                    title={
+                        <span >
+                            <img 
+                                src={Logo} 
+                                alt="logo" 
+                                style={styles.logo}
+                            />    
+                        </span>
+                    }
                     iconElementLeft={
                         <span>
                             <DrawerUndockedExample />

@@ -17,7 +17,6 @@ class LogIn extends Component {
                         transitionEnabled={true}
                         zDepth={3}
                         style={{ position: 'relative', transitionDuration: '0.3s',borderRadius: 5 }}
-
                     >
                         <mat.AppBar
                             titleStyle={{ textShadow: '1px 1px 2px black' }}
