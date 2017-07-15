@@ -9,6 +9,8 @@ import Slide5 from '../Images/eei-645-exp-ora_3_.jpg';
 import Sales from './sales';
 import BrandsLogos from './brands';
 import FooterOfCollection from './footer';
+import Subscribe from './subscribe'
+
 
 const styles={
     sliderBox:{
@@ -79,7 +81,7 @@ class Home extends Component {
                 </div>
                 <BrandsLogos />
                 <Sales />
-
+                <Subscribe/>
                 <FooterOfCollection />
             </div>
         );
