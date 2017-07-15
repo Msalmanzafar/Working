@@ -25,8 +25,8 @@ const styles = {
         textShadow: '1px 1px 2px black',
     },
     logo: {
-        width: 175 , 
-        height: 58,
+        width: 195 , 
+        height: 65,
         marginTop: -14,
         marginBottom: -12,
         marginLeft: 10

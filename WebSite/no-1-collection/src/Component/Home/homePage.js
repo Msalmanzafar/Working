@@ -7,6 +7,8 @@ import Slide4 from '../Images/orange-and-brown-living-room-curtains.jpg';
 import Slide5 from '../Images/eei-645-exp-ora_3_.jpg';
 
 import Sales from './sales';
+import BrandsLogos from './brands';
+import FooterOfCollection from './footer';
 
 const styles={
     sliderBox:{
@@ -18,27 +20,15 @@ const styles={
         color: '#e27300',
         // fontSize: '25px'
     },
-    brandz:{
-        width: 230, 
-        height: 100,
-        marginRight: 10,
-        cursor: 'pointer'
-        
-    }
 }
 
 class Home extends Component {
     render() {
         return (
             <div>
-                <div className="container text-center" style={{marginTop: 20}}>
-                    <h4 className="text-center ">Click And Moves Over Brands</h4>
-                    <img src={Slide1} style={styles.brandz} alt="the febric"/>
-                    <img src={Slide2} style={styles.brandz} alt="trendz"/>
-                    <img src={Slide3} style={styles.brandz} alt="vintage"/>
-                </div>
+               
                 <div className="container">
-                    <h2 className="text-center " style={styles.wel}>Welcome</h2>
+                    <h2 className="text-center h1" style={styles.wel}>Welcome</h2>
                     <h5 className="text-center h4">Sign in for the best experience</h5>
                 </div>
                 <div className="container-flux" style={styles.sliderBox}>
@@ -87,7 +77,10 @@ class Home extends Component {
                         </a>
                     </div>
                 </div>
+                <BrandsLogos />
                 <Sales />
+
+                <FooterOfCollection />
             </div>
         );
     }
