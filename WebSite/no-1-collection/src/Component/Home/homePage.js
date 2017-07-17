@@ -31,7 +31,7 @@ class Home extends Component {
                
                 <div className="container">
                     <h2 className="text-center h1" style={styles.wel}>Welcome</h2>
-                    <h5 className="text-center h4">Sign in for the best experience</h5>
+                    <h5 className="text-center h4">LogIn for the best experience</h5>
                 </div>
                 <div className="container-flux" style={styles.sliderBox}>
                     <br/>

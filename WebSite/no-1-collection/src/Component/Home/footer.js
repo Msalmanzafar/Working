@@ -8,7 +8,7 @@ import instagram from '../Images/logo-insta.png'
 
 const styles = {
     footer: {
-        backgroundColor: '#ea2d13',
+        backgroundColor: '#9f0500',
         // boxShadow: '0px -4px 8px gray'
     },
     footerContent1: {

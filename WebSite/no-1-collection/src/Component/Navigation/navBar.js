@@ -27,8 +27,8 @@ const styles = {
     logo: {
         width: 195 , 
         height: 65,
-        marginTop: -14,
-        marginBottom: -12,
+        marginTop: -6,
+        marginBottom: -8,
         marginLeft: 10
     },
     loader: {
