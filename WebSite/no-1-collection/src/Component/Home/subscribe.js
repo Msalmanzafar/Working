@@ -5,72 +5,32 @@ import FaApple from 'react-icons/lib/fa/apple';
 import FaAndroid from 'react-icons/lib/fa/android';
 
 
-const style = {
-    height: 'auto',
-    width: 130,
-    margin: '5% 0% 5% 2% ',
-    // float: 'right',
-    textAlign: 'center',
-    display: 'inline-block',
-    backgroundColor: '#d9d9d9',
-    boxShadow: 'hidden',
-    // border: '2px solid blue',
-    paddingTop: 18,
-    // paddingBottom: 15
-};
-const style2 = {
-    height: 'auto',
-    width: 320,
-    margin: '5% 0% 5% 0% ',
-    textAlign: 'center',
-    display: 'inline-block',
-    backgroundColor: '#d9d9d9',
-    boxShadow: 'hidden',
-    // border: '2px solid blue'
-};
-const style3 = {
-    height: 'auto',
-    width: '38%',
-    margin: '5% 0% 5% 5% ',
-    textAlign: 'center',
-    display: 'inline-block',
-    // float: 'right',
-    backgroundColor: '#d9d9d9',
-    boxShadow: 'hidden',
-    // border: '2px solid blue'
-
-}
 const styles = {
     box: {
         backgroundColor: '#d9d9d9',
         height: 'auto',
-
     },
-    box1: {
-        height: 'auto',
-        width: 150,
-        textAlign: 'center',
-        display: 'inline-block',
-        backgroundColor: '#d9d9d9',
-        boxShadow: 'hidden',
-        border: '2px solid blue',
-        position: 'relative',
+    div1: {
+        padding: 0,
+        margin: '4% 0% 3% 2%',
+        // border: '2px solid blue',
+    },
+    div2: {
+        padding: 0,
+        margin: '0% 0% 0% 0%',
+        // border: '2px solid blue',
+    },
+    div3: {
+        padding: 0,
+        margin: '4% 0% 0% 0%',
+        // border: '2px solid blue',
+        float: 'right',
     },
     logos: {
-        width: 110,
-        height: 110,
-        marginTop: -16
-    },
-    box2: {
+        width: '100%',
         height: 'auto',
-        width: 310,
-        textAlign: 'left',
-        display: 'inline-block',
-        backgroundColor: '#d9d9d9',
-        boxShadow: 'hidden',
-        border: '2px solid blue',
-        position: 'relative',
     },
+
     heading: {
         fontWeight: 'bold',
         fontSize: 18,
@@ -81,16 +41,26 @@ const styles = {
         color: '#808080'
     },
     download: {
-        margin: 8,
+        margin: 9,
     },
+    native: {
+        width: 35,
+        height: 35,
+        color: 'gray',
+        marginLeft: 10,
+        cursor: 'pointer',
+    }
+    ,
     subs: {
         fontSize: 12,
         fontWeight: 'bold',
         // lineHeight: 0.4
+        color: '#808080'
     },
-    subInput:{
-        float: 'left',
-        // marginTop: -22,
+    subInput: {
+        // float: 'left',
+        // width: "55%",
+        marginLeft: 12
         // fontSize: 14
     }
 }
@@ -98,38 +68,50 @@ class Subscribe extends Component {
     render() {
         return (
             <div>
-                <div className="container-flux text-center" style={styles.box}>
-                    <mat.Paper style={style}  >
-                        <img src={Logo} alt="LOGO" style={styles.logos} />
-
-                    </mat.Paper>
-                    <mat.Paper style={style2}  >
-                        <sapn style={styles.heading}>
-                            Shop with No1Collection on the go!
-                            </sapn><br />
-                        <span style={styles.info}>
-                            More Deals, Faster Access, Better Shopping!
-                            </span><br />
-                        <mat.RaisedButton secondary={true} label="FREE DOWNLOAD" style={styles.download} />
-                        <FaApple style={{ width: 35, height: 35, color: 'gray', marginLeft: 10, cursor: 'pointer' }} />
-                        <FaAndroid style={{ width: 35, height: 35, color: 'gray', marginLeft: 10, cursor: 'pointer' }} />
-                    </mat.Paper>
-
-                    {/*for Subscribe  */}
-
-                    <mat.Paper style={style3}  >
-                        <span style={styles.subs}>
-                            Subscribe to our newsletter to receive special offers and latest Events.
-                        </span><br />
-                        <mat.TextField
-                            hintText="your email here "
-                            floatingLabelText="Email"
-                            type='email'
-                            style={styles.subInput}
-                        /><br />
-                        <mat.RaisedButton primary={true} label='Subscribe'/>
-                    </mat.Paper>
-
+                <div className="container-flux text-center" >
+                    <div className='col-md-12' style={styles.box}>
+                        <section>
+                            <div className="row">
+                                <div className='col-xs-12 col-md-6' style={styles.div1}>
+                                    <div className="col-xs-3 col-md-3" style={styles.div2}>
+                                        <blockquote style={{ border: 'none' }}>
+                                           <img src={Logo} alt="LOGO" style={styles.logos} />
+                                        </blockquote>
+                                    </div>
+                                    <div className="col-xs-12 col-md-9" style={styles.div2}>
+                                        <blockquote style={{ border: 'none' }}>
+                                            <sapn style={styles.heading}>
+                                                Shop with No1Collection on the go!
+                                            </sapn><br />
+                                            <span style={styles.info}>
+                                                More Deals, Faster Access, Better Shopping!
+                                            </span><br />
+                                            <mat.RaisedButton secondary={true} label="FREE DOWNLOAD" style={styles.download} />
+                                            <FaApple style={styles.native} />
+                                            <FaAndroid style={styles.native} />
+                                        </blockquote>
+                                    </div>
+                                </div> 
+                                <div className='col-xs-12  col-md-4 col-md-pull-1' style={styles.div3}>
+                                    <blockquote style={{ border: 'none' }}>
+                                        <sapn style={styles.heading}>
+                                            Subscribe Now
+                                    </sapn><br />
+                                        <span style={styles.subs}>
+                                            Subscribe to our newsletter to receive special offers and latest Events.
+                                    </span><br />
+                                        <mat.TextField
+                                            hintText="your email here "
+                                            floatingLabelText="Email"
+                                            type='email'
+                                            style={styles.subInput}
+                                        /><br />
+                                        <mat.RaisedButton secondary={true} label='Subscribe' />
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         );

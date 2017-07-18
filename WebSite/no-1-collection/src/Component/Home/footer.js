@@ -13,45 +13,44 @@ const styles = {
     },
     footerContent1: {
         height: 'auto',
-        width: '23%',
         marginTop: 10,
         textAlign: 'left',
         display: 'inline-block',
-        border: '2px solid black'
+        // border: '2px solid black'
     },
-    footerContent2: {
-        height: 'auto',
-        width: '23%',
-        marginTop: 10,
-        textAlign: 'left',
-        display: 'inline-block',
-        border: '2px solid black'
-    },
-    footerContent3: {
-        height: 'auto',
-        width: '23%',
-        marginTop: 10,
-        textAlign: 'left',
-        display: 'inline-block',
-        border: '2px solid black'
-    },
-    footerContent4: {
-        height: 'auto',
-        width: '30%',
-        marginTop: 10,
-        textAlign: 'left',
-        display: 'inline-block',
-        border: '2px solid black'
-    },
+    // footerContent2: {
+    //     height: 'auto',
+    //     width: '23%',
+    //     marginTop: 10,
+    //     textAlign: 'left',
+    //     display: 'inline-block',
+    //     border: '2px solid black'
+    // },
+    // footerContent3: {
+    //     height: 'auto',
+    //     width: '23%',
+    //     marginTop: 10,
+    //     textAlign: 'left',
+    //     display: 'inline-block',
+    //     border: '2px solid black'
+    // },
+    // footerContent4: {
+    //     height: 'auto',
+    //     width: '30%',
+    //     marginTop: 10,
+    //     textAlign: 'left',
+    //     display: 'inline-block',
+    //     border: '2px solid black'
+    // },
 
-    list:{
+    list: {
         lineHeight: 0.8
     },
-    listHeading:{
+    listHeading: {
         color: 'white',
         textShadow: '0px 1px 2px black'
     },
-    listLink:{
+    listLink: {
         color: 'white',
         fontSize: 14,
     }
@@ -62,7 +61,64 @@ class FooterOfCollection extends Component {
             <div>
                 <div className="container-flux " >
                     <div className='col-md-12 text-center' style={styles.footer}>
-                        <div className='col-md-3' style={styles.footerContent1}>
+                        <section>
+                            <div className='row'>
+                                <div className='col-xs-12 col-md-3' style={styles.footerContent1}>
+                                    <blockquote style={{ border: 'none' }}>
+                                        <h4 style={styles.listHeading}>LET US HELP YOU</h4>
+                                        <div style={styles.list}>
+                                            <p> <a href="" style={styles.listLink}>Help Center</a> </p>
+                                            <p> <a href="" style={styles.listLink}>How to Shop on No.1 Collection</a> </p>
+                                            <p> <a href="" style={styles.listLink}>Track Your Order</a> </p>
+                                            <p> <a href="" style={styles.listLink}>Contact Us</a> </p>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                                <div className='col-xs-12 col-md-3' style={styles.footerContent1}>
+                                    <blockquote style={{ border: 'none' }}>
+                                        <h4 style={styles.listHeading}>GET TO KNOW US</h4>
+                                        <div style={styles.list}>
+                                            <p> <a href="" style={styles.listLink}>About Us</a> </p>
+                                            <p> <a href="" style={styles.listLink}>Careers</a> </p>
+                                            <p> <a href="" style={styles.listLink}>Terms & Conditions</a> </p>
+                                            <p> <a href="" style={styles.listLink}>Contact Us</a> </p>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                                <div className='col-xs-12 col-md-3' style={styles.footerContent1}>
+                                    <blockquote style={{ border: 'none' }}>
+                                        <h4 style={styles.listHeading}>NO1COLLECTION INTERNATIONAL</h4>
+                                        <div style={styles.list}>
+                                            <p> <a href="" style={styles.listLink}>Pakistan</a> </p>
+                                            <p> <a href="" style={styles.listLink}>Turkey</a> </p>
+                                            <p> <a href="" style={styles.listLink}>China</a> </p>
+                                            <p> <a href="" style={styles.listLink}>Africa </a> </p>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                                <div className='col-xs-12 col-md-3' style={styles.footerContent1}>
+                                    <blockquote style={{ border: 'none' }}>
+                                        <h4 style={styles.listHeading}>JOIN US ON</h4>
+                                        <div >
+                                            <a href="" style={styles.listLink}>
+                                                <img src={facebook} alt="facebook" style={{ width: 54, height: 51, marginRight: -4 }} />
+                                            </a>
+                                            <a href="" style={styles.listLink}>
+                                                <img src={gmail} alt="gmail" style={{ width: 36, height: 35, marginRight: 0 }} />
+                                            </a>
+                                            <a href="" style={styles.listLink}>
+                                                <img src={twiter} alt="twiter" style={{ width: 47, height: 46, marginRight: -2 }} />
+                                            </a>
+                                            <a href="" style={styles.listLink}>
+                                                <img src={instagram} alt="instagram" style={{ width: 47, height: 46, marginRight: -12 }} />
+                                            </a>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* <div className='col-md-3' style={styles.footerContent1}>
                             <h4 style={styles.listHeading}>LET US HELP YOU</h4>
                             <div style={styles.list}>
                                 <p> <a href="" style={styles.listLink}>Help Center</a> </p>
@@ -93,19 +149,19 @@ class FooterOfCollection extends Component {
                             <h4 style={styles.listHeading}>JOIN US ON</h4>
                             <div >
                                 <a href="" style={styles.listLink}>
-                                    <img src={facebook} alt="facebook" style={{width: 65, height: 63,marginRight: -4}}/>
+                                    <img src={facebook} alt="facebook" style={{ width: 65, height: 63, marginRight: -4 }} />
                                 </a>
                                 <a href="" style={styles.listLink}>
-                                    <img src={gmail} alt="gmail" style={{width: 44, height: 42,marginRight: 0}}/>
+                                    <img src={gmail} alt="gmail" style={{ width: 44, height: 42, marginRight: 0 }} />
                                 </a>
                                 <a href="" style={styles.listLink}>
-                                    <img src={twiter} alt="twiter" style={{width: 55, height: 53,marginRight: -2}}/>
+                                    <img src={twiter} alt="twiter" style={{ width: 55, height: 53, marginRight: -2 }} />
                                 </a>
                                 <a href="" style={styles.listLink}>
-                                    <img src={instagram} alt="instagram" style={{width: 55, height: 53,marginRight: -12}}/>
+                                    <img src={instagram} alt="instagram" style={{ width: 55, height: 53, marginRight: -12 }} />
                                 </a>
                             </div>
-                        </div>
+                        </div>*/}
                     </div>
 
                 </div>

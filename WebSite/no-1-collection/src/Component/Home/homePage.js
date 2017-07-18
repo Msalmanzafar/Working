@@ -33,9 +33,9 @@ class Home extends Component {
                     <h2 className="text-center h1" style={styles.wel}>Welcome</h2>
                     <h5 className="text-center h4">LogIn for the best experience</h5>
                 </div>
-                <div className="container-flux" style={styles.sliderBox}>
+                <div className="container " >
                     <br/>
-                    <div id="myCarousel" className="carousel slide" data-ride="carousel">
+                    <div id="myCarousel" className="carousel slide " data-ride="carousel">
                         {/*<!-- Indicators -->*/}
                         <ol className="carousel-indicators" >
                             <li data-target="#myCarousel"  data-slide-to="0" className="active"></li>
