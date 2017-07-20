@@ -3,7 +3,6 @@ import * as mat from 'material-ui';
 import theFebric from '../Images/The-Fabric-Store.png';
 import Trendz from '../Images/Trendz.png';
 import vintage from '../Images/Vintage.png';
-// import facebookBlue from '../Images/facebookBlue.png';
 import FaFacebookSquare from 'react-icons/lib/fa/facebook-square';
 import FaLinkedinSquare from 'react-icons/lib/fa/linkedin-square';
 import { Link } from 'react-router';
