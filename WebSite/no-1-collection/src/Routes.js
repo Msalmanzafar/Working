@@ -8,7 +8,7 @@ import AppTheme from "./Apptheme";
 import Home from "./Component/Home/homePage";
 import SignUp from './Component/Authentication/signup';
 import LogIn from './Component/Authentication/login';
-
+import ContactUs from './Component/ContactUs/contactUs'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -36,6 +36,7 @@ export default class Routes extends Component {
                         <Route path='/home' component={Home}/>
                         <Route path='/signup' component={SignUp}/>
                         <Route path='/login' component={LogIn}/>
+                        <Route path='/contactus' component={ContactUs}/>
                         
                     </Route>
                 </Router>
