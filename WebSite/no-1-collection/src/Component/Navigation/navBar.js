@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import * as mat from 'material-ui';
-import DrawerUndockedExample from './navbar-child'
-import Logo from '../Images/No1-Collections12.png'
+import DrawerUndockedExample from './navbar-child';
+import Logo from '../Images/No1-Collections12.png';
+import FaSignIn from 'react-icons/lib/fa/sign-in';
+// import FaSignOut from 'react-icons/lib/fa/sign-out';
+import FaUser from 'react-icons/lib/fa/user';
 
 
 const styles = {
     appBar: {
-        boxShadow: '0px 5px 12px gray',
-        height: 70
+        // boxShadow: '0px 5px 12px gray',
+        height: 70,
     },
     title: {
         cursor: 'pointer',
@@ -59,6 +62,7 @@ class NavBar extends Component {
 
                 <mat.AppBar
                     style={styles.appBar}
+                    zDepth={2}
                     title={
                         <span >
                             <img 
@@ -77,13 +81,20 @@ class NavBar extends Component {
                         <div style={styles.headerButton}>
                             <span >
                                 <Link to='/signup'>
-                                    <mat.FlatButton style={styles.button} label="Sign Up" />
+                                    <mat.FlatButton 
+                                        style={styles.button} 
+                                        label="Sign Up" 
+                                        icon={<FaUser style={{fontSize: 25}}/>}
+                                    />
                                 </Link>
                             </span>
                             <span>
                                 <Link to='/login'>
-                                    <mat.FlatButton style={styles.button}
+                                    <mat.FlatButton 
+                                        style={styles.button}
                                         label="Log In"
+                                        icon={<FaSignIn style={{fontSize: 25}}/>}
+                                        
                                     />
                                 </Link>
                             </span>

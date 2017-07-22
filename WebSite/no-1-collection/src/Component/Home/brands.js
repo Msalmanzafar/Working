@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {browserHistory} from 'react-router'
 import Slide1 from '../Images/main3.jpg';
 import Slide2 from '../Images/Trendz.png';
 import Slide3 from '../Images/Vintage.png';
@@ -21,7 +21,8 @@ class BrandsLogos extends Component {
         this.theFebric = this.theFebric.bind(this);
     }
     theFebric(){
-        console.log("theFebric----You Click it")
+        console.log("theFebric----You Click it");
+        browserHistory.push('/thefebricstore');
     }
     render() {
         return (

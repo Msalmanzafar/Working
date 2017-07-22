@@ -8,7 +8,12 @@ import AppTheme from "./Apptheme";
 import Home from "./Component/Home/homePage";
 import SignUp from './Component/Authentication/signup';
 import LogIn from './Component/Authentication/login';
-import ContactUs from './Component/ContactUs/contactUs'
+import ContactUs from './Component/ContactUs/contactUs';
+import AboutNo1Collection from './Component/About/about';
+
+//The Febric sectiion
+import TheFebricStore from './Component/TheFebric/Index';
+
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -37,6 +42,10 @@ export default class Routes extends Component {
                         <Route path='/signup' component={SignUp}/>
                         <Route path='/login' component={LogIn}/>
                         <Route path='/contactus' component={ContactUs}/>
+                        <Route path='/about' component={AboutNo1Collection}/>
+                        
+                    </Route>
+                    <Route path='/thefebricstore' component={TheFebricStore}>
                         
                     </Route>
                 </Router>

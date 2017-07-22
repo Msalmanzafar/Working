@@ -3,6 +3,10 @@ import React from 'react';
 import { browserHistory } from 'react-router';
 import * as mat from 'material-ui';
 
+import theFebric from '../Images/The-Fabric-Store.png';
+import Trendz from '../Images/Trendz.png';
+import vintage from '../Images/Vintage.png';
+
 import { List, ListItem } from 'material-ui/List';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -12,7 +16,7 @@ import IconButton from 'material-ui/IconButton';
 import MdMenu from 'react-icons/lib/md/menu';
 import MdAddShoppingCart from 'react-icons/lib/md/add-shopping-cart';
 import MdBorderColor from 'react-icons/lib/md/border-color';
-import MdSettings from 'react-icons/lib/md/settings';
+// import MdSettings from 'react-icons/lib/md/settings';
 import MdInfoOutline from 'react-icons/lib/md/info-outline';
 import MdHome from 'react-icons/lib/md/home';
 import MdContactMail from 'react-icons/lib/md/contact-mail';
@@ -54,51 +58,25 @@ class DrawerUndockedExample extends React.Component {
 
     constructor(props) {
         super(props);
-        this.CreateStore = this.CreateStore.bind(this);
-        this.AvailibaleStores = this.AvailibaleStores.bind(this);
-        this.SaleProduct = this.SaleProduct.bind(this);
-        this.SalesDetails = this.SalesDetails.bind(this);
         this.home = this.home.bind(this);
         this.Contact_Us = this.Contact_Us.bind(this);
+        this.About = this.About.bind(this); 
 
         this.state = { open: false };
     }
-    home(){
+    home() {
         browserHistory.push('/home');
         this.setState({ open: false });
     }
-    Contact_Us(){
+    Contact_Us() {
         browserHistory.push('/contactus');
         this.setState({ open: false });
     }
-    SalesDetails() {
-        console.log("Store Create");
-
-        // this.props.LoaderAction();
-        // this.props.SaledListActions();
-        // browserHistory.push('/salesdetails');
+    About(){
+        browserHistory.push('/about');
         this.setState({ open: false });
     }
-    SaleProduct() {
-        console.log("Store Create");
-
-        // this.props.SalesProductsAction();
-        // browserHistory.push('/saleproduct');
-        this.setState({ open: false });
-    }
-    AvailibaleStores() {
-        console.log("Store Create");
-        // this.props.LoaderAction();
-        // this.props.AvailibaleActions();
-        // browserHistory.push('/availstores');
-        this.setState({ open: false });
-    }
-    CreateStore() {
-        console.log("Store Create");
-        // browserHistory.push('/newstore')
-        this.setState({ open: false });
-    }
-
+    
     handleToggle = () => {
         // console.log('working');
         this.setState({ open: !this.state.open });
@@ -113,82 +91,85 @@ class DrawerUndockedExample extends React.Component {
                     iconStyle={styles.smallIcon}
                     style={styles.small}
                 >
-                    <MdMenu  onClick={this.handleToggle} />
+                    <MdMenu onClick={this.handleToggle} />
                 </IconButton>
                 <Drawer
                     docked={false}
                     width={250}
                     open={this.state.open}
+                    
                     onRequestChange={(open) => this.setState({ open })}
                 >
-                    <AppBar 
+                    <AppBar
                         iconElementLeft={<mat.Avatar
                             size={55}
-                        />} 
+                        />}
                         title='email'
                     />
                     <div>
                         <MenuItem
-                            style={{  display: 'inline' }}
+                            style={{ display: 'inline' }}
                             onClick={this.CreateStore}
                         >
                             <List>
-                                <ListItem 
-                                onClick={this.home} 
-                                primaryText="Home" 
-                                leftIcon={<MdHome />} />
+                                <ListItem
+                                    onClick={this.home}
+                                    primaryText="Home"
+                                    leftIcon={<MdHome />} />
                             </List>
                         </MenuItem>
                         <MenuItem
-                            style={{  display: 'inline' }}
+                            style={{ display: 'inline' }}
                             onClick={this.CreateStore}
                         >
                             <List>
-                                <ListItem 
-                                primaryText="Card" 
-                                leftIcon={<MdAddShoppingCart />} />
+                                <ListItem
+                                    primaryText="Card"
+                                    leftIcon={<MdAddShoppingCart />} />
                             </List>
                         </MenuItem>
                         <MenuItem
-                            style={{  display: 'inline' }}
+                            style={{ display: 'inline' }}
                             onClick={this.AvailibaleStores}
                         >
                             <List>
-                                <ListItem 
-                                primaryText="Order" 
-                                leftIcon={<MdBorderColor />} />
+                                <ListItem
+                                    primaryText="Order"
+                                    leftIcon={<MdBorderColor />} />
                             </List>
                         </MenuItem>
-                        <MenuItem 
+                        {/* <MenuItem
                             onClick={this.SaleProduct}
-                            style={{  display: 'inline' }}
+                            style={{ display: 'inline' }}
                         >
                             <List>
-                                <ListItem 
-                                primaryText="Setting" 
-                                leftIcon={<MdSettings />} />
+                                <ListItem
+                                    primaryText="Setting"
+                                    leftIcon={<MdSettings />} />
                             </List>
-                        </MenuItem>
-                        <MenuItem 
-                            style={{  display: 'inline' }}
+                        </MenuItem> */}
+                        <MenuItem
+                            style={{ display: 'inline' }}
                             onClick={this.SalesDetails}
                         >
                             <List>
-                                <ListItem 
-                                primaryText="Contact Us" 
-                                leftIcon={<MdContactMail />} 
-                                onClick={this.Contact_Us}
+                                <ListItem
+                                    primaryText="Contact Us"
+                                    leftIcon={<MdContactMail />}
+                                    onClick={this.Contact_Us}
                                 />
                             </List>
                         </MenuItem>
-                        <MenuItem 
-                            style={{  display: 'inline' }}
+                        <MenuItem
+                            style={{ display: 'inline' }}
                             onClick={this.SalesDetails}
                         >
                             <List>
-                                <ListItem 
-                                primaryText="About" 
-                                leftIcon={<MdInfoOutline />} />
+                                <ListItem
+                                    primaryText="About Us"
+                                    leftIcon={<MdInfoOutline />}
+                                    onClick={this.About}
+                                />
                             </List>
                         </MenuItem>
                     </div>
@@ -198,6 +179,15 @@ class DrawerUndockedExample extends React.Component {
                         onClick={this.handleClose}
                         style={styles.close}
                     />
+
+                    <div className='col-md-12' style={{marginTop: 10}}>
+                        <span>
+                            <img src={theFebric} alt="theFebric" style={{width: 65,height: 28,margin: 3}}/>
+                            <img src={Trendz} alt="Trendz" style={{width: 60,height: 28,margin: 3}}/>
+                            <img src={vintage} alt="vintage" style={{width: 65,height: 28,margin: 3}}/>
+                            
+                        </span>
+                    </div>
                 </Drawer>
             </div>
         );

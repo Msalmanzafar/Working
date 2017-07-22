@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import * as mat from 'material-ui';
+import Subscribe from '../Home/subscribe';
+import FooterOfCollection from '../Home/footer';
+
+
+
 
 const styles = {
     signup: {
@@ -19,10 +24,10 @@ class SignUp extends Component {
                         style={{ position: 'relative' ,borderRadius: 5}}
                     >
                         <mat.AppBar
-                            titleStyle={{ textShadow: '1px 1px 2px black' }}
+                            titleStyle={{textShadow: '0px 2px 3px black',textAlign: 'center'}}
                             showMenuIconButton={false}
-                            title={<h3 className=" text-center">Sign Up</h3>}
-                            style={{borderRadius: '5px 5px 0 0'}}
+                            title='Sign Up'
+                            style={{borderRadius: '5px 5px 0 0',backgroundColor: '#808080'}}
                         />
                         <mat.CardText>
                             <div className="text-center">
@@ -69,6 +74,10 @@ class SignUp extends Component {
                     </mat.Card>
 
                 </div>
+                <br/>
+                <br/>
+                <Subscribe />
+                <FooterOfCollection />
             </div>
         );
     }

@@ -6,11 +6,20 @@ import vintage from '../Images/Vintage.png';
 import FaFacebookSquare from 'react-icons/lib/fa/facebook-square';
 import FaLinkedinSquare from 'react-icons/lib/fa/linkedin-square';
 import { Link } from 'react-router';
+import FaPhoneSquare from 'react-icons/lib/fa/phone-square';
+import FaEnvelope from 'react-icons/lib/fa/envelope';
+import FaMapMarker from 'react-icons/lib/fa/map-marker';
+import FaMobile from 'react-icons/lib/fa/mobile';
+import Subscribe from '../Home/subscribe';
+import FooterOfCollection from '../Home/footer';
 
+
+// import FaGooglePlusSquare from 'react-icons/lib/fa/google-plus-square';
+// import FaGooglePlus from 'react-icons/lib/fa/google-plus'
 
 const style = {
-    height: 'auto',
-    width: '100%',
+    // height: 'auto',
+    // width: '100%',
     // margin: 30,
     textAlign: 'left',
     display: 'inline-block',
@@ -26,9 +35,9 @@ const styles = {
     titles: {
         // fontSize: 24,
         fontWeight: 'bold',
-        margin: 30,
-        textShadow: '1px 1px 2px #999999',
-        color: 'black'
+        // margin: 25,
+        textShadow: '1px 1px 2px black',
+        // color: 'black'
     },
     thefebric: {
         margin: 27,
@@ -55,6 +64,9 @@ const styles = {
         // margin: '0px 0px 0px 30px',
         color: '#0d47a1'
     },
+    gmail: {
+        color: '#862d2d'
+    },
     heading: {
         margin: '30px 0px 10px 30px',
         color: '#f44336',
@@ -71,28 +83,37 @@ const styles = {
         color: '#f44336',
         // fontWeight: 'bold',
         textDecoration: 'underline'
+    },
+    icons: {
+        fontSize: 28,
+        marginTop: 8,
+        color: '#d9e3f0',
     }
 }
 class ContactUs extends Component {
-    constructor(props) {
-        super(props);
-        this.facebookPage = this.facebookPage.bind(this);
-    }
-    facebookPage() {
-        console.log("facebookPage");
-        Link.Open
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
+
     render() {
         return (
             <div >
                 <div className="container" style={styles.ContactContainer}>
                     <mat.Card style={style} zDepth={2} >
                         <mat.AppBar
-                            style={{ backgroundColor: 'white', }}
+                            style={{ backgroundColor: '#808080' }}
                             title={
                                 <span style={styles.titles}>Contact Us</span>
                             }
                             showMenuIconButton={false}
+                            iconElementRight={
+                                <span style={{ marginRight: 8 }}>
+                                    <FaEnvelope style={styles.icons} />
+                                    <FaMobile style={styles.icons} />
+                                    <FaPhoneSquare style={styles.icons} />
+                                    <FaMapMarker style={styles.icons} />
+                                </span>
+                            }
                         />
                         <div className='col-md-12' >
                             <div className='row' >
@@ -154,23 +175,24 @@ class ContactUs extends Component {
                                 <h3 style={styles.headingSocial}>Get Social With Us</h3>
                                 <div className="row">
                                     <div className='col-md-5'>
-                                        {/* <img 
-                                            src={facebookBlue} 
-                                            alt="facebook" 
-                                            style={styles.facebook}
-                                        /><span>The Fabric Store</span> */}
+                                        <mat.List>
+                                            <mat.ListItem
+                                                style={{ marginLeft: 30 }}
+                                                primaryText="Send Email"
+                                                onClick={() => console.log('email')}
+                                                leftIcon={<FaEnvelope style={styles.gmail} />}
+                                            />
+                                        </mat.List>
+                                    </div>
+                                    <div className='col-md-5'>
                                         <mat.List>
                                             <Link target="_blank" to="https://www.facebook.com/The-Fabric-store-1866263960272860/" >
                                                 <mat.ListItem
                                                     style={{ marginLeft: 30 }}
                                                     primaryText="The Fabric Store"
-                                                    onClick={this.facebookPage}
                                                     leftIcon={<FaFacebookSquare style={styles.facebook} />}
-
                                                 />
                                             </Link>
-
-
                                         </mat.List>
                                     </div>
                                     <div className='col-md-5'>
@@ -183,15 +205,17 @@ class ContactUs extends Component {
                                                 />
                                             </Link>
                                         </mat.List>
-
                                     </div>
                                 </div>
                             </blockquote>
                         </div>
+
                     </mat.Card>
-                    <br />
-                    <br />
                 </div>
+                <br />
+                <br />
+                <Subscribe />
+                <FooterOfCollection />
             </div>
         );
     }

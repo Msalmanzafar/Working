@@ -44,11 +44,11 @@ const styles = {
         margin: 9,
     },
     native: {
-        width: 35,
         height: 35,
         color: 'gray',
-        marginLeft: 10,
         cursor: 'pointer',
+        fontSize: 36,
+        marginRight: 4
     }
     ,
     subs: {
