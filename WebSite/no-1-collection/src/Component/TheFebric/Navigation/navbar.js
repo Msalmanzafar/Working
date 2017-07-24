@@ -64,12 +64,14 @@ class NavBarFebric extends Component {
                 <mat.AppBar
                     style={styles.appBar}
                     zDepth={2}
+                    titleStyle={{textAlign: 'left'}}
                     title={
                         <span >
                              <img 
                                 src={Logo} 
                                 alt="logo" 
                                 style={styles.logo}
+                                
                             />     
                         </span>
                     }

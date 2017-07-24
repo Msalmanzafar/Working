@@ -60,7 +60,7 @@ class DrawerUndockedExample extends React.Component {
         super(props);
         this.home = this.home.bind(this);
         this.Contact_Us = this.Contact_Us.bind(this);
-        this.About = this.About.bind(this); 
+        this.About = this.About.bind(this);
 
         this.state = { open: false };
     }
@@ -72,11 +72,11 @@ class DrawerUndockedExample extends React.Component {
         browserHistory.push('/contactus');
         this.setState({ open: false });
     }
-    About(){
+    About() {
         browserHistory.push('/about');
         this.setState({ open: false });
     }
-    
+
     handleToggle = () => {
         // console.log('working');
         this.setState({ open: !this.state.open });
@@ -97,7 +97,7 @@ class DrawerUndockedExample extends React.Component {
                     docked={false}
                     width={250}
                     open={this.state.open}
-                    
+
                     onRequestChange={(open) => this.setState({ open })}
                 >
                     <AppBar
@@ -113,9 +113,11 @@ class DrawerUndockedExample extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     onClick={this.home}
                                     primaryText="Home"
                                     leftIcon={<MdHome />} />
+
                             </List>
                         </MenuItem>
                         <MenuItem
@@ -124,16 +126,19 @@ class DrawerUndockedExample extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     primaryText="Card"
                                     leftIcon={<MdAddShoppingCart />} />
                             </List>
                         </MenuItem>
                         <MenuItem
+                            style={{ textAlign: 'left' }}
                             style={{ display: 'inline' }}
                             onClick={this.AvailibaleStores}
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     primaryText="Order"
                                     leftIcon={<MdBorderColor />} />
                             </List>
@@ -154,6 +159,7 @@ class DrawerUndockedExample extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     primaryText="Contact Us"
                                     leftIcon={<MdContactMail />}
                                     onClick={this.Contact_Us}
@@ -166,6 +172,7 @@ class DrawerUndockedExample extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     primaryText="About Us"
                                     leftIcon={<MdInfoOutline />}
                                     onClick={this.About}
@@ -180,12 +187,12 @@ class DrawerUndockedExample extends React.Component {
                         style={styles.close}
                     />
 
-                    <div className='col-md-12' style={{marginTop: 10}}>
+                    <div className='col-md-12' style={{ marginTop: 10 }}>
                         <span>
-                            <img src={theFebric} alt="theFebric" style={{width: 65,height: 28,margin: 3}}/>
-                            <img src={Trendz} alt="Trendz" style={{width: 60,height: 28,margin: 3}}/>
-                            <img src={vintage} alt="vintage" style={{width: 65,height: 28,margin: 3}}/>
-                            
+                            <img src={theFebric} alt="theFebric" style={{ width: 65, height: 28, margin: 3 }} />
+                            <img src={Trendz} alt="Trendz" style={{ width: 60, height: 28, margin: 3 }} />
+                            <img src={vintage} alt="vintage" style={{ width: 65, height: 28, margin: 3 }} />
+
                         </span>
                     </div>
                 </Drawer>

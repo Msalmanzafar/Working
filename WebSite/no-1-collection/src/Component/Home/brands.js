@@ -27,8 +27,8 @@ class BrandsLogos extends Component {
     render() {
         return (
             <div>
-                <div className="container text-center" style={{ margin: 20 }}>
-                    <h3 className="text-center ">Click And Moves Over Brands</h3>
+                <div className="container-flux text-center" style={{ margin: 20 }}>
+                    <h3 className="text-center ">Click And Moves Our Brands</h3>
                     <img onClick={this.theFebric} src={Slide1} style={styles.brandz} alt="the febric" />
                     <img src={Slide2} style={styles.brandz} alt="trendz" />
                     <img src={Slide3} style={styles.brandz} alt="vintage" />

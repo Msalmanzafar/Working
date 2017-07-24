@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import * as mat from 'material-ui';
 import Subscribe from '../Home/subscribe';
 import FooterOfCollection from '../Home/footer';
+import user from '../Images/icon officer_12_1.png';
 
 
 
 
 const styles = {
     signup: {
-        marginTop: 50
+        marginTop: 50,
+        
     }
 }
 
@@ -19,17 +21,20 @@ class SignUp extends Component {
             <div>
                 <div className="container " style={styles.signup}>
                     <mat.Card
-                        transitionEnabled={true}
                         zDepth={3}
                         style={{ position: 'relative' ,borderRadius: 5}}
+                        className="text-left"
                     >
                         <mat.AppBar
                             titleStyle={{textShadow: '0px 2px 3px black',textAlign: 'center'}}
                             showMenuIconButton={false}
                             title='Sign Up'
-                            style={{borderRadius: '5px 5px 0 0',backgroundColor: '#808080'}}
+                            style={{borderRadius: '5px 5px 0 0',backgroundColor: '#b3b3b3'}}
                         />
                         <mat.CardText>
+                            <div className='text-center'>
+                                 <img src={user} alt='user' style={{width: '18%', height: 'auto'}}/>
+                            </div> 
                             <div className="text-center">
                                 <mat.TextField
                                     hintText="Enter your first name"

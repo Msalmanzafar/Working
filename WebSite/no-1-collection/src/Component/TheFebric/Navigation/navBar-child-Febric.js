@@ -60,7 +60,7 @@ class TheFebricMenu extends React.Component {
         super(props);
         this.home = this.home.bind(this);
         this.Contact_Us = this.Contact_Us.bind(this);
-        this.About = this.About.bind(this); 
+        this.About = this.About.bind(this);
 
         this.state = { open: false };
     }
@@ -72,11 +72,11 @@ class TheFebricMenu extends React.Component {
         browserHistory.push('/contactus');
         this.setState({ open: false });
     }
-    About(){
+    About() {
         browserHistory.push('/about');
         this.setState({ open: false });
     }
-    
+
     handleToggle = () => {
         // console.log('working');
         this.setState({ open: !this.state.open });
@@ -97,7 +97,7 @@ class TheFebricMenu extends React.Component {
                     docked={false}
                     width={250}
                     open={this.state.open}
-                    
+
                     onRequestChange={(open) => this.setState({ open })}
                 >
                     <AppBar
@@ -113,6 +113,7 @@ class TheFebricMenu extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     onClick={this.home}
                                     primaryText="Home"
                                     leftIcon={<MdHome />} />
@@ -124,6 +125,7 @@ class TheFebricMenu extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     primaryText="Card"
                                     leftIcon={<MdAddShoppingCart />} />
                             </List>
@@ -134,6 +136,7 @@ class TheFebricMenu extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     primaryText="Order"
                                     leftIcon={<MdBorderColor />} />
                             </List>
@@ -154,6 +157,7 @@ class TheFebricMenu extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     primaryText="Contact Us"
                                     leftIcon={<MdContactMail />}
                                     onClick={this.Contact_Us}
@@ -166,6 +170,7 @@ class TheFebricMenu extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    style={{ textAlign: 'left' }}
                                     primaryText="About Us"
                                     leftIcon={<MdInfoOutline />}
                                     onClick={this.About}

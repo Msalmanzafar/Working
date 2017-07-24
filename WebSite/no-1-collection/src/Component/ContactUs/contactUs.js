@@ -87,7 +87,7 @@ const styles = {
     icons: {
         fontSize: 28,
         marginTop: 8,
-        color: '#d9e3f0',
+        // color: '',
     }
 }
 class ContactUs extends Component {
@@ -101,7 +101,7 @@ class ContactUs extends Component {
                 <div className="container" style={styles.ContactContainer}>
                     <mat.Card style={style} zDepth={2} >
                         <mat.AppBar
-                            style={{ backgroundColor: '#808080' }}
+                            style={{ backgroundColor: '#b3b3b3' }}
                             title={
                                 <span style={styles.titles}>Contact Us</span>
                             }

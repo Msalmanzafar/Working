@@ -25,25 +25,19 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
     crossorigin="anonymous">
-  <style>
-    /* .contact {
-      background-image: url('./luxury-armchair-eighteenth-century.jpg');
-      background-repeat: no-repeat;
-      background-origin: border-box;
-       background-size: 100% 800px 
-    }
-    .gro{
-      background-color: rgba(255, 255, 255, 0.7)
-    } */
-  </style>
-
+    <link rel="stylesheet" href="./style.css"/>
 </head>
 
-<body>
+<body onload="myFunction()">
   <!-- <noscript>
     You need to enable JavaScript to run this app.
   </noscript> -->
-  <div id="root"></div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <div id='loader'></div>
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+    <div id="root"></div>
+
+  </div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -55,6 +49,7 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
+  <script src='./jquery.js'></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>

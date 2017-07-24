@@ -15,7 +15,7 @@ class Sales extends Component {
     render() {
         return (
             <div>
-                <div className='container-fluid ' style={{ marginTop: 20, marginBottom: 20 }}>
+                <div className='container ' style={{ marginTop: 20, marginBottom: 20 }}>
                     <div className="col-md-12 text-center">
 
                         <mat.Paper style={style} zDepth={2} >

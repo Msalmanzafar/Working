@@ -72,6 +72,7 @@ class NavBar extends Component {
                             />    
                         </span>
                     }
+                    titleStyle={{textAlign: 'left'}}
                     iconElementLeft={
                         <span>
                             <DrawerUndockedExample />
