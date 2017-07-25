@@ -120,7 +120,7 @@ class DrawerUndockedExample extends React.Component {
 
                             </List>
                         </MenuItem>
-                        <MenuItem
+                        {/* <MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.CreateStore}
                         >
@@ -130,8 +130,8 @@ class DrawerUndockedExample extends React.Component {
                                     primaryText="Card"
                                     leftIcon={<MdAddShoppingCart />} />
                             </List>
-                        </MenuItem>
-                        <MenuItem
+                        </MenuItem> */}
+                        {/* <MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.AvailibaleStores}
                         >
@@ -141,7 +141,7 @@ class DrawerUndockedExample extends React.Component {
                                     primaryText="Order"
                                     leftIcon={<MdBorderColor />} />
                             </List>
-                        </MenuItem>
+                        </MenuItem> */}
                         {/* <MenuItem
                             onClick={this.SaleProduct}
                             style={{ display: 'inline' }}
