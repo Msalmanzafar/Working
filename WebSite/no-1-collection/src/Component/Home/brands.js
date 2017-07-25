@@ -6,12 +6,19 @@ import Slide3 from '../Images/Vintage.png';
 
 const styles={
     brandz:{
-        width: 210, 
-        height: 110,
+        width: 225, 
+        height: 120,
         margin: 10,
         cursor: 'pointer',
         borderRadius: 5,
-        boxShadow: '1px 2px 3px gray',
+        opacity: 1
+        // boxShadow: '1px 2px 3px gray',
+    },
+    brandzBox:{
+        marginTop: -200, 
+        position: 'relative', 
+        zIndex: 10, 
+        // backgroundColor: 'rgba(255,255,255,0.1)'
     }
 }
 
@@ -27,8 +34,10 @@ class BrandsLogos extends Component {
     render() {
         return (
             <div>
-                <div className="container-flux text-center" style={{ margin: 20 }}>
-                    <h3 className="text-center ">Click And Moves Our Brands</h3>
+                <div className="container-flux text-center" style={styles.brandzBox}>
+                    <h2 className="text-center " style={{color: 'white', fontWeight: 'bold',textShadow: '1px 2px 3px black'}}>
+                        Click And Moves Our Brands
+                    </h2>
                     <img onClick={this.theFebric} src={Slide1} style={styles.brandz} alt="the febric" />
                     <img src={Slide2} style={styles.brandz} alt="trendz" />
                     <img src={Slide3} style={styles.brandz} alt="vintage" />

@@ -26,12 +26,18 @@ const styles = {
     heading: {
         margin: '30px 0px 10px 30px',
         color: '#f44336',
+        fontWeight: 'bold',
+        fontFamily:'helvetica',
     },
     text:{
         margin: 30,
         fontSize: 16,
         textAlign: 'justify',
         color: 'black'
+    },
+    impo:{
+        color: 'red',
+        fontWeight: 'bold'
     },
 }
 class AboutNo1Collection extends Component {
@@ -53,14 +59,25 @@ class AboutNo1Collection extends Component {
                             />
                             <div className='col-md-12'>
                                 <div className='row'>
-                                    <div className='col-md-12' style={{border: '2px solid red'}}>
+                                    <div className='col-md-12' >
                                         <blockquote style={{ border: 'none' }}>
-                                            <h3 style={styles.heading}>Nursery</h3>
+                                            <h2 style={styles.heading}>Company Introduction</h2>
                                             <p style={styles.text}>
-                                                188/B Block 2 PECHS Main Nursery Furniture
-                                                Market behind Blue Ribbon Bakery Karachi.<br />
-                                                Ph# 34541225 / 3459395
+                                                <span style={styles.impo}>No.1 group of Companies</span> was incorporated on August 2005. <span style={styles.impo}>No.1 Collection </span> 
+                                                provides a full range of furnishing fabric to fulfill the needs of all of its cutomers
+                                                being wholesale & retail clinets. Sinece then the Company hase made progress in widely diverse fields. 
+                                                At present, the Company is trendstter in furnishing fabric industries and also has a remarkable presence 
+                                                in Viscose, Jute, Chaneel, Jacqard, Embroidery, Organza, Titanic, Digital Prints.
+                                                <br/>
+                                                Our Collection harmonize interior design, sophistication, and excitement, with quality, richness, 
+                                                and choices, and fully addresses their fashion needs. Our supplier belongs to round the globe from China,
+                                                 Morocco, Dubai, turkey & India.
                                             </p>
+                                        </blockquote>
+                                    </div>
+                                    <div className="col-md-12">
+                                        <blockquote style={{ border: 'none' }}>
+                                            <h2 style={styles.heading}>Our Vision</h2>
                                         </blockquote>
                                     </div>
                                 </div>

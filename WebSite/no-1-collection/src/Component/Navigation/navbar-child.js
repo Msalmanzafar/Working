@@ -132,7 +132,6 @@ class DrawerUndockedExample extends React.Component {
                             </List>
                         </MenuItem>
                         <MenuItem
-                            style={{ textAlign: 'left' }}
                             style={{ display: 'inline' }}
                             onClick={this.AvailibaleStores}
                         >

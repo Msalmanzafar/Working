@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Slide1 from '../Images/main3.jpg';
-import Slide2 from '../Images/Trendz.png';
-import Slide3 from '../Images/Vintage.png';
-import Slide4 from '../Images/orange-and-brown-living-room-curtains.jpg';
+import Slide1 from '../Images/download.jpg';
+import Slide2 from '../Images/57300-9050571.jpg';
+import Slide3 from '../Images/Pink-wallpaper-curtains-and-sofa.jpg';
+import Slide4 from '../Images/shof_b11ef8d8295230f.jpg';
 import Slide5 from '../Images/eei-645-exp-ora_3_.jpg';
 
 import Sales from './sales';
@@ -13,9 +13,9 @@ import Subscribe from './subscribe'
 
 
 const styles={
-    sliderBox:{
-        boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    },
+    // sliderBox:{
+    //     boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    // },
     wel:{
         textShadow: '1px 1px 2px gray, 0 0 25px #ffd54f, 0 0 5px #ffecb3',
         fontWeight: 'bold',
@@ -29,12 +29,8 @@ class Home extends Component {
         return (
             <div>
                
-                <div className="container">
-                    <h2 className="text-center h1" style={styles.wel}>Welcome</h2>
-                    <h5 className="text-center h4">LogIn for the best experience</h5>
-                </div>
-                <div className="container " >
-                    <br/>
+                
+                <div className="container-flux " style={{position: 'relative',zIndex: 2,opacity: 0.9}}>
                     <div id="myCarousel" className="carousel slide " data-ride="carousel">
                         {/*<!-- Indicators -->*/}
                         <ol className="carousel-indicators" >
@@ -49,22 +45,22 @@ class Home extends Component {
                         {/*<!-- Wrapper for slides -->*/}
                         <div className="carousel-inner">
                             <div className="item active">
-                                <img src={Slide1} alt="slide1" style={{width:'100%',height:'430px'}} />
+                                <img src={Slide1} alt="slide1" style={{width:'100%',height:'600px'}} />
                             </div>
 
                             <div className="item">
-                                <img src={Slide2} alt="slide2" style={{width:'100%',height:'430px'}} />
+                                <img src={Slide2} alt="slide2" style={{width:'100%',height:'600px'}} />
                             </div>
 
                             <div className="item">
-                                <img src={Slide3} alt="slide3" style={{width:'100%',height:'430px'}} />
+                                <img src={Slide3} alt="slide3" style={{width:'100%',height:'600px'}} />
                             </div>
 
                             <div className="item">
-                                <img src={Slide4} alt="slide4" style={{width:'100%',height:'430px'}} />
+                                <img src={Slide4} alt="slide4" style={{width:'100%',height:'600px'}} />
                             </div>
                             <div className="item">
-                                <img src={Slide5} alt="slide5" style={{width:'100%',height:'430px'}} />
+                                <img src={Slide5} alt="slide5" style={{width:'100%',height:'600px'}} />
                             </div>
                         </div>
 
@@ -78,8 +74,16 @@ class Home extends Component {
                             <span className="sr-only">Next</span>
                         </a>
                     </div>
+                    
                 </div>
+                 
                 <BrandsLogos />
+                <div className="container">
+                    <h2 className="text-center h1" style={styles.wel}>
+                        Welcome To <span>No.1 Collection</span>
+                    </h2>
+                    <h5 className="text-center h4">LogIn for the best experience</h5>
+                </div> 
                 <Sales />
                 <Subscribe/>
                 <FooterOfCollection />

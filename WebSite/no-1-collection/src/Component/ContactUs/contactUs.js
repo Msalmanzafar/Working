@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import * as mat from 'material-ui';
-import theFebric from '../Images/The-Fabric-Store.png';
-import Trendz from '../Images/Trendz.png';
-import vintage from '../Images/Vintage.png';
+// import theFebric from '../Images/The-Fabric-Store.png';
+// import Trendz from '../Images/Trendz.png';
+// import vintage from '../Images/Vintage.png';
 import FaFacebookSquare from 'react-icons/lib/fa/facebook-square';
 import FaLinkedinSquare from 'react-icons/lib/fa/linkedin-square';
 import { Link } from 'react-router';
 import FaPhoneSquare from 'react-icons/lib/fa/phone-square';
 import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaMapMarker from 'react-icons/lib/fa/map-marker';
-import FaMobile from 'react-icons/lib/fa/mobile';
+// import FaMobile from 'react-icons/lib/fa/mobile';
 import Subscribe from '../Home/subscribe';
 import FooterOfCollection from '../Home/footer';
 
@@ -46,31 +46,25 @@ const styles = {
         borderRadius: 4,
         boxShadow: '0px 2px 4px gray'
     },
-    trendz: {
-        margin: 27,
-        width: 200,
-        height: 100,
-        borderRadius: 4,
-        boxShadow: '0px 2px 4px gray'
-    },
-    vintage: {
-        margin: '0px 27px -8px 27px ',
-        width: 200,
-        height: 100,
-        borderRadius: 4,
-        boxShadow: '0px 2px 4px gray'
-    },
-    facebook: {
-        // margin: '0px 0px 0px 30px',
-        color: '#0d47a1'
+    map: {
+        fontSize: 22,
+        color: 'red'
     },
     gmail: {
         color: '#862d2d'
     },
+    facebook: {
+        color: '#01579b'
+    },
+    linkedin: {
+        color: '#0288d1'
+    },
     heading: {
         margin: '30px 0px 10px 30px',
         color: '#f44336',
-        // fontWeight: 'bold'
+        fontWeight: 'bold',
+        textDecoration: 'underline',
+        fontStyle: 'Helvetica, sans-serif',
     },
     text: {
         margin: 30,
@@ -91,11 +85,36 @@ const styles = {
     }
 }
 class ContactUs extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    state = {
+        open: false,
+    };
+    constructor(props) {
+        super(props);
+        this.Email = this.Email.bind(this);
+    }
+    Email() {
+        console.log('emailllllll');
+        this.setState({ open: true });
+    }
+    
+    handleClose = () => {
+        this.setState({ open: false });
+    };
 
     render() {
+        const actions = [
+            <mat.FlatButton
+                label="Send"
+                primary={true}
+                onTouchTap={this.handleClose}
+            />,
+            <mat.FlatButton
+                label="Cancel"
+                primary={true}
+                keyboardFocused={true}
+                onTouchTap={this.handleClose}
+            />,
+        ];
         return (
             <div >
                 <div className="container" style={styles.ContactContainer}>
@@ -106,80 +125,54 @@ class ContactUs extends Component {
                                 <span style={styles.titles}>Contact Us</span>
                             }
                             showMenuIconButton={false}
-                            iconElementRight={
-                                <span style={{ marginRight: 8 }}>
-                                    <FaEnvelope style={styles.icons} />
-                                    <FaMobile style={styles.icons} />
-                                    <FaPhoneSquare style={styles.icons} />
-                                    <FaMapMarker style={styles.icons} />
-                                </span>
-                            }
+
                         />
                         <div className='col-md-12' >
                             <div className='row' >
-                                <div className='col-md-6' style={{ borderRight: '1px solid gray' }} >
+                                <div className='col-md-12' >
                                     <blockquote style={{ border: 'none' }}>
-                                        <img src={theFebric} alt="theFebric" style={styles.thefebric} />
-                                        <br />
-                                        <h3 style={styles.heading}>Nursery</h3>
-                                        <p style={styles.text}>
-                                            188/B Block 2 PECHS Main Nursery Furniture
-                                            Market behind Blue Ribbon Bakery Karachi.<br />
-                                            Ph# 34541225 / 3459395
-                                        </p>
-                                        <h3 style={styles.heading}>Manzoor Colony</h3>
-                                        <p style={styles.text}>
-                                            Shop no 38 Sector I, Millat Society,
-                                            Express way, Chudary Rehmat Ali Road,
-                                            Main Muhammadi Furniture Market,
-                                            Manzoor Colony, Karachi.<br />
-                                            Ph# 35380905
-                                        </p>
-                                        <h3 style={styles.heading}>Gulshan e Iqbal</h3>
-                                        <p style={styles.text}>
-                                            Shop no 5-B, Hasan Apartment Ext Block
-                                            13-D, Gulshan e Iqbal, Karachi.<br />
-                                            Ph# 34830915
-                                        </p>
+                                        <h3 style={styles.heading}>Head Office</h3>
+                                        <div className='col-md-7'>
+                                            <mat.List>
+                                                <mat.ListItem
+                                                    disableKeyboardFocus={true}
+                                                    disabled={true}
+                                                    style={{ marginLeft: 20 }}
+                                                    primaryText="188/B 2nd Floor, Block 2, PECHS, Main Nursery Furniture Markeet behind Blue Ribbon Bakery, Karachi."
+                                                    leftIcon={<FaMapMarker style={styles.map} />}
+                                                />
+                                            </mat.List>
+                                        </div>
                                     </blockquote>
                                 </div>
-                                <div className='col-md-6' >
+                                <div className='col-md-12'>
                                     <blockquote style={{ border: 'none' }}>
-                                        <img src={Trendz} alt="theFebric" style={styles.trendz} />
-                                        <br />
-                                        <h3 style={styles.heading}>Defence</h3>
-                                        <p style={styles.text}>
-                                            Plot no 51-C, 27th Commercial Street,
-                                            Tauheed Commercial Area, Phase 5,
-                                            DHA, Karachi.<br />
-                                            Ph# 35294793-94 / 0310-2345787
-                                        </p>
-                                        <h3 style={styles.heading}>Nursery</h3>
-                                        <p style={styles.text}>
-                                            Shop no 4, 190 A1, Block-2, PECHS,
-                                            Main Nursery Furniture Market, Karachi.
-                                            <br />
-                                            Ph# 34541222
-                                        </p>
-                                        <img src={vintage} alt="vintage" style={styles.vintage} />
-                                        <p style={styles.text}>
-                                            Fabric available at all leading Outlets.
-                                        </p>
+                                        <div className='col-md-6'>
+                                            <mat.List>
+                                                <mat.ListItem
+                                                    disableKeyboardFocus={true}
+                                                    disabled={true}
+                                                    style={{ marginLeft: 20 }}
+                                                    primaryText="021-34541225 / 021-34559395"
+                                                    leftIcon={<FaPhoneSquare style={styles.map} />}
+                                                />
+                                            </mat.List>
+                                        </div>
                                     </blockquote>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                         <div className='col-md-12' >
                             <blockquote style={{ border: 'none' }}>
-                                <h3 style={styles.headingSocial}>Get Social With Us</h3>
+                                <h3 style={styles.heading}>Get Social With Us</h3>
                                 <div className="row">
                                     <div className='col-md-5'>
                                         <mat.List>
                                             <mat.ListItem
                                                 style={{ marginLeft: 30 }}
                                                 primaryText="Send Email"
-                                                onClick={() => console.log('email')}
+                                                onTouchTap={this.Email}
                                                 leftIcon={<FaEnvelope style={styles.gmail} />}
                                             />
                                         </mat.List>
@@ -201,7 +194,7 @@ class ContactUs extends Component {
                                                 <mat.ListItem
                                                     style={{ marginLeft: 30 }}
                                                     primaryText="No1Collection"
-                                                    leftIcon={<FaLinkedinSquare style={styles.facebook} />}
+                                                    leftIcon={<FaLinkedinSquare style={styles.linkedin} />}
                                                 />
                                             </Link>
                                         </mat.List>
@@ -211,6 +204,19 @@ class ContactUs extends Component {
                         </div>
 
                     </mat.Card>
+                </div>
+                <div>
+                    <div>
+                        <mat.Dialog
+                            title=""
+                            actions={actions}
+                            modal={false}
+                            open={this.state.open}
+                            onRequestClose={this.handleClose}
+                        >
+                            The actions in this window were passed in as an array of React objects.
+                        </mat.Dialog>
+                    </div>
                 </div>
                 <br />
                 <br />
