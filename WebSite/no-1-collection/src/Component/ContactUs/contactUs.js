@@ -12,10 +12,9 @@ import FaMapMarker from 'react-icons/lib/fa/map-marker';
 // import FaMobile from 'react-icons/lib/fa/mobile';
 import Subscribe from '../Home/subscribe';
 import FooterOfCollection from '../Home/footer';
+import EmailForm from './Email/headOfficeEmail'
 
 
-// import FaGooglePlusSquare from 'react-icons/lib/fa/google-plus-square';
-// import FaGooglePlus from 'react-icons/lib/fa/google-plus'
 
 const style = {
     // height: 'auto',
@@ -93,7 +92,7 @@ class ContactUs extends Component {
         this.Email = this.Email.bind(this);
     }
     Email() {
-        console.log('emailllllll');
+        // console.log('emailllllll');
         this.setState({ open: true });
     }
     
@@ -103,11 +102,6 @@ class ContactUs extends Component {
 
     render() {
         const actions = [
-            <mat.FlatButton
-                label="Send"
-                primary={true}
-                onTouchTap={this.handleClose}
-            />,
             <mat.FlatButton
                 label="Cancel"
                 primary={true}
@@ -160,7 +154,21 @@ class ContactUs extends Component {
                                         </div>
                                     </blockquote>
                                 </div>
-
+                                <div className='col-md-12'>
+                                    <blockquote style={{ border: 'none' }}>
+                                        <div className='col-md-6'>
+                                            <mat.List>
+                                                <mat.ListItem
+                                                    disableKeyboardFocus={true}
+                                                    disabled={true}
+                                                    style={{ marginLeft: 20 }}
+                                                    primaryText="info@no1collection.com.pk"
+                                                    leftIcon={<FaEnvelope style={styles.map} />}
+                                                />
+                                            </mat.List>
+                                        </div>
+                                    </blockquote>
+                                </div>
                             </div>
                         </div>
                         <div className='col-md-12' >
@@ -208,13 +216,13 @@ class ContactUs extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title=""
+                            title="Feed Back"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                         >
-                            The actions in this window were passed in as an array of React objects.
+                            <EmailForm />
                         </mat.Dialog>
                     </div>
                 </div>

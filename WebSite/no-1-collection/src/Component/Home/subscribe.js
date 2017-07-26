@@ -69,7 +69,7 @@ class Subscribe extends Component {
         return (
             <div>
                 <div className="container-flux text-center" >
-                    <div className='col-md-12' style={styles.box}>
+                    <div className='col-xs-12 col-md-12' style={styles.box}>
                         <section>
                             <div className="row">
                                 <div className='col-xs-12 col-md-6' style={styles.div1}>

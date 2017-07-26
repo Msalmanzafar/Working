@@ -3,6 +3,7 @@ import * as mat from 'material-ui';
 import Subscribe from '../Home/subscribe';
 import FooterOfCollection from '../Home/footer';
 
+import Vision from '../Images/OurVision.png'
 
 const style = {
     // height: 'auto',
@@ -24,18 +25,19 @@ const styles = {
         position: 'relative',
     },
     heading: {
-        margin: '30px 0px 10px 30px',
+        margin: '30px 0px 0px 30px',
         color: '#f44336',
         fontWeight: 'bold',
-        fontFamily:'helvetica',
+        fontFamily: 'helvetica',
+        textShadow: '0px 1px 2px gray'
     },
-    text:{
-        margin: 30,
+    text: {
+        margin: '20px 35px 0px 35px',
         fontSize: 16,
         textAlign: 'justify',
         color: 'black'
     },
-    impo:{
+    impo: {
         color: 'red',
         fontWeight: 'bold'
     },
@@ -63,21 +65,55 @@ class AboutNo1Collection extends Component {
                                         <blockquote style={{ border: 'none' }}>
                                             <h2 style={styles.heading}>Company Introduction</h2>
                                             <p style={styles.text}>
-                                                <span style={styles.impo}>No.1 group of Companies</span> was incorporated on August 2005. <span style={styles.impo}>No.1 Collection </span> 
+                                                <span style={styles.impo}>No.1 group of Companies</span> was incorporated on August 2005. <span style={styles.impo}>No.1 Collection </span>
                                                 provides a full range of furnishing fabric to fulfill the needs of all of its cutomers
-                                                being wholesale & retail clinets. Sinece then the Company hase made progress in widely diverse fields. 
-                                                At present, the Company is trendstter in furnishing fabric industries and also has a remarkable presence 
+                                                being wholesale & retail clinets. Sinece then the Company hase made progress in widely diverse fields.
+                                                At present, the Company is trendstter in furnishing fabric industries and also has a remarkable presence
                                                 in Viscose, Jute, Chaneel, Jacqard, Embroidery, Organza, Titanic, Digital Prints.
-                                                <br/>
-                                                Our Collection harmonize interior design, sophistication, and excitement, with quality, richness, 
+                                                <br />
+                                                Our Collection harmonize interior design, sophistication, and excitement, with quality, richness,
                                                 and choices, and fully addresses their fashion needs. Our supplier belongs to round the globe from China,
                                                  Morocco, Dubai, turkey & India.
                                             </p>
                                         </blockquote>
                                     </div>
-                                    <div className="col-md-12">
+                                </div>
+                            </div>
+                            <div className='col-md-12'>
+                                <div className='row'>
+                                    <div className='col-md-7'>
                                         <blockquote style={{ border: 'none' }}>
                                             <h2 style={styles.heading}>Our Vision</h2>
+                                            <p style={styles.text}>
+                                                The Vision of <span style={styles.impo}>No.1 Group of Companies</span> is to be the largest
+                                                and best retail & whole sale organization in fabric industry, through offering
+                                                the best products not only on time but also provide efficent service.
+                                            </p>
+                                        </blockquote>
+                                    </div>
+                                    <div className='col-md-4'>
+                                        <blockquote style={{ border: 'none' }}>
+                                            <img src={Vision} alt="Vision" style={{width: 330}}/>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col-md-12'>
+                                <div className='row'>
+                                    <div className='col-md-10'>
+                                        <blockquote style={{border: 'none'}}>
+                                            <h2 style={styles.heading}> 
+                                                Our Mission
+                                            </h2>
+                                            <p style={styles.text}>
+                                                <span style={styles.impo}>No.1 Group of companies</span> is devoted to achieve consistent
+                                                improvement in the system of providing products & service to the cutomers and explore new 
+                                                markets to promote / expand sales of the Company through good governance and foster a sound
+                                                and dynamic team, so as to achieve optimum prices of products of the Company of sustainable 
+                                                and equitable growth and prosperity of the Company.
+                                            </p>
+                                            <br/>
+                                            <br/>
                                         </blockquote>
                                     </div>
                                 </div>
