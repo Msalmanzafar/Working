@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as mat from 'material-ui';
-
+// import ErrorDisplay from './Error';
 import FaEnvelope from 'react-icons/lib/fa/envelope';
 
 class EmailForm extends Component {
@@ -15,7 +15,7 @@ class EmailForm extends Component {
         var message = this.refs.message.getValue();
 
         if (!email || !message) {
-            alert("Please Write your Email and message")
+            alert("Please Write your Email and message");
         } else {
             let feedback = {
                 emai: email,
@@ -23,9 +23,6 @@ class EmailForm extends Component {
             }
             console.log('SendFeedBack', feedback);
         }
-
-
-
     }
     render() {
         return (
