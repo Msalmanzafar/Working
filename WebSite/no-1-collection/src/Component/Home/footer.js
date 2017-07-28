@@ -16,13 +16,13 @@ import { Link } from 'react-router';
 const styles = {
     footer: {
         backgroundColor: '#9f0500',
-        // boxShadow: '0px -4px 8px gray'
+        position: 'relative'
     },
     footerContent1: {
         height: 'auto',
         marginTop: 10,
         textAlign: 'left',
-        display: 'inline-block',
+        // display: 'inline-block',
         // border: '2px solid black'
     },
 
@@ -48,7 +48,7 @@ class FooterOfCollection extends Component {
         return (
             <div>
                 <div className="container-flux " >
-                    <div className='col-md-12 text-center' style={styles.footer}>
+                    <div className='col-xs-12 col-md-12 text-center' style={styles.footer}>
                         <section>
                             <div className='row'>
                                 <div className='col-xs-12 col-md-3' style={styles.footerContent1}>

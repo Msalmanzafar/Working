@@ -13,9 +13,6 @@ import Subscribe from './subscribe'
 
 
 const styles = {
-    // sliderBox:{
-    //     boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    // },
     wel: {
         textShadow: '1px 1px 2px gray, 0 0 25px #ffd54f, 0 0 5px #ffecb3',
         fontWeight: 'bold',

@@ -7,7 +7,7 @@ class EmailForm extends Component {
     constructor(props) {
         super(props);
         this.SendFeedBack = this.SendFeedBack.bind(this);
-
+        
     }
     SendFeedBack() {
         // console.log('SendFeedBack');
@@ -25,6 +25,7 @@ class EmailForm extends Component {
         }
     }
     render() {
+        
         return (
             <div>
                 <div>

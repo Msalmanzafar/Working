@@ -36,7 +36,7 @@ class BrandsLogos extends Component {
             <div>
                 <div className="container-flux text-center" style={styles.brandzBox}>
                     <h2 className="text-center " style={{color: 'white', fontWeight: 'bold',textShadow: '1px 2px 3px black'}}>
-                        Click And Moves Our Brands
+                        Our Brands Is Just On One Click
                     </h2>
                     <img onClick={this.theFebric} src={Slide1} style={styles.brandz} alt="the febric" />
                     <img src={Slide2} style={styles.brandz} alt="trendz" />

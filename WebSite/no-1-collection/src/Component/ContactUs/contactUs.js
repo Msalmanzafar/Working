@@ -132,7 +132,7 @@ class ContactUs extends Component {
                                                     disableKeyboardFocus={true}
                                                     disabled={true}
                                                     style={{ marginLeft: 20 }}
-                                                    primaryText="188/B 2nd Floor, Block 2, PECHS, Main Nursery Furniture Markeet behind Blue Ribbon Bakery, Karachi."
+                                                    primaryText="188/B 2nd Floor, Block 2, PECHS, Main Nursery Furniture Market behind Blue Ribbon Bakery, Karachi."
                                                     leftIcon={<FaMapMarker style={styles.map} />}
                                                 />
                                             </mat.List>

@@ -9,6 +9,7 @@ const styles = {
     box: {
         backgroundColor: '#d9d9d9',
         height: 'auto',
+        position: 'relative'
     },
     div1: {
         padding: 0,
