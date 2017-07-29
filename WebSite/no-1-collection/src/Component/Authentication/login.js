@@ -24,7 +24,7 @@ class LogIn extends Component {
                         style={{ position: 'relative', borderRadius: 5 }}
                     >
                         <mat.AppBar
-                            titleStyle={{ textShadow: '0px 2px 3px black', textAlign: 'center' }}
+                            titleStyle={{ fontSize: 28, textShadow: '2px 2px 5px black', fontWeight: 500, textAlign: 'center' }}
                             showMenuIconButton={false}
                             title='Log In'
                             style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#b3b3b3' }}
@@ -33,9 +33,9 @@ class LogIn extends Component {
                             {/* <div className='text-center'>
                                 <FaUser style={{fontSize: 50}}/>
                             </div> */}
-                             <div className='text-center'>
-                                 <img src={user} alt='user' style={{width: '18%', height: 'auto'}}/>
-                            </div> 
+                            <div className='text-center'>
+                                <img src={user} alt='user' style={{ width: '16%', height: 'auto' }} />
+                            </div>
                             <div className="text-center">
                                 <mat.TextField
                                     hintText="Enter your register email"
