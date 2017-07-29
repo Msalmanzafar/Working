@@ -14,6 +14,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import MdMenu from 'react-icons/lib/md/menu';
+import FaImage from 'react-icons/lib/fa/image';
 // import MdAddShoppingCart from 'react-icons/lib/md/add-shopping-cart';
 // import MdBorderColor from 'react-icons/lib/md/border-color';
 // import MdSettings from 'react-icons/lib/md/settings';
@@ -120,17 +121,17 @@ class DrawerUndockedExample extends React.Component {
 
                             </List>
                         </MenuItem>
-                        {/* <MenuItem
+                         <MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.CreateStore}
                         >
                             <List>
                                 <ListItem
                                     style={{ textAlign: 'left' }}
-                                    primaryText="Card"
-                                    leftIcon={<MdAddShoppingCart />} />
+                                    primaryText="Products Album"
+                                    leftIcon={<FaImage />} />
                             </List>
-                        </MenuItem> */}
+                        </MenuItem> 
                         {/* <MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.AvailibaleStores}
@@ -186,7 +187,7 @@ class DrawerUndockedExample extends React.Component {
                         style={styles.close}
                     />
 
-                    <div className='col-md-12' style={{ marginTop: 10 }}>
+                    <div className='col-xs-12 col-md-12' style={{ marginTop: 10 }}>
                         <span>
                             <img src={theFebric} alt="theFebric" style={{ width: 65, height: 28, margin: 3 }} />
                             <img src={Trendz} alt="Trendz" style={{ width: 60, height: 28, margin: 3 }} />

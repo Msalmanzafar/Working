@@ -49,8 +49,8 @@ class SignUp extends Component {
 
         switch (fieldName) {
             case 'fullName':
-                fullNameValid = value.length >= 8;
-                fieldValidationErrors.Full_Name = fullNameValid ? '' : ' is required (Muhammad Salman)';
+                fullNameValid = value;
+                fieldValidationErrors.Full_Name = fullNameValid ? '' : ' is required';
                 break;
             case 'cellNumber':
                 cellNumberValid = value.length >= 11;
@@ -61,7 +61,7 @@ class SignUp extends Component {
                 fieldValidationErrors.Email = emailValid ? '' : ' is invalid (example@gmail.com)';
                 break;
             case 'password':
-                passwordValid = value.length >= 6;
+                passwordValid = value.length >= 8;
                 fieldValidationErrors.Password = passwordValid ? '' : ' is too short';
                 break;
             default:
@@ -69,18 +69,25 @@ class SignUp extends Component {
         }
         this.setState({
             formErrors: fieldValidationErrors,
+            fullNameValid: fullNameValid,
+            cellNumberValid: cellNumberValid,
             emailValid: emailValid,
             passwordValid: passwordValid
         }, this.validateForm);
     }
 
     validateForm() {
-        this.setState({ formValid: this.state.emailValid && this.state.passwordValid });
+        this.setState({ 
+            formValid: this.state.emailValid && this.state.passwordValid && this.state.fullNameValid && this.state.cellNumberValid});
     }
     SignUp() {
+        let fullName = this.state.fullName;
+        let cellNumber = this.state.cellNumber;
         let email = this.state.email;
         let password = this.state.password;
         let SignUpNewUser = {
+            fullName: fullName,
+            cellNumber: cellNumber,
             email: email,
             password: password
         }

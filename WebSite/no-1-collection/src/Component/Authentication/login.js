@@ -1,65 +1,143 @@
+
 import React, { Component } from 'react';
 import * as mat from 'material-ui';
 import Subscribe from '../Home/subscribe';
 import FooterOfCollection from '../Home/footer';
-// import FaUser from 'react-icons/lib/fa/user';
 import user from '../Images/icon officer_12_1.png';
-
+import { FormErrors } from './FormErrors';
+import './Form.css';
 
 const styles = {
     login: {
-        marginTop: 50
+        marginTop: 50,
+
     }
 }
 
 
 class LogIn extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            formErrors: {  email: '', password: '' },
+            emailValid: false,
+            passwordValid: false,
+            formValid: false
+        }
+        this.logIn = this.logIn.bind(this);
+    }
+
+    handleUserInput = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({ [name]: value },
+            () => { this.validateField(name, value) });
+    }
+
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+        let passwordValid = this.state.passwordValid;
+
+        switch (fieldName) {
+            case 'email':
+                emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+                fieldValidationErrors.Email = emailValid ? '' : ' is invalid (example@gmail.com)';
+                break;
+            case 'password':
+                passwordValid = value.length >= 8;
+                fieldValidationErrors.Password = passwordValid ? '' : ' is too short';
+                break;
+            default:
+                break;
+        }
+        this.setState({
+            formErrors: fieldValidationErrors,
+            emailValid: emailValid,
+            passwordValid: passwordValid
+        }, this.validateForm);
+    }
+
+    validateForm() {
+        this.setState({ formValid: this.state.emailValid && this.state.passwordValid });
+    }
+    logIn() {
+        let email = this.state.email;
+        let password = this.state.password;
+        let LogInUser = {
+            email: email,
+            password: password
+        }
+        console.log('User Login', LogInUser);
+
+    }
+    errorClass(error) {
+        return (error.length === 0 ? '' : 'has-error');
+    }
     render() {
         return (
             <div>
                 <div className="container " style={styles.login}>
                     <mat.Card
-                        className="text-left"
                         zDepth={3}
                         style={{ position: 'relative', borderRadius: 5 }}
+                        className="text-left"
                     >
                         <mat.AppBar
-                            titleStyle={{ fontSize: 28, textShadow: '2px 2px 5px black', fontWeight: 500, textAlign: 'center' }}
+                            titleStyle={{ fontSize: 28,textShadow: '2px 2px 5px black',fontWeight: 500, textAlign: 'center' }}
                             showMenuIconButton={false}
                             title='Log In'
                             style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#b3b3b3' }}
                         />
                         <mat.CardText>
-                            {/* <div className='text-center'>
-                                <FaUser style={{fontSize: 50}}/>
-                            </div> */}
                             <div className='text-center'>
                                 <img src={user} alt='user' style={{ width: '16%', height: 'auto' }} />
                             </div>
                             <div className="text-center">
                                 <mat.TextField
-                                    hintText="Enter your register email"
+                                    hintText="Enter your registered email address"
                                     floatingLabelText="Email"
                                     fullWidth={true}
                                     style={{ width: '97%' }}
+                                    type="email"
+                                    required
+                                    name="email"
+                                    value={this.state.email}
+                                    onChange={this.handleUserInput}
                                 /><br />
                                 <mat.TextField
-                                    hintText="Enter your password"
                                     floatingLabelText="Password"
                                     fullWidth={true}
-                                    type="password"
                                     style={{ width: '97%' }}
+                                    type="password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleUserInput}
                                 /><br />
+                                <div className="panel panel-default text-left" style={{ marginLeft: 20, fontSize: 18, color: 'red', border: 'none' }}>
+                                    <FormErrors formErrors={this.state.formErrors} />
+                                </div>
+                                <div className='text-left'>
+                                    <mat.RaisedButton
+                                        label="Sign Up"
+                                        secondary={true}
+                                        onClick={this.logIn}
+                                        type="button"
+                                        disabled={!this.state.formValid}
+                                        
+                                        style={{ marginTop: 10, marginLeft: 20, }}
+                                    />
+                                </div>
+
+
+
                             </div>
-                            <mat.RaisedButton
-                                label="Sign Up"
-                                secondary={true}
-                                style={{ marginTop: 10, marginLeft: 10 }}
-                            />
                         </mat.CardText>
                     </mat.Card>
-
                 </div>
+
                 <br />
                 <br />
                 <Subscribe />
