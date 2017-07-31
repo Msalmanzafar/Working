@@ -10,7 +10,7 @@ import SignUp from './Component/Authentication/signup';
 import LogIn from './Component/Authentication/login';
 import ContactUs from './Component/ContactUs/contactUs';
 import AboutNo1Collection from './Component/About/about';
-
+import ProductGallery from './Component/ProductGallery/Gallery'
 //The Febric sectiion
 import TheFebricStore from './Component/TheFebric/Index';
 
@@ -43,6 +43,7 @@ export default class Routes extends Component {
                         <Route path='/login' component={LogIn}/>
                         <Route path='/contactus' component={ContactUs}/>
                         <Route path='/about' component={AboutNo1Collection}/>
+                        <Route path='/pgallery' component={ProductGallery}/>
                         
                     </Route>
                     <Route path='/thefebricstore' component={TheFebricStore}>

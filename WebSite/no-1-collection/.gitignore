@@ -17,7 +17,7 @@
 .env.production.local
 
 # Images
-/brands
+/Images
 
 npm-debug.log*
 yarn-debug.log*

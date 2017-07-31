@@ -82,7 +82,7 @@ class LogIn extends Component {
                 <div className="container " style={styles.login}>
                     <mat.Card
                         zDepth={3}
-                        style={{ position: 'relative', borderRadius: 5 }}
+                        style={{ position: 'relative', borderRadius: 4 }}
                         className="text-left"
                     >
                         <mat.AppBar

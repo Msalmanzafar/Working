@@ -77,22 +77,25 @@ class SignUp extends Component {
     }
 
     validateForm() {
-        this.setState({ 
-            formValid: this.state.emailValid && this.state.passwordValid && this.state.fullNameValid && this.state.cellNumberValid});
+        this.setState({
+            formValid: this.state.emailValid && this.state.passwordValid && this.state.fullNameValid && this.state.cellNumberValid
+        });
     }
     SignUp() {
         let fullName = this.state.fullName;
         let cellNumber = this.state.cellNumber;
         let email = this.state.email;
         let password = this.state.password;
+
         let SignUpNewUser = {
             fullName: fullName,
             cellNumber: cellNumber,
             email: email,
             password: password
-        }
-        console.log('new user', SignUpNewUser);
+        };
 
+        console.log('new user', SignUpNewUser);
+        
     }
     errorClass(error) {
         return (error.length === 0 ? '' : 'has-error');
@@ -103,11 +106,10 @@ class SignUp extends Component {
                 <div className="container " style={styles.signup}>
                     <mat.Card
                         zDepth={3}
-                        style={{ position: 'relative', borderRadius: 5 }}
-                        className="text-left"
+                        style={{ position: 'relative', borderRadius: 4 }}
                     >
                         <mat.AppBar
-                            titleStyle={{ fontSize: 28,textShadow: '2px 2px 5px black',fontWeight: 500, textAlign: 'center' }}
+                            titleStyle={{ fontSize: 28, textShadow: '2px 2px 5px black', fontWeight: 500, textAlign: 'center' }}
                             showMenuIconButton={false}
                             title='Sign Up'
                             style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#b3b3b3' }}
@@ -170,7 +172,7 @@ class SignUp extends Component {
                                         onClick={this.SignUp}
                                         type="button"
                                         disabled={!this.state.formValid}
-                                        
+
                                         style={{ marginTop: 10, marginLeft: 20, }}
                                     />
                                 </div>

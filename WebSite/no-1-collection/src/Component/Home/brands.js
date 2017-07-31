@@ -6,8 +6,8 @@ import Slide3 from '../Images/Vintage.png';
 
 const styles = {
     brandz: {
-        width: '18%',
-        height: 'auto',
+        width: 225,
+        height: 120,
         margin: 10,
         cursor: 'pointer',
         borderRadius: 5,

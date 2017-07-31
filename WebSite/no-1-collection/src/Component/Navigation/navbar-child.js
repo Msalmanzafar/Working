@@ -51,7 +51,6 @@ const styles = {
     menu: {
         width: 40,
         height: 36,
-        // padding: 5,
     }
 };
 
@@ -62,11 +61,16 @@ class DrawerUndockedExample extends React.Component {
         this.home = this.home.bind(this);
         this.Contact_Us = this.Contact_Us.bind(this);
         this.About = this.About.bind(this);
+        this.Gallery = this.Gallery.bind(this);
 
         this.state = { open: false };
     }
     home() {
         browserHistory.push('/home');
+        this.setState({ open: false });
+    }
+    Gallery(){
+        browserHistory.push('/pgallery');
         this.setState({ open: false });
     }
     Contact_Us() {
@@ -127,6 +131,7 @@ class DrawerUndockedExample extends React.Component {
                         >
                             <List>
                                 <ListItem
+                                    onClick={this.Gallery}
                                     style={{ textAlign: 'left' }}
                                     primaryText="Products Album"
                                     leftIcon={<FaImage />} />
