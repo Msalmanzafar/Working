@@ -1,13 +1,45 @@
 import React, { Component } from 'react';
 import * as mat from 'material-ui';
+import Product1 from '../Images/20170712_142450.jpg';
+import Product2 from '../Images/20170712_142855.jpg';
+import Product3 from '../Images/20170712_142919.jpg';
+
+
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 const styles = {
     gallery: {
         marginTop: 50,
-
-    }
+    },
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+    },
+    gridList: {
+        height: 450,
+        overflowY: 'auto',
+    },
 }
 
+const tilesData = [
+    {
+        img: Product1,
+        title: 'TheFabric',
+        // author: 'jill111',
+    },
+    {
+        img: Product2,
+        title: 'TheFabric',
+        // author: 'jill111',
+    },
+    {
+        img: Product3,
+        title: 'TheFabric',
+    }
+    
+
+];
 
 class ProductGallery extends Component {
     render() {
@@ -26,15 +58,26 @@ class ProductGallery extends Component {
                         />
                         <mat.CardText>
                             <div className='container-flux'>
-                                <section>
-                                    <div className='row'>
-                                        <div className='col-lg-4'>
-                                            <blockquote style={{border: 'none'}}> 
-                                                <img src="" alt="product"/>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                </section>
+                                <div style={styles.root}>
+                                    <mat.GridList
+                                        cols={3}
+                                        cellHeight={170}
+                                        padding={2}
+                                        style={styles.gridList}
+                                        className='col-md-10'
+                                    >
+                                        <mat.Subheader>August</mat.Subheader>
+                                        {tilesData.map((tile) => (
+                                            <mat.GridTile
+                                                key={tile.img}
+                                                title={tile.title}
+                                                actionIcon={<mat.IconButton><StarBorder color="white" /></mat.IconButton>}
+                                            >
+                                                <img src={tile.img} style={{ width: '100%' }} alt='' />
+                                            </mat.GridTile>
+                                        ))}
+                                    </mat.GridList>
+                                </div>
                             </div>
                         </mat.CardText>
                     </mat.Card>
