@@ -9,7 +9,8 @@ import Slide5 from '../Images/eei-645-exp-ora_3_.jpg';
 import Sales from './sales';
 import BrandsLogos from './brands';
 import FooterOfCollection from './footer';
-import Subscribe from './subscribe'
+import Subscribe from './subscribe';
+// import $ from 'jquery';
 
 
 const styles = {
@@ -73,7 +74,7 @@ class Home extends Component {
                 </div>
 
                 <BrandsLogos />
-                <div className="container">
+                <div className="container"  style={{marginTop: 210, position: 'relative'}}>
                     <h2 className="text-center h1" style={styles.wel}>
                         Welcome To <span>No.1 Collection</span>
                     </h2>

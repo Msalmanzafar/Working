@@ -3,15 +3,15 @@ import * as mat from 'material-ui';
 import ProImage1 from '../Images/20170712_142450.jpg';
 import ProImage2 from '../Images/20170712_142855.jpg';
 import ProImage3 from '../Images/20170712_142919.jpg';
-// import ProImage4 from '../Images/20170712_14250.jpg';
-// import ProImage5 from '../Images/20170712_1425.jpg';
+import ProImage4 from '../Images/20170712_14250.jpg';
+import ProImage5 from '../Images/20170712_1425.jpg';
 import ProImage6 from '../Images/20170712_142523.jpg';
 import ProImage7 from '../Images/20170712_142727.jpg';
 import ProImage8 from '../Images/20170712_142755.jpg';
 import ProImage9 from '../Images/20170712_142809.jpg';
 import ProImage10 from '../Images/20170712_142820.jpg';
 
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+// import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Subscribe from '../Home/subscribe';
 import FooterOfCollection from '../Home/footer';
 
@@ -26,7 +26,7 @@ const styles = {
         justifyContent: 'space-around',
     },
     gridList: {
-        height: 450,
+        height: 550,
         overflowY: 'auto',
     },
 }
@@ -35,51 +35,85 @@ const tilesData = [
     {
         img: ProImage1,
         title: 'TheFabric',
+        id: '001'
         // author: 'jill111',
     },
     {
         img: ProImage2,
         title: 'TheFabric',
+        id: '002'
         // author: 'jill111',
     },
     {
         img: ProImage3,
         title: 'TheFabric',
+        id: '003'
     },
-    // {
-    //     Img: ProImage4,
-    //     title: 'TheFabric'
-    // },
-    // {
-    //     Img: ProImage5,
-    //     title: 'TheFabric'
-    // },
+    {
+        img: ProImage4,
+        title: 'TheFabric',
+        id: '004'
+    },
+    {
+        img: ProImage5,
+        title: 'TheFabric',
+        id: '005'
+    },
     {
         img: ProImage6,
-        title: 'TheFabric'
+        title: 'TheFabric',
+        id: '006'
     },
     {
         img: ProImage7,
-        title: 'TheFabric'
+        title: 'TheFabric',
+        id: '007'
     },
     {
         img: ProImage8,
-        title: 'TheFabric'
+        title: 'TheFabric',
+        id: '008'
     },
     {
         img: ProImage9,
-        title: 'TheFabric'
+        title: 'TheFabric',
+        id: '009',
     },
     {
         img: ProImage10,
-        title: 'TheFabric'
+        title: 'TheFabric',
+        id: '010'
     },
-    
+
 
 ];
 
 class ProductGallery extends Component {
+    constructor(props) {
+        super(props);
+        this.stars = this.stars.bind(this);
+        this.state={
+            open: false
+        }
+    }
+    stars = () => {
+        console.log("Big Images");
+        this.setState({ open: true });
+        
+    }
+    
+    handleClose = () => {
+        this.setState({ open: false });
+    };
     render() {
+        const actions = [
+            <mat.FlatButton
+                label="Cancel"
+                primary={true}
+                keyboardFocused={true}
+                onTouchTap={this.handleClose}
+            />,
+        ];
         return (
             <div>
                 <div className='container' style={styles.gallery}>
@@ -98,41 +132,52 @@ class ProductGallery extends Component {
                                 <div style={styles.root}>
                                     <mat.GridList
                                         cols={3}
-                                        cellHeight={170}
+                                        cellHeight={'auto'}
                                         padding={2}
                                         style={styles.gridList}
-                                        className='col-md-10'
+                                        className='col-xs-12 col-md-11'
                                     >
-                                        <mat.Subheader>August</mat.Subheader>
-                                        {tilesData.map((tile) => (
+                                        <mat.Subheader>August 2017</mat.Subheader>
+                                        {tilesData.map((key) => (
+
                                             <mat.GridTile
-                                                key={tile.img}
-                                                title={tile.title}
-                                                titleStyle={{textAlign: 'left'}}
-                                                actionIcon={<mat.IconButton><StarBorder color="white" /></mat.IconButton>}
+                                                key={key.img}
+                                                title={key.title}
+                                                titleStyle={{ textAlign: 'left' }}
+                                                actionIcon={
+                                                    <mat.FlatButton
+                                                        label='Open'
+                                                        labelStyle={{ color: 'white' }}
+                                                        onClick={this.stars}
+                                                    />
+
+                                                }
                                             >
-                                                <img src={tile.img} style={{ width: '100%' }} alt='' />
+                                                <img src={key.img} style={{ width: '100%' }} alt='' />
                                             </mat.GridTile>
                                         ))}
-                                        <mat.Subheader>August</mat.Subheader>
-                                        {tilesData.map((tile) => (
-                                            <mat.GridTile
-                                                key={tile.img}
-                                                title={tile.title}
-                                                titleStyle={{textAlign: 'left'}}
-                                                actionIcon={<mat.IconButton><StarBorder color="white" /></mat.IconButton>}
-                                            >
-                                                <img src={tile.img} style={{ width: '100%' }} alt='' />
-                                            </mat.GridTile>
-                                        ))}
+
                                     </mat.GridList>
                                 </div>
                             </div>
                         </mat.CardText>
                     </mat.Card>
                 </div>
-                <br/>
-                <br/>
+                <div>
+                    <div>
+                        <mat.Dialog
+                            title="Feed Back"
+                            actions={actions}
+                            modal={false}
+                            open={this.state.open}
+                            onRequestClose={this.handleClose}
+                        >
+                            here is the big images
+                        </mat.Dialog>
+                    </div>
+                </div>
+                <br />
+                <br />
                 <Subscribe />
                 <FooterOfCollection />
             </div>
