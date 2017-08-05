@@ -7,6 +7,11 @@ import user from '../Images/icon officer_12_1.png';
 import { FormErrors } from './FormErrors';
 import './Form.css';
 
+import { CreateNewUserAction } from '../../Actions/AuthActions';
+import { connect } from 'react-redux';
+
+
+
 const styles = {
     signup: {
         marginTop: 50,
@@ -28,9 +33,11 @@ class SignUp extends Component {
             cellNumberValid: false,
             emailValid: false,
             passwordValid: false,
-            formValid: false
+            formValid: false,
+            // openSnack: false,
         }
         this.SignUp = this.SignUp.bind(this);
+
     }
 
     handleUserInput = (e) => {
@@ -87,20 +94,28 @@ class SignUp extends Component {
         let email = this.state.email;
         let password = this.state.password;
 
-        let SignUpNewUser = {
+        let newUserOption = {
             fullName: fullName,
             cellNumber: cellNumber,
             email: email,
             password: password
         };
 
-        console.log('new user', SignUpNewUser);
-        
+        // console.log('new user', newUserOption);
+        this.props.CreateNewUserAction(newUserOption);
     }
     errorClass(error) {
         return (error.length === 0 ? '' : 'has-error');
     }
+
+
     render() {
+        const {
+            ErrorMessage,
+            SnackBars,
+            Loading,
+        } = this.props;
+
         return (
             <div>
                 <div className="container " style={styles.signup}>
@@ -165,20 +180,37 @@ class SignUp extends Component {
                                 <div className="panel panel-default text-left" style={{ marginLeft: 20, fontSize: 18, color: 'red', border: 'none' }}>
                                     <FormErrors formErrors={this.state.formErrors} />
                                 </div>
+                                {(ErrorMessage) ? (
+                                    <div>
+                                        <p className="alert alert-danger">{ErrorMessage}</p>
+                                    </div>
+                                ) : (
+                                        <span></span>
+                                    )}
                                 <div className='text-left'>
-                                    <mat.RaisedButton
-                                        label="Sign Up"
-                                        secondary={true}
-                                        onClick={this.SignUp}
-                                        type="button"
-                                        disabled={!this.state.formValid}
+                                    {(!Loading) ? (
+                                        <mat.RaisedButton
+                                            label="Sign Up"
+                                            secondary={true}
+                                            onClick={this.SignUp}
+                                            type="button"
+                                            disabled={!this.state.formValid}
+                                            style={{ marginTop: 10, marginLeft: 20, }}
+                                        />
+                                    ) : (
+                                        <mat.CircularProgress 
+                                            style={{ marginTop: 10, marginLeft: 20, }}
+                                        />
+                                    )}
 
-                                        style={{ marginTop: 10, marginLeft: 20, }}
-                                    />
                                 </div>
-
-
-
+                            </div>
+                            <div>
+                                <mat.Snackbar
+                                    open={SnackBars}
+                                    message="Your Account is Created"
+                                    bodyStyle={{ backgroundColor: '#b71c1c', color: '#ffffff' }}
+                                />
                             </div>
                         </mat.CardText>
                     </mat.Card>
@@ -192,6 +224,21 @@ class SignUp extends Component {
         );
     }
 };
+const mapStateToProps = (state) => {
+    return {
+        // auth: state.AuthReducer.loader,
+        SnackBars: state.AuthReducer.Snack,
+        ErrorMessage: state.AuthReducer.ErrorMess,
+        Loading: state.AuthReducer.loader
+    };
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        CreateNewUserAction: (newUserOption) => {
+            dispatch(CreateNewUserAction(newUserOption));
+        }
+    };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
 
-
-export default SignUp;
+// export default SignUp;

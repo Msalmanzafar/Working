@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Router, Route, browserHistory ,IndexRoute} from 'react-router';
-// import * as firebase from 'firebase';
+import * as firebase from 'firebase';
 import NavBar from './Component/Navigation/navBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppTheme from "./Apptheme";
@@ -19,15 +19,16 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 
-// var config = {
-//     apiKey: "AIzaSyAz-OClI43ywtTv7fMKdCJnc3-LcpZWTcE",
-//     authDomain: "inventory-store-2720b.firebaseapp.com",
-//     databaseURL: "https://inventory-store-2720b.firebaseio.com",
-//     projectId: "inventory-store-2720b",
-//     storageBucket: "inventory-store-2720b.appspot.com",
-//     messagingSenderId: "190443387553"
-//   };
-//   firebase.initializeApp(config);
+
+var config = {
+    apiKey: "AIzaSyBIaQC5Ei8ZFQ9Cp5_9ClzPYvBe2KtVkvo",
+    authDomain: "no1collection-dbc89.firebaseapp.com",
+    databaseURL: "https://no1collection-dbc89.firebaseio.com",
+    projectId: "no1collection-dbc89",
+    storageBucket: "no1collection-dbc89.appspot.com",
+    messagingSenderId: "732993006138"
+  };
+  firebase.initializeApp(config);
 
 
 
