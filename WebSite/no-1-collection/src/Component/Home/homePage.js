@@ -15,9 +15,9 @@ import Subscribe from './subscribe';
 
 const styles = {
     wel: {
-        textShadow: '1px 1px 2px gray, 0 0 25px #ffd54f, 0 0 5px #ffecb3',
+        textShadow: '1px 1px 2px gray, 0 0 25px #8bc34a, 0 0 5px #8bc34a',
         fontWeight: 'bold',
-        color: '#e27300',
+        color: '#009688',
         // fontSize: '25px'
     },
 }

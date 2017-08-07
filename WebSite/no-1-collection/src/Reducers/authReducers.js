@@ -6,9 +6,16 @@ const AuthReducer = (state = {
     authSignIn: [],
     ErrorMess: '',
     Snack: false,
+    Visited: false,
     loader: false,
 }, action) => {
     switch (action.type) {
+        case ActionTypes.VisitedAction:{
+            return state ={
+                ...state,
+                Visited: !state.Visited
+            }
+        }
         case ActionTypes.SncakBar:{
             return state ={
                 ...state,
@@ -21,7 +28,7 @@ const AuthReducer = (state = {
                 loader: !state.loader
             }
         }
-        case ActionTypes.SiginUpadte: {
+        case ActionTypes.UserLogIn: {
             return state = {
                 ...state,
                 authLogOut: !state.authLogOut,

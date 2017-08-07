@@ -4,8 +4,10 @@ import * as mat from 'material-ui';
 import DrawerUndockedExample from './navbar-child';
 import Logo from '../Images/No1-Collections12.png';
 import FaSignIn from 'react-icons/lib/fa/sign-in';
-// import FaSignOut from 'react-icons/lib/fa/sign-out';
+import FaSignOut from 'react-icons/lib/fa/sign-out';
 import FaUser from 'react-icons/lib/fa/user';
+import { LogOutAction } from '../../Actions/AuthActions'
+import { connect } from 'react-redux'
 
 
 const styles = {
@@ -28,7 +30,7 @@ const styles = {
         textShadow: '1px 1px 2px black',
     },
     logo: {
-        width: 190 , 
+        width: 190,
         height: 65,
         marginTop: -6,
         marginBottom: -8,
@@ -48,79 +50,101 @@ class NavBar extends Component {
         this.logOut = this.logOut.bind(this);
     }
     logOut() {
-        console.log("logOut");
-        // this.props.LogOutAction();
+        // console.log("logOut");
+        this.props.LogOutAction();
     }
     render() {
-        // const {
-        //     auth,
-        //     Loaders,
-        // } = this.props;
+        const {
+            auth,
+            SnackBars,
+        } = this.props;
         return (
 
             <div >
-
-                <mat.AppBar
-                    style={styles.appBar}
-                    zDepth={2}
-                    title={
-                        <span >
-                            <img 
-                                src={Logo} 
-                                alt="logo" 
-                                style={styles.logo}
-                            />    
-                        </span>
-                    }
-                    titleStyle={{textAlign: 'left'}}
-                    iconElementLeft={
-                        <span>
-                            <DrawerUndockedExample />
-                        </span>
-                    }
-                    iconElementRight={
-                        <div style={styles.headerButton}>
+                <div>
+                    <mat.AppBar
+                        style={styles.appBar}
+                        zDepth={2}
+                        title={
                             <span >
-                                <Link to='/signup'>
-                                    <mat.FlatButton 
-                                        style={styles.button} 
-                                        label="Sign Up" 
-                                        icon={<FaUser style={{fontSize: 25}}/>}
-                                    />
-                                </Link>
+                                <img
+                                    src={Logo}
+                                    alt="logo"
+                                    style={styles.logo}
+                                />
                             </span>
+                        }
+                        titleStyle={{ textAlign: 'left' }}
+                        iconElementLeft={
                             <span>
-                                <Link to='/login'>
-                                    <mat.FlatButton 
-                                        style={styles.button}
-                                        label="Log In"
-                                        icon={<FaSignIn style={{fontSize: 25}}/>}
-                                        
-                                    />
-                                </Link>
+                                <DrawerUndockedExample />
                             </span>
+                        }
+                        iconElementRight={
+                            <div style={styles.headerButton}>
+                                {(!auth) ? (
+                                    <div>
+                                        <span >
+                                            <Link to='/signup'>
+                                                <mat.FlatButton
+                                                    style={styles.button}
+                                                    label="Sign Up"
+                                                    icon={<FaUser style={{ fontSize: 25 }} />}
+                                                />
+                                            </Link>
+                                        </span>
+                                        <span>
+                                            <Link to='/login'>
+                                                <mat.FlatButton
+                                                    style={styles.button}
+                                                    label="Log In"
+                                                    icon={<FaSignIn style={{ fontSize: 25 }} />}
 
-                        </div>
-                    }
-                />
+                                                />
+                                            </Link>
+                                        </span>
+                                    </div>
+                                ) : (
+                                        <span>
+                                            <mat.FlatButton
+                                                style={styles.button}
+                                                label="Log Out"
+                                                icon={<FaSignOut style={{ fontSize: 25 }} />}
+                                                onClick={this.logOut}
+                                            />
+                                        </span>
+                                    )}
+
+                            </div>
+                        }
+                    />
+                </div>
+                <div>
+                    <mat.Snackbar
+                        open={SnackBars}
+                        message="Thanks for Visting"
+                        bodyStyle={{ backgroundColor: '#b71c1c', color: '#ffffff' }}
+                    />
+                </div>
                 {this.props.children}
             </div>
         );
     }
 }
-// const mapStateToProps = (state) => {
-//   return {
-//     auth: state.AuthReducer.authLogOut,
-//     Loaders: state.AuthReducer.loader,
-//   };
-// }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     LogOutAction: () => {
-//       dispatch(LogOutAction());
-//     }
-//   };
-// }
-// export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+const mapStateToProps = (state) => {
+    return {
+        auth: state.AuthReducer.authLogOut,
+        SnackBars: state.AuthReducer.Visited,
+        // Loaders: state.AuthReducer.loader,
+    };
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        LogOutAction: () => {
+            dispatch(LogOutAction());
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
 
-export default NavBar;
+// export default NavBar;

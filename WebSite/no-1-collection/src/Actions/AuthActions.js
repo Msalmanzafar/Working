@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 import ActionTypes from '../Action_Types/actionTypes';
 
 
-
+// Create New Account and Database 
 export function CreateNewUserAction(newUserOption) {
     return dispatch => {
         // console.log("newUserOption" ,newUserOption)
@@ -12,9 +12,7 @@ export function CreateNewUserAction(newUserOption) {
             .createUserWithEmailAndPassword(newUserOption.email, newUserOption.password)
             .then((user) => {
                 dispatch(LoadingAction());
-
                 dispatch(SanckBarAction())
-
                 let firebaseData = {
                     email: newUserOption.email,
                     fullName: newUserOption.fullName,
@@ -25,17 +23,70 @@ export function CreateNewUserAction(newUserOption) {
                         setTimeout(() => {
                             dispatch(SanckBarAction())
                             browserHistory.push('/login');
-
-                        }, 4000)
+                        }, 2000)
                     });
             })
             .catch((error) => {
-                // var errorCode = error.code;
                 var errorMessage = error.message;
-                // alert(errorMessage);
                 dispatch(ErrorMessageDispatch(errorMessage))
-                // console.log(errorMessage);
+                dispatch(LoadingAction());
+
             });
+    }
+}
+// ------------------------------------------------------------------------------------------------
+
+
+// Login User Function
+
+export function UserLogInAction(LogInUser) {
+    return dispatch => {
+        // console.log('logIn Action',LogInUser);
+        dispatch(LoadingAction());
+        firebase.auth().signInWithEmailAndPassword(LogInUser.email, LogInUser.password)
+            .then((user) => {
+                dispatch(LoadingAction());
+                dispatch(UserLoginDispatch(user));
+                dispatch(SanckBarAction());
+                setTimeout(() => {
+                    dispatch(SanckBarAction());
+                    browserHistory.push('/home');
+                }, 2000)
+            })
+            .catch((error) => {
+                var errorMessage = error.message;
+                dispatch(ErrorMessageDispatch(errorMessage));
+                dispatch(LoadingAction());
+            });
+    }
+}
+//------------------------------------------------------------------------------------------
+
+// LogOut User Function
+
+export function LogOutAction() {
+    return dispatch => {
+        // console.log("logOut")
+        firebase.auth().signOut()
+            .then(() => {
+                dispatch(VisitedDisptach());
+                dispatch(UserLoginDispatch());
+                setTimeout(() => {
+                    dispatch(VisitedDisptach());
+                }, 2000)
+            })
+            .catch((error) => {
+                var errorMessage = error.message;
+                alert(errorMessage);// An error happened.
+            });
+    }
+}
+//--------------------------------------------------------------------------------------------
+
+function UserLoginDispatch(payload) {
+    return {
+        type: ActionTypes.UserLogIn,
+        payload
     }
 }
 
@@ -55,5 +106,11 @@ function SanckBarAction() {
 function LoadingAction() {
     return {
         type: ActionTypes.LoadingAction
+    }
+}
+
+function VisitedDisptach(){
+    return{
+        type: ActionTypes.VisitedAction
     }
 }

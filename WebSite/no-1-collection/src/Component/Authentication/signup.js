@@ -107,8 +107,6 @@ class SignUp extends Component {
     errorClass(error) {
         return (error.length === 0 ? '' : 'has-error');
     }
-
-
     render() {
         const {
             ErrorMessage,

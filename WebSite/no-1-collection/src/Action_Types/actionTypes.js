@@ -1,12 +1,11 @@
 const ActionTypes = {
-    NewUserAction: 'NewUserAction',
-    UserLoginAction: 'UserLoginAction',
-    LoadingBar: 'LoadingBar',
+    UserLogIn: 'UserLoginAction',
     UserInfoAction: 'UserInfoAction',
     ErrorMessages: 'ErrorMessages',
     
     SncakBar: 'SncakBar',
     LoadingAction: 'LoadingAction',
+    VisitedAction: 'VisitedAction',
 }
 
 export default ActionTypes;

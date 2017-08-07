@@ -1,7 +1,5 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
-import * as mat from 'material-ui';
 
 import theFebric from '../Images/The-Fabric-Store.png';
 import Trendz from '../Images/Trendz.png';
@@ -14,13 +12,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import MdMenu from 'react-icons/lib/md/menu';
-import FaImage from 'react-icons/lib/fa/image';
-// import MdAddShoppingCart from 'react-icons/lib/md/add-shopping-cart';
-// import MdBorderColor from 'react-icons/lib/md/border-color';
-// import MdSettings from 'react-icons/lib/md/settings';
+// import FaImage from 'react-icons/lib/fa/image';
 import MdInfoOutline from 'react-icons/lib/md/info-outline';
 import MdHome from 'react-icons/lib/md/home';
 import MdContactMail from 'react-icons/lib/md/contact-mail';
+import { connect } from 'react-redux'
 
 
 
@@ -69,7 +65,7 @@ class DrawerUndockedExample extends React.Component {
         browserHistory.push('/home');
         this.setState({ open: false });
     }
-    Gallery(){
+    Gallery() {
         browserHistory.push('/pgallery');
         this.setState({ open: false });
     }
@@ -90,6 +86,9 @@ class DrawerUndockedExample extends React.Component {
     handleClose = () => this.setState({ open: false });
 
     render() {
+        const {
+            User
+        } = this.props;
         return (
             <div>
                 <IconButton
@@ -106,10 +105,16 @@ class DrawerUndockedExample extends React.Component {
                     onRequestChange={(open) => this.setState({ open })}
                 >
                     <AppBar
-                        iconElementLeft={<mat.Avatar
-                            size={55}
-                        />}
-                        title='email'
+                        showMenuIconButton={false}
+                        title={
+                            <span>
+                                {(!User) ? (
+                                    <span></span>
+                                ) : (
+                                        <span style={{ fontSize: 14 }}>{User.email}</span>
+                                    )}
+                            </span>
+                        }
                     />
                     <div>
                         <MenuItem
@@ -125,7 +130,7 @@ class DrawerUndockedExample extends React.Component {
 
                             </List>
                         </MenuItem>
-                         <MenuItem
+                        {/* <MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.CreateStore}
                         >
@@ -135,27 +140,6 @@ class DrawerUndockedExample extends React.Component {
                                     style={{ textAlign: 'left' }}
                                     primaryText="Products Album"
                                     leftIcon={<FaImage />} />
-                            </List>
-                        </MenuItem> 
-                        {/* <MenuItem
-                            style={{ display: 'inline' }}
-                            onClick={this.AvailibaleStores}
-                        >
-                            <List>
-                                <ListItem
-                                    style={{ textAlign: 'left' }}
-                                    primaryText="Order"
-                                    leftIcon={<MdBorderColor />} />
-                            </List>
-                        </MenuItem> */}
-                        {/* <MenuItem
-                            onClick={this.SaleProduct}
-                            style={{ display: 'inline' }}
-                        >
-                            <List>
-                                <ListItem
-                                    primaryText="Setting"
-                                    leftIcon={<MdSettings />} />
                             </List>
                         </MenuItem> */}
                         <MenuItem
@@ -206,27 +190,13 @@ class DrawerUndockedExample extends React.Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     auth: state.AuthReducer.authSignIn
-//   };
-// }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     LoaderAction: () => {
-//       dispatch(LoaderAction());
-//     },
-//     AvailibaleActions: () => {
-//       dispatch(AvailibaleActions());
-//     },
-//     SalesProductsAction: () => {
-//       dispatch(SalesProductsAction());
-//     },
-//     SaledListActions: () => {
-//       dispatch(SaledListActions());
-//     }
-//   };
-// }
-// export default connect(mapStateToProps, mapDispatchToProps)(DrawerUndockedExample);
+const mapStateToProps = (state) => {
+    return {
+        User: state.AuthReducer.authSignIn,
+        auth: state.AuthReducer.authLogOut
+    };
+}
 
-export default DrawerUndockedExample;
+export default connect(mapStateToProps)(DrawerUndockedExample);
+
+// export default DrawerUndockedExample;

@@ -6,7 +6,8 @@ import FooterOfCollection from '../Home/footer';
 import user from '../Images/icon officer_12_1.png';
 import { FormErrors } from './FormErrors';
 import './Form.css';
-
+import { UserLogInAction } from '../../Actions/AuthActions';
+import { connect } from 'react-redux';
 
 
 const styles = {
@@ -23,7 +24,7 @@ class LogIn extends Component {
         this.state = {
             email: '',
             password: '',
-            formErrors: {  email: '', password: '' },
+            formErrors: { email: '', password: '' },
             emailValid: false,
             passwordValid: false,
             formValid: false
@@ -68,17 +69,23 @@ class LogIn extends Component {
     logIn() {
         let email = this.state.email;
         let password = this.state.password;
+
         let LogInUser = {
             email: email,
             password: password
         }
-        console.log('User Login', LogInUser);
-
+        // console.log('User Login', LogInUser);
+        this.props.UserLogInAction(LogInUser);
     }
     errorClass(error) {
         return (error.length === 0 ? '' : 'has-error');
     }
     render() {
+        const {
+            ErrorMessage,
+            SnackBars,
+            Loading,
+        } = this.props;
         return (
             <div>
                 <div className="container " style={styles.login}>
@@ -88,7 +95,7 @@ class LogIn extends Component {
                         className="text-left"
                     >
                         <mat.AppBar
-                            titleStyle={{ fontSize: 28,textShadow: '2px 2px 5px black',fontWeight: 500, textAlign: 'center' }}
+                            titleStyle={{ fontSize: 28, textShadow: '2px 2px 5px black', fontWeight: 500, textAlign: 'center' }}
                             showMenuIconButton={false}
                             title='Log In'
                             style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#b3b3b3' }}
@@ -121,20 +128,37 @@ class LogIn extends Component {
                                 <div className="panel panel-default text-left" style={{ marginLeft: 20, fontSize: 18, color: 'red', border: 'none' }}>
                                     <FormErrors formErrors={this.state.formErrors} />
                                 </div>
+                                {(ErrorMessage) ? (
+                                    <div>
+                                        <p className="alert alert-danger">{ErrorMessage}</p>
+                                    </div>
+                                ) : (
+                                        <span></span>
+                                    )}
                                 <div className='text-left'>
-                                    <mat.RaisedButton
-                                        label="Sign Up"
-                                        secondary={true}
-                                        onClick={this.logIn}
-                                        type="button"
-                                        disabled={!this.state.formValid}
-                                        
-                                        style={{ marginTop: 10, marginLeft: 20, }}
+                                    {(!Loading) ? (
+                                        <mat.RaisedButton
+                                            label="Sign Up"
+                                            secondary={true}
+                                            onClick={this.logIn}
+                                            type="button"
+                                            disabled={!this.state.formValid}
+                                            style={{ marginTop: 10, marginLeft: 20, }}
+                                        />
+                                    ) : (
+                                            <mat.CircularProgress
+                                                style={{ marginTop: 10, marginLeft: 20, }}
+                                            />
+                                        )}
+
+                                </div>
+                                <div>
+                                    <mat.Snackbar
+                                        open={SnackBars}
+                                        message="Thanks For Login "
+                                        bodyStyle={{ backgroundColor: '#b71c1c', color: '#ffffff' }}
                                     />
                                 </div>
-
-
-
                             </div>
                         </mat.CardText>
                     </mat.Card>
@@ -149,5 +173,19 @@ class LogIn extends Component {
     }
 };
 
-
-export default LogIn;
+const mapStateToProps = (state) => {
+    return {
+        // auth: state.AuthReducer,
+        SnackBars: state.AuthReducer.Snack,
+        ErrorMessage: state.AuthReducer.ErrorMess,
+        Loading: state.AuthReducer.loader
+    };
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        UserLogInAction: (LogInUser) => {
+            dispatch(UserLogInAction(LogInUser));
+        }
+    };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
