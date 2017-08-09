@@ -12,7 +12,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import MdMenu from 'react-icons/lib/md/menu';
-// import FaImage from 'react-icons/lib/fa/image';
+import Avatar from 'material-ui/Avatar';
+import FaImage from 'react-icons/lib/fa/image';
 import MdInfoOutline from 'react-icons/lib/md/info-outline';
 import MdHome from 'react-icons/lib/md/home';
 import MdContactMail from 'react-icons/lib/md/contact-mail';
@@ -101,11 +102,14 @@ class DrawerUndockedExample extends React.Component {
                     docked={false}
                     width={250}
                     open={this.state.open}
-
                     onRequestChange={(open) => this.setState({ open })}
                 >
                     <AppBar
-                        showMenuIconButton={false}
+                        iconElementLeft={
+                            <span>
+                                <Avatar size={48}/>
+                            </span>
+                        }
                         title={
                             <span>
                                 {(!User) ? (
@@ -130,7 +134,7 @@ class DrawerUndockedExample extends React.Component {
 
                             </List>
                         </MenuItem>
-                        {/* <MenuItem
+                         <MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.CreateStore}
                         >
@@ -141,7 +145,7 @@ class DrawerUndockedExample extends React.Component {
                                     primaryText="Products Album"
                                     leftIcon={<FaImage />} />
                             </List>
-                        </MenuItem> */}
+                        </MenuItem> 
                         <MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.SalesDetails}

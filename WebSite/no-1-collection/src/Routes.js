@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Router, Route, browserHistory ,IndexRoute} from 'react-router';
 import * as firebase from 'firebase';
-import NavBar from './Component/Navigation/navBar'
+import NavBar from './Component/NavBar/navBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppTheme from "./Apptheme";
 import Home from "./Component/Home/homePage";
@@ -13,7 +13,7 @@ import AboutNo1Collection from './Component/About/about';
 import ProductGallery from './Component/ProductGallery/Gallery'
 //The Febric sectiion
 import TheFebricStore from './Component/TheFebric/Index';
-
+import FebricHome from './Component/TheFebric/Home/febricHome'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -39,16 +39,17 @@ export default class Routes extends Component {
                 <Router history={browserHistory}>
                     <Route path="/" component={NavBar}>
                         <IndexRoute component={Home}/>
-                        <Route path='/home' component={Home}/>
+                        {/* <Route path='/home' component={Home}/> */}
                         <Route path='/signup' component={SignUp}/>
                         <Route path='/login' component={LogIn}/>
                         <Route path='/contactus' component={ContactUs}/>
                         <Route path='/about' component={AboutNo1Collection}/>
                         <Route path='/pgallery' component={ProductGallery}/>
-                        
+
                     </Route>
                     <Route path='/thefebricstore' component={TheFebricStore}>
-                        
+                        <IndexRoute component={FebricHome} />
+                        <Route path='/febrichome' component={FebricHome}/>
                     </Route>
                 </Router>
             </MuiThemeProvider>

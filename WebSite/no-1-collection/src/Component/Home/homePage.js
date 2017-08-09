@@ -7,7 +7,7 @@ import Slide4 from '../Images/shof_b11ef8d8295230f.jpg';
 import Slide5 from '../Images/eei-645-exp-ora_3_.jpg';
 
 import Sales from './sales';
-import BrandsLogos from './brands';
+// import BrandsLogos from './brands';
 import FooterOfCollection from './footer';
 import Subscribe from './subscribe';
 // import $ from 'jquery';
@@ -23,10 +23,13 @@ const styles = {
 }
 
 class Home extends Component {
+    componentDidMount(){
+        // window.location.reload();
+    }
     render() {
         return (
             <div>
-                <div className="container-flux " style={{ position: 'relative', zIndex: 2, opacity: 0.9 }}>
+                <div className="container-flux " style={{ top: -20,position: 'relative', zIndex: 2, opacity: 0.9 }}>
                     <div id="myCarousel" className="carousel slide " data-ride="carousel">
                         {/*<!-- Indicators -->*/}
                         <ol className="carousel-indicators" >
@@ -73,8 +76,8 @@ class Home extends Component {
 
                 </div>
 
-                <BrandsLogos />
-                <div className="container"  style={{marginTop: 210, position: 'relative'}}>
+                {/* <BrandsLogos /> */}
+                <div className="container"  style={{ position: 'relative'}}>
                     <h2 className="text-center h1" style={styles.wel}>
                         Welcome To <span>No.1 Collection</span>
                     </h2>

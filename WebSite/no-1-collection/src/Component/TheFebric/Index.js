@@ -7,6 +7,7 @@ class TheFebricStore extends Component{
         return(
             <div>
                 <NavBarFebric/>
+                {this.props.children}
             </div>
         );
     }

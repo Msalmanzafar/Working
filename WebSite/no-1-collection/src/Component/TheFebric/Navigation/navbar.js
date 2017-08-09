@@ -58,9 +58,7 @@ class NavBarFebric extends Component {
         //     Loaders,
         // } = this.props;
         return (
-
             <div >
-
                 <mat.AppBar
                     style={styles.appBar}
                     zDepth={2}
@@ -101,11 +99,9 @@ class NavBarFebric extends Component {
                                     />
                                 </Link>
                             </span>
-
                         </div>
                     }
                 />
-                {this.props.children}
             </div>
         );
     }

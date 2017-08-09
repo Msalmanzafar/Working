@@ -50,7 +50,7 @@ export function UserLogInAction(LogInUser) {
                 dispatch(SanckBarAction());
                 setTimeout(() => {
                     dispatch(SanckBarAction());
-                    browserHistory.push('/home');
+                    browserHistory.push('/');
                 }, 2000)
             })
             .catch((error) => {

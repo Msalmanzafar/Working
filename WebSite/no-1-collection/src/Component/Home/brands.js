@@ -15,7 +15,7 @@ const styles = {
         // boxShadow: '1px 2px 3px gray',
     },
     brandzBox: {
-        marginTop: -200,
+        marginTop: -210,
         position: 'relative',
         zIndex: 10,
         // backgroundColor: 'rgba(255,255,255,0.1)'

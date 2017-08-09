@@ -3,9 +3,9 @@ import React from 'react';
 import { browserHistory } from 'react-router';
 import * as mat from 'material-ui';
 
-// import theFebric from '../Images/The-Fabric-Store.png';
-// import Trendz from '../Images/Trendz.png';
-// import vintage from '../Images/Vintage.png';
+import theFebric from '../../Images/The-Fabric-Store.png';
+import Trendz from '../../Images/Trendz.png';
+import vintage from '../../Images/Vintage.png';
 
 import { List, ListItem } from 'material-ui/List';
 import Drawer from 'material-ui/Drawer';
@@ -14,12 +14,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import MdMenu from 'react-icons/lib/md/menu';
-import MdAddShoppingCart from 'react-icons/lib/md/add-shopping-cart';
-import MdBorderColor from 'react-icons/lib/md/border-color';
+// import MdAddShoppingCart from 'react-icons/lib/md/add-shopping-cart';
+// import MdBorderColor from 'react-icons/lib/md/border-color';
 // import MdSettings from 'react-icons/lib/md/settings';
-import MdInfoOutline from 'react-icons/lib/md/info-outline';
+// import MdInfoOutline from 'react-icons/lib/md/info-outline';
 import MdHome from 'react-icons/lib/md/home';
-import MdContactMail from 'react-icons/lib/md/contact-mail';
+// import MdContactMail from 'react-icons/lib/md/contact-mail';
 
 
 
@@ -65,7 +65,7 @@ class TheFebricMenu extends React.Component {
         this.state = { open: false };
     }
     home() {
-        browserHistory.push('/home');
+        browserHistory.push('/febrichome');
         this.setState({ open: false });
     }
     Contact_Us() {
@@ -105,6 +105,7 @@ class TheFebricMenu extends React.Component {
                             size={55}
                         />}
                         title='email'
+                        style={{ backgroundColor: '#e27300',}}
                     />
                     <div>
                         <MenuItem
@@ -119,7 +120,7 @@ class TheFebricMenu extends React.Component {
                                     leftIcon={<MdHome />} />
                             </List>
                         </MenuItem>
-                        <MenuItem
+                        {/*<MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.CreateStore}
                         >
@@ -141,16 +142,7 @@ class TheFebricMenu extends React.Component {
                                     leftIcon={<MdBorderColor />} />
                             </List>
                         </MenuItem>
-                        {/* <MenuItem
-                            onClick={this.SaleProduct}
-                            style={{ display: 'inline' }}
-                        >
-                            <List>
-                                <ListItem
-                                    primaryText="Setting"
-                                    leftIcon={<MdSettings />} />
-                            </List>
-                        </MenuItem> */}
+                        
                         <MenuItem
                             style={{ display: 'inline' }}
                             onClick={this.SalesDetails}
@@ -176,23 +168,23 @@ class TheFebricMenu extends React.Component {
                                     onClick={this.About}
                                 />
                             </List>
-                        </MenuItem>
+                        </MenuItem>*/}
                     </div>
 
                     <RaisedButton
                         label="Close"
                         onClick={this.handleClose}
                         style={styles.close}
-                    />
+                    /> 
 
-                    {/* <div className='col-md-12' style={{marginTop: 10}}>
+                     <div className='col-md-12' style={{marginTop: 10}}>
                         <span>
                             <img src={theFebric} alt="theFebric" style={{width: 65,height: 28,margin: 3}}/>
                             <img src={Trendz} alt="Trendz" style={{width: 60,height: 28,margin: 3}}/>
                             <img src={vintage} alt="vintage" style={{width: 65,height: 28,margin: 3}}/>
                             
                         </span>
-                    </div> */}
+                    </div> 
                 </Drawer>
             </div>
         );
