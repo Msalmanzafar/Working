@@ -12,7 +12,8 @@ export function CreateNewUserAction(newUserOption) {
             .createUserWithEmailAndPassword(newUserOption.email, newUserOption.password)
             .then((user) => {
                 dispatch(LoadingAction());
-                dispatch(SanckBarAction())
+                dispatch(SanckBarAction());
+                dispatch(ErrorMessageDispatch());
                 let firebaseData = {
                     email: newUserOption.email,
                     fullName: newUserOption.fullName,
@@ -48,6 +49,7 @@ export function UserLogInAction(LogInUser) {
                 dispatch(LoadingAction());
                 dispatch(UserLoginDispatch(user));
                 dispatch(SanckBarAction());
+                dispatch(ErrorMessageDispatch());
                 setTimeout(() => {
                     dispatch(SanckBarAction());
                     browserHistory.push('/');

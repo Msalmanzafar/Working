@@ -3,19 +3,21 @@ import React, { Component } from 'react';
 import * as mat from 'material-ui';
 import Subscribe from '../Home/subscribe';
 import FooterOfCollection from '../Home/footer';
-import user from '../Images/icon officer_12_1.png';
+// import user from '../Images/icon officer_12_1.png';
 import { FormErrors } from './FormErrors';
+import FaPencil from 'react-icons/lib/fa/pencil'
 import './Form.css';
+
 import { UserLogInAction } from '../../Actions/AuthActions';
 import { connect } from 'react-redux';
 
 
-const styles = {
-    login: {
-        marginTop: 50,
+// const styles = {
+//     login: {
+//         marginTop: 50,
 
-    }
-}
+//     }
+// }
 
 
 class LogIn extends Component {
@@ -88,85 +90,91 @@ class LogIn extends Component {
         } = this.props;
         return (
             <div>
-                <div className="container " style={styles.login}>
-                    <mat.Card
-                        zDepth={3}
-                        style={{ position: 'relative', borderRadius: 4 }}
-                        className="text-left"
+                <div className='container-flux' id='imgBox'>
+                    <div
+                        id="LoginBox"
+                        className="container col-md-8 col-md-offset-2 col-xs-12"
                     >
-                        <mat.AppBar
-                            titleStyle={{ fontSize: 28, textShadow: '2px 2px 5px black', fontWeight: 500, textAlign: 'center' }}
-                            showMenuIconButton={false}
-                            title='Log In'
-                            style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#b3b3b3' }}
-                        />
-                        <mat.CardText>
-                            <div className='text-center'>
-                                <img src={user} alt='user' style={{ width: '16%', height: 'auto' }} />
-                            </div>
-                            <div className="text-center">
-                                <mat.TextField
-                                    hintText="Enter your registered email address"
-                                    floatingLabelText="Email"
-                                    fullWidth={true}
-                                    style={{ width: '97%' }}
-                                    type="email"
-                                    required
-                                    name="email"
-                                    value={this.state.email}
-                                    onChange={this.handleUserInput}
-                                /><br />
-                                <mat.TextField
-                                    floatingLabelText="Password"
-                                    fullWidth={true}
-                                    style={{ width: '97%' }}
-                                    type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleUserInput}
-                                /><br />
-                                <div className="panel panel-default text-left" style={{ marginLeft: 20, fontSize: 18, color: 'red', border: 'none' }}>
-                                    <FormErrors formErrors={this.state.formErrors} />
-                                </div>
-                                {(ErrorMessage) ? (
-                                    <div>
-                                        <p className="alert alert-danger">{ErrorMessage}</p>
+                        <mat.Card
+                            zDepth={3}
+                            style={{ position: 'relative', marginTop: 80, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.9)' }}
+                            className="text-left"
+                        >
+                            <mat.AppBar
+                                titleStyle={{ fontSize: 28, color: 'black', fontWeight: 500, textAlign: 'left' }}
+                                iconElementRight={<FaPencil style={{ fontSize: 34, marginTop: 5, marginRight: 10 }} />}
+                                showMenuIconButton={false}
+                                title='Log In'
+                                style={{ borderRadius: '5px 5px 0 0', backgroundColor: 'rgba(255,255,255,0.5)' }}
+                            />
+                            <mat.CardText>
+                                <div className="text-center">
+                                    <mat.TextField
+                                        hintText="Enter your registered email address"
+                                        floatingLabelText="Email"
+                                        fullWidth={true}
+                                        style={{ width: '97%' }}
+                                        type="email"
+                                        required
+                                        name="email"
+                                        value={this.state.email}
+                                        onChange={this.handleUserInput}
+                                    /><br />
+                                    <mat.TextField
+                                        floatingLabelText="Password"
+                                        fullWidth={true}
+                                        style={{ width: '97%' }}
+                                        type="password"
+                                        name="password"
+                                        value={this.state.password}
+                                        onChange={this.handleUserInput}
+                                    /><br />
+                                    <div className="panel panel-default text-left" style={{ marginLeft: 20, fontSize: 18, color: 'red', border: 'none' }}>
+                                        <FormErrors formErrors={this.state.formErrors} />
                                     </div>
-                                ) : (
-                                        <span></span>
-                                    )}
-                                <div className='text-left'>
-                                    {(!Loading) ? (
-                                        <mat.RaisedButton
-                                            label="Sign Up"
-                                            secondary={true}
-                                            onClick={this.logIn}
-                                            type="button"
-                                            disabled={!this.state.formValid}
-                                            style={{ marginTop: 10, marginLeft: 20, }}
-                                        />
+                                    {(ErrorMessage) ? (
+                                        <div style={{ marginLeft: 20, marginRight: 20 }}>
+                                            <p className="alert alert-danger">{ErrorMessage}</p>
+                                        </div>
                                     ) : (
-                                            <mat.CircularProgress
+                                            <span></span>
+                                        )}
+                                    <div className='text-left'>
+                                        {(!Loading) ? (
+                                            <mat.RaisedButton
+                                                label="Sign Up"
+                                                secondary={true}
+                                                onClick={this.logIn}
+                                                type="button"
+                                                disabled={!this.state.formValid}
                                                 style={{ marginTop: 10, marginLeft: 20, }}
                                             />
-                                        )}
+                                        ) : (
+                                                <mat.CircularProgress
+                                                    style={{ marginTop: 10, marginLeft: 20, }}
+                                                />
+                                            )}
+
+                                    </div>
 
                                 </div>
-                                <div>
-                                    <mat.Snackbar
-                                        open={SnackBars}
-                                        message="Thanks For Login "
-                                        bodyStyle={{ backgroundColor: '#b71c1c', color: '#ffffff' }}
-                                    />
-                                </div>
-                            </div>
-                        </mat.CardText>
-                    </mat.Card>
+                            </mat.CardText>
+                        </mat.Card>
+                    </div>
+                </div>
+                <div>
+                    <mat.Snackbar
+                        open={SnackBars}
+                        message="Thanks For Login "
+                        bodyStyle={{ backgroundColor: '#b71c1c', color: '#ffffff' }}
+                    />
+                </div>
+                <br />
+                <br />
+                <div style={{ position: 'relative', marginTop: -60 }}>
+                    <Subscribe />
                 </div>
 
-                <br />
-                <br />
-                <Subscribe />
                 <FooterOfCollection />
             </div>
         );

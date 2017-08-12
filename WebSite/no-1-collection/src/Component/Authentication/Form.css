@@ -1,3 +1,6 @@
+body{
+  margin: 0px,
+}
 .demoForm {
 	width: 500px;
 	margin: auto;
@@ -14,31 +17,32 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
-@media screen and (min-width: 900px){
-  article {
-   -webkit-flex-direction: row;
-    flex-direction: row;
-  }
-  article > * {
-    -webkit-flex: 1;
-    flex: 1;
-  }
-
-  article > div {
-      width: 80%;
+#imgBox {
+    background-image: url('../Images/tiffany-blue-damask-hi.png');
+    /* background-size: cover; */
+    background-repeat: repeat;
+    /* background-position: center center; */
+    position: relative;
+    top: -20px;
+    bottom: 0px;
+    height: 100vh;
+    z-index: 1;
     
-    -webkit-flex: 3;
-    flex: 3;
-  }
-}
-
-@media screen and (max-width: 1000px){
-    article {
-        -webkit-flex-direction: column;
-        flex-direction: column;
-    }
-    article > div {
-      width: 90%;
-    
-    }
-}
+};
+  
+#SignUpBox {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}; 
+  #LoginBox {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+};

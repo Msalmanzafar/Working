@@ -6,7 +6,7 @@ import FooterOfCollection from '../Home/footer';
 // import user from '../Images/icon officer_12_1.png';
 import { FormErrors } from './FormErrors';
 import './Form.css';
-import Back from '../Images/resize-img.jpg'
+// import Back from '../Images/ORANGE.jpg'
 import FaPencil from 'react-icons/lib/fa/pencil'
 
 import { CreateNewUserAction } from '../../Actions/AuthActions';
@@ -14,17 +14,16 @@ import { connect } from 'react-redux';
 
 
 
-const styles = {
-    signup: {
-        marginTop: '-53%',
-        // position: 'relative',
-        height: 'auto',
-        width: '62%',
-        zIndex: 2,
-        // textAlign: 'left',
-        // display: 'inline-block',
-    }
-}
+// const styles = {
+//     signup: {
+//         position: 'relative',
+//         height: 'auto',
+//         // width: '62%',
+//         // zIndex: 2,
+//         // textAlign: 'center',
+//         // display: 'inline-block',
+//     }
+// }
 
 
 class SignUp extends Component {
@@ -154,44 +153,42 @@ class SignUp extends Component {
         return (
 
             <div>
-                <div className='container-flux' style={{ marginTop: -20, position: 'relative', opacity: 0.7 }}>
-                    <img src={Back} alt="background" style={{ width: '100%', }} />
-                </div>
-                <div className="container" id='signUpBox' style={styles.signup}>
-                    <mat.Card
-                        className='text-center'
-                        zDepth={3}
-                        style={{ position: 'relative', borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.5)' }}
+                <div className='container-flux' id='imgBox'>
+                    <div
+                        id="SignUpBox"
+                        className="container col-md-8 col-md-offset-2 col-xs-12"
                     >
-                        <mat.AppBar
-                            titleStyle={{ fontSize: 28, color: 'black', fontWeight: 500, textAlign: 'left' }}
-                            showMenuIconButton={false}
-                            iconElementRight={<FaPencil style={{ fontSize: 34, marginTop: 5, marginRight: 10 }} />}
-                            title='Sign Up'
-                            style={{ borderRadius: '5px 5px 0 0', backgroundColor: 'rgba(255,255,255,0.2)' }}
-                        />
-                        <article>
+                        <mat.Card
+                            className='text-center'
+                            zDepth={3}
+                            style={{ position: 'relative',marginTop: 40, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.9)' }}
+                        >
+                            <mat.AppBar
+                                titleStyle={{ fontSize: 28, color: 'black', fontWeight: 500, textAlign: 'left' }}
+                                showMenuIconButton={false}
+                                iconElementRight={<FaPencil style={{ fontSize: 34, marginTop: 5, marginRight: 10 }} />}
+                                title='Sign Up'
+                                style={{ borderRadius: '5px 5px 0 0', backgroundColor: 'rgba(255,255,255,0.5)' }}
+                            />
                             <mat.CardText>
-                                {/* <div className='text-center'>
-                                <img src={user} alt='user' style={{ width: '16%', height: 'auto' }} />
-                            </div> */}
+
                                 <div className="text-center">
                                     <mat.TextField
-                                        hintText="Enter your full name"
+                                        hintText="Your full name"
                                         floatingLabelText="Full Name"
                                         fullWidth={true}
-                                        style={{ width: '97%' }}
+                                        style={{ width: '48%', marginRight: 10 }}
                                         type="text"
                                         required
                                         name="fullName"
                                         value={this.state.fullName}
                                         onChange={this.handleUserInput}
-                                    /><br />
+                                    />
                                     <mat.TextField
-                                        hintText="Enter your city"
+                                        hintText="Your city name"
                                         floatingLabelText="City"
                                         fullWidth={true}
-                                        style={{ width: '97%' }}
+                                        style={{ width: '47.5%' }}
                                         type="text"
                                         required
                                         name="cityName"
@@ -199,33 +196,34 @@ class SignUp extends Component {
                                         onChange={this.handleUserInput}
                                     /><br />
                                     <mat.TextField
-                                        hintText="Enter your address"
+                                        hintText="Your complete address"
                                         floatingLabelText="Address"
                                         fullWidth={true}
-                                        style={{ width: '97%' }}
+                                        style={{ width: '97%', textAlign: 'left' }}
                                         type="text"
                                         required
                                         name="address"
+                                        multiLine={true}
                                         value={this.state.address}
                                         onChange={this.handleUserInput}
-                                    /><br />
+                                    />
                                     <mat.TextField
-                                        hintText="Enter your shop name"
+                                        hintText="Your shop name"
                                         floatingLabelText="Shop Name"
                                         fullWidth={true}
-                                        style={{ width: '97%' }}
+                                        style={{ width: '48%', marginRight: 10 }}
                                         type="text"
                                         required
                                         name="shopName"
                                         value={this.state.shopName}
                                         onChange={this.handleUserInput}
-                                    /><br />
+                                    />
                                     <NumberFormat
                                         format="###########"
                                         customInput={mat.TextField}
                                         floatingLabelText="Cell Number"
                                         fullWidth={true}
-                                        style={{ width: '97%' }}
+                                        style={{ width: '47.5%' }}
                                         className='no-spinner'
                                         required
                                         name="cellNumber"
@@ -233,7 +231,7 @@ class SignUp extends Component {
                                         onChange={this.handleUserInput}
                                     /><br />
                                     <mat.TextField
-                                        hintText="Enter your registered email address"
+                                        hintText="Your email address"
                                         floatingLabelText="Email"
                                         fullWidth={true}
                                         style={{ width: '97%' }}
@@ -256,7 +254,7 @@ class SignUp extends Component {
                                         <FormErrors formErrors={this.state.formErrors} />
                                     </div>
                                     {(ErrorMessage) ? (
-                                        <div>
+                                        <div style={{ marginLeft: 20, marginRight: 20 }}>
                                             <p className="alert alert-danger">{ErrorMessage}</p>
                                         </div>
                                     ) : (
@@ -283,20 +281,21 @@ class SignUp extends Component {
 
 
                             </mat.CardText>
-                        </article>
-                    </mat.Card>
-                    <div>
-                        <mat.Snackbar
-                            open={SnackBars}
-                            message="Your Account is Created"
-                            bodyStyle={{ backgroundColor: '#b71c1c', color: '#ffffff' }}
-                        />
+                        </mat.Card>
+
                     </div>
+                </div>
+                <div>
+                    <mat.Snackbar
+                        open={SnackBars}
+                        message="Your Account is Created"
+                        bodyStyle={{ backgroundColor: '#b71c1c', color: '#ffffff' }}
+                    />
                 </div>
 
                 <br />
                 <br />
-                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'relative' ,marginTop: -60}}>
                     <Subscribe />
                 </div>
                 <FooterOfCollection />

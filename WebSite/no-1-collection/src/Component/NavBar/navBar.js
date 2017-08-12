@@ -5,6 +5,9 @@ import * as mat from 'material-ui';
 import { LogOutAction } from '../../Actions/AuthActions';
 import { connect } from 'react-redux';
 import Logo1 from '../Images/main3.jpg';
+import Logo2 from '../Images/Trendz.png';
+import Logo3 from '../Images/Vintage.png';
+
 
 class NavBar extends Component {
     constructor(props) {
@@ -44,13 +47,14 @@ class NavBar extends Component {
         const {
             auth,
             SnackBars,
-            user,
+            users,
         } = this.props;
+        // console.log('user---',users.email)
         return (
             <div>
                 <div>
                     <div>
-                        <nav className="navbar header" id="my-navbar">
+                        <nav className="navbar header" >
                             <div className="container">
                                 <div className="navbar-header">
                                     <button type="button" className="navbar-toggle " data-toggle="collapse" data-target="#navbar-collapse">
@@ -65,14 +69,22 @@ class NavBar extends Component {
                                         <li><a id="link" onClick={this.Home}>Home</a></li>
                                         <li className="dropdown">
                                             <a className="dropdown-toggle" id="link" data-toggle="dropdown">Brands
-                                                <span className="caret"></span></a>
+                                                </a>
                                             <ul className="dropdown-menu child">
                                                 <li><a id="link" >
-                                                    <img style={{ width: 50, marginRight: 4 }} src={Logo1} alt='FebricStore' />
+                                                    <img style={{ width: 40, marginRight: 6 }} src={Logo1} alt='FebricStore' />
                                                     The Febric Store</a>
                                                 </li>
-                                                <li><a id="link" >Trendz</a></li>
-                                                <li><a id="link" >Vintage</a></li>
+                                                <li>
+                                                    <a id="link" >
+                                                        <img style={{ width: 40, marginRight: 6 }} src={Logo2} alt="Trendz"/>
+                                                        Trendz</a>
+                                                </li>
+                                                <li>
+                                                    <a id="link" >
+                                                        <img style={{ width: 40, marginRight: 6 }} src={Logo3} alt="Vintage"/>
+                                                        Vintage</a>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li><a id="link" onClick={this.Gallery}>Gallery</a></li>
@@ -83,14 +95,14 @@ class NavBar extends Component {
 
                                     {(!auth) ? (
                                         <ul className="nav navbar-nav navbar-right">
-                                            <li><a onClick={this.SignUp} id="link"><span style={{ paddingLeft: 12 }} className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                                            <li><a onClick={this.LogIn} id="link"><span style={{ paddingLeft: 12 }} className="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                            <li><a onClick={this.SignUp} id="link"><span style={{ marginLeft: 8 }} className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                            <li><a onClick={this.LogIn} id="link"><span style={{ marginLeft: 8 }} className="glyphicon glyphicon-log-in"></span> Login</a></li>
 
                                         </ul>
                                     ) : (
                                             <ul className="nav navbar-nav navbar-right">
 
-                                                {/* <li><a onClick={this.LogOut} id="link"><span style={{ paddingLeft: 12 }} className="glyphicon glyphicon-log-out"></span> Log Out</a></li> */}
+                                                
                                                 <mat.Avatar
                                                     style={{ marginTop: 10, cursor: 'pointer' }}
                                                     size={40}
@@ -98,7 +110,8 @@ class NavBar extends Component {
                                                     className="dropdown-toggle"
                                                 />
                                                 <ul className="dropdown-menu child">
-                                                    <li><a id="link" >Setting</a></li>
+                                                    <li><a id="link">{users.email}</a></li> 
+                                                    <li><a id="link">Setting</a></li>
                                                     <li><a id="link" onClick={this.LogOut}>Log Out</a></li>
                                                 </ul>
                                             </ul>
@@ -127,7 +140,7 @@ const mapStateToProps = (state) => {
     return {
         auth: state.AuthReducer.authLogOut,
         SnackBars: state.AuthReducer.Visited,
-        user: state.AuthReducer.authSignIn,
+        users: state.AuthReducer.authSignIn,
     };
 }
 const mapDispatchToProps = (dispatch) => {
