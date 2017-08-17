@@ -13,9 +13,20 @@ class NavBar extends Component {
     constructor(props) {
         super(props);
         this.Home = this.Home.bind(this);
-        this.Gallery = this.Gallery.bind(this);
         this.Contact_Us = this.Contact_Us.bind(this);
         this.About = this.About.bind(this);
+
+        this.Viscose = this.Viscose.bind(this);
+        this.Wellvet = this.Wellvet.bind(this);
+        this.Jackward = this.Jackward.bind(this);
+        this.Arz = this.Arz.bind(this);
+        this.Jute = this.Jute.bind(this);
+        this.Exclusive = this.Exclusive.bind(this);
+        this.Organza = this.Organza.bind(this);
+        this.Others = this.Others.bind(this);
+
+
+
         this.SignUp = this.SignUp.bind(this);
         this.LogIn = this.LogIn.bind(this);
         this.LogOut = this.LogOut.bind(this);
@@ -25,9 +36,31 @@ class NavBar extends Component {
     Home() {
         browserHistory.push('/');
     }
-    Gallery() {
-        browserHistory.push('/pgallery');
+    Viscose() {
+        browserHistory.push('/viscose');
     }
+    Wellvet() {
+        browserHistory.push('/wellvet');
+    }
+    Jackward() {
+        browserHistory.push('/jackward');
+    }
+    Arz() {
+        browserHistory.push('/doublearz');
+    }
+    Jute() {
+        browserHistory.push('/jute');
+    }
+    Exclusive() {
+        browserHistory.push('/exclusive');
+    }
+    Organza() {
+        browserHistory.push('/organza');
+    }
+    Others() {
+        browserHistory.push('/others');
+    }
+    
     Contact_Us() {
         browserHistory.push('/contactus');
     }
@@ -67,9 +100,11 @@ class NavBar extends Component {
                                 <div className="collapse navbar-collapse text-left" id="navbar-collapse">
                                     <ul className="nav link1 navbar-nav">
                                         <li><a id="link" onClick={this.Home}>Home</a></li>
+
                                         <li className="dropdown">
                                             <a className="dropdown-toggle" id="link" data-toggle="dropdown">Brands
-                                                </a>
+                                                <span className="caret"></span>
+                                            </a>
                                             <ul className="dropdown-menu child">
                                                 <li><a id="link" >
                                                     <img style={{ width: 40, marginRight: 6 }} src={Logo1} alt='FebricStore' />
@@ -77,17 +112,64 @@ class NavBar extends Component {
                                                 </li>
                                                 <li>
                                                     <a id="link" >
-                                                        <img style={{ width: 40, marginRight: 6 }} src={Logo2} alt="Trendz"/>
+                                                        <img style={{ width: 40, marginRight: 6 }} src={Logo2} alt="Trendz" />
                                                         Trendz</a>
                                                 </li>
                                                 <li>
                                                     <a id="link" >
-                                                        <img style={{ width: 40, marginRight: 6 }} src={Logo3} alt="Vintage"/>
+                                                        <img style={{ width: 40, marginRight: 6 }} src={Logo3} alt="Vintage" />
                                                         Vintage</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a id="link" onClick={this.Gallery}>Gallery</a></li>
+                                        <li className="dropdown">
+                                            <a className="dropdown-toggle" id="link" data-toggle="dropdown" >
+                                                Products Gallery
+                                                    <span className="caret"></span>
+                                            </a>
+                                            <ul className="dropdown-menu child">
+                                                <li>
+                                                    <a id="link" onClick={this.Viscose}>
+                                                        Viscose
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a id="link" onClick={this.Wellvet}>
+                                                        Wellvet
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a id="link" onClick={this.Jackward}>
+                                                        Jackward
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a id="link" onClick={this.Arz}>
+                                                        Double Arz
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a id="link" onClick={this.Jute}>
+                                                        Jute
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a id="link" onClick={this.Exclusive}>
+                                                        Exclusive
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a id="link" onClick={this.Organza}>
+                                                        Organza
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a id="link" onClick={this.Others}>
+                                                        Others
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
                                         <li><a id="link" onClick={this.Contact_Us}>Contact Us</a></li>
                                         <li><a id="link" onClick={this.About}>About Us</a></li>
 
@@ -102,7 +184,7 @@ class NavBar extends Component {
                                     ) : (
                                             <ul className="nav navbar-nav navbar-right">
 
-                                                
+
                                                 <mat.Avatar
                                                     style={{ marginTop: 10, cursor: 'pointer' }}
                                                     size={40}
@@ -110,7 +192,7 @@ class NavBar extends Component {
                                                     className="dropdown-toggle"
                                                 />
                                                 <ul className="dropdown-menu child">
-                                                    <li><a id="link">{users.email}</a></li> 
+                                                    <li><a id="link">{users.email}</a></li>
                                                     <li><a id="link">Setting</a></li>
                                                     <li><a id="link" onClick={this.LogOut}>Log Out</a></li>
                                                 </ul>
