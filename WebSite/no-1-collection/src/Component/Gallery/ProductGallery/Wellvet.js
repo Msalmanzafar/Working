@@ -89,7 +89,7 @@ class WellVet extends Component {
     }
     tempArray = []
     stars = (key) => {
-        console.log("Big Images", key);
+        // console.log("Big Images", key);
         this.tempArray=[];
         this.setState({ open: true });
         for (let i = 0; i < tilesData.length; i++) {
@@ -111,7 +111,7 @@ class WellVet extends Component {
                 onTouchTap={this.handleClose}
             />,
         ];
-        console.log("images", this.tempArray)
+        // console.log("images", this.tempArray)
 
         return (
             <div>
@@ -164,13 +164,17 @@ class WellVet extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Feed Back"
+                            title="Big Image"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                         >
-                            <img src={this.tempArray.img} alt="img" style={{width: '80%'}}/>
+                            {this.tempArray.map((v,i)=>{
+                                return(
+                                    <img key={i} src={v.img} alt="img" style={{width: '100%'}}/>
+                                )
+                            })}
                         </mat.Dialog>
                     </div>
                 </div>
