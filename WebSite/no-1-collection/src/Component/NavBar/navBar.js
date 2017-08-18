@@ -183,8 +183,6 @@ class NavBar extends Component {
                                         </ul>
                                     ) : (
                                             <ul className="nav navbar-nav navbar-right">
-
-
                                                 <mat.Avatar
                                                     style={{ marginTop: 10, cursor: 'pointer' }}
                                                     size={40}

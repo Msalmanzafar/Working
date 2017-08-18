@@ -36,54 +36,44 @@ const tilesData = [
     {
         img: ProImage1,
         title: 'TheFabric',
-        id: '001'
         // author: 'jill111',
     },
     {
         img: ProImage2,
         title: 'TheFabric',
-        id: '002'
         // author: 'jill111',
     },
     {
         img: ProImage3,
         title: 'TheFabric',
-        id: '003'
     },
     {
         img: ProImage4,
         title: 'TheFabric',
-        id: '004'
     },
     {
         img: ProImage5,
         title: 'TheFabric',
-        id: '005'
     },
     {
         img: ProImage6,
         title: 'TheFabric',
-        id: '006'
     },
     {
         img: ProImage7,
         title: 'TheFabric',
-        id: '007'
     },
     {
         img: ProImage8,
         title: 'TheFabric',
-        id: '008'
     },
     {
         img: ProImage9,
         title: 'TheFabric',
-        id: '009',
     },
     {
         img: ProImage10,
         title: 'TheFabric',
-        id: '010'
     },
 
 
@@ -92,17 +82,23 @@ const tilesData = [
 class Viscose extends Component {
     constructor(props) {
         super(props);
-        this.stars = this.stars.bind(this);
-        this.state={
+        this.state = {
             open: false
+
         }
     }
-    stars = () => {
-        console.log("Big Images");
+    tempArray = []
+    stars = (key) => {
+        // console.log("Big Images", key);
+        this.tempArray=[];
         this.setState({ open: true });
-        
+        for (let i = 0; i < tilesData.length; i++) {
+            if (key === i) {
+                this.tempArray = this.tempArray.concat(tilesData[i]);
+            }
+        }
     }
-    
+
     handleClose = () => {
         this.setState({ open: false });
     };
@@ -115,6 +111,8 @@ class Viscose extends Component {
                 onTouchTap={this.handleClose}
             />,
         ];
+        // console.log("images", this.tempArray)
+
         return (
             <div>
                 <div className='container' style={styles.gallery}>
@@ -139,22 +137,21 @@ class Viscose extends Component {
                                         className='col-xs-12 col-md-11'
                                     >
                                         <mat.Subheader>August 2017</mat.Subheader>
-                                        {tilesData.map((key) => (
-
+                                        {tilesData.map((v, i) => (
                                             <mat.GridTile
-                                                key={key.img}
-                                                title={key.title}
+                                                key={i}
+                                                title={v.title}
                                                 titleStyle={{ textAlign: 'left' }}
                                                 actionIcon={
                                                     <mat.FlatButton
-                                                        label='Open'
+                                                        label='View'
                                                         labelStyle={{ color: 'white' }}
-                                                        onClick={this.stars}
+                                                        onClick={this.stars.bind(this, i)}
                                                     />
 
                                                 }
                                             >
-                                                <img src={key.img} style={{ width: '100%' }} alt='' />
+                                                <img src={v.img} style={{ width: '100%' }} alt='' />
                                             </mat.GridTile>
                                         ))}
 
@@ -167,13 +164,17 @@ class Viscose extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Feed Back"
+                            title="Big Image"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                         >
-                            here is the big images
+                            {this.tempArray.map((v,i)=>{
+                                return(
+                                    <img key={i} src={v.img} alt="img" style={{width: '100%'}}/>
+                                )
+                            })}
                         </mat.Dialog>
                     </div>
                 </div>

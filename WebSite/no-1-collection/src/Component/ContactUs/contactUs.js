@@ -17,8 +17,8 @@ import EmailForm from './Email/headOfficeEmail'
 
 
 const style = {
-    // height: 'auto',
-    // width: '100%',
+    height: 'auto',
+    width: '100%',
     // margin: 30,
     textAlign: 'left',
     display: 'inline-block',
@@ -38,13 +38,13 @@ const styles = {
         textShadow: '1px 1px 2px black',
         // color: 'black'
     },
-    thefebric: {
-        margin: 27,
-        width: 220,
-        height: 100,
-        borderRadius: 4,
-        boxShadow: '0px 2px 4px gray'
-    },
+    // thefebric: {
+    //     margin: 27,
+    //     width: 220,
+    //     height: 100,
+    //     borderRadius: 4,
+    //     boxShadow: '0px 2px 4px gray'
+    // },
     map: {
         fontSize: 22,
         color: 'red'
@@ -59,20 +59,20 @@ const styles = {
         color: '#0288d1'
     },
     heading: {
-        margin: '30px 0px 10px 30px',
+        // margin: '30px 0px 10px 30px',
         color: '#f44336',
         fontWeight: 'bold',
         textDecoration: 'underline',
         fontStyle: 'Helvetica, sans-serif',
     },
     text: {
-        margin: 30,
+        margin: 20,
         fontSize: 16,
         textAlign: 'justify',
         color: 'black'
     },
     headingSocial: {
-        margin: '30px 0px 10px 30px',
+        // margin: '30px 0px 10px 30px',
         color: '#f44336',
         // fontWeight: 'bold',
         textDecoration: 'underline'

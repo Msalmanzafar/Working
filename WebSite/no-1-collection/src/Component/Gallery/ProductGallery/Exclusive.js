@@ -12,6 +12,7 @@ import ProImage8 from '../../Images/20170712_142755.jpg';
 import ProImage9 from '../../Images/20170712_142809.jpg';
 import ProImage10 from '../../Images/20170712_142820.jpg';
 
+import childImg1 from '../../Images/20170818_114213.jpg';
 // import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Subscribe from '../../Home/subscribe';
 import FooterOfCollection from '../../Home/footer';
@@ -36,73 +37,74 @@ const tilesData = [
     {
         img: ProImage1,
         title: 'TheFabric',
-        id: '001'
         // author: 'jill111',
     },
     {
         img: ProImage2,
         title: 'TheFabric',
-        id: '002'
         // author: 'jill111',
     },
     {
         img: ProImage3,
         title: 'TheFabric',
-        id: '003'
     },
     {
         img: ProImage4,
         title: 'TheFabric',
-        id: '004'
     },
     {
         img: ProImage5,
         title: 'TheFabric',
-        id: '005'
     },
     {
         img: ProImage6,
         title: 'TheFabric',
-        id: '006'
     },
     {
         img: ProImage7,
         title: 'TheFabric',
-        id: '007'
     },
     {
         img: ProImage8,
         title: 'TheFabric',
-        id: '008'
     },
     {
         img: ProImage9,
         title: 'TheFabric',
-        id: '009',
     },
     {
         img: ProImage10,
         title: 'TheFabric',
-        id: '010'
     },
-
-
 ];
+
+const ChildTiles = [
+    {
+        img: childImg1
+    },
+];
+
 
 class Exclusive extends Component {
     constructor(props) {
         super(props);
-        this.stars = this.stars.bind(this);
-        this.state={
+        this.state = {
             open: false
+
         }
     }
-    stars = () => {
-        console.log("Big Images");
+    BigImage = []
+    stars = (key) => {
+        // console.log("Big Images", key);
+        this.BigImage = [];
         this.setState({ open: true });
-        
+        for (let i = 0; i < tilesData.length; i++) {
+            if (key === i) {
+                this.BigImage = this.BigImage.concat(tilesData[i]);
+            }
+        }
     }
-    
+
     handleClose = () => {
         this.setState({ open: false });
     };
@@ -115,6 +117,8 @@ class Exclusive extends Component {
                 onTouchTap={this.handleClose}
             />,
         ];
+        // console.log("images", this.BigImage)
+
         return (
             <div>
                 <div className='container' style={styles.gallery}>
@@ -139,22 +143,21 @@ class Exclusive extends Component {
                                         className='col-xs-12 col-md-11'
                                     >
                                         <mat.Subheader>August 2017</mat.Subheader>
-                                        {tilesData.map((key) => (
-
+                                        {tilesData.map((v, i) => (
                                             <mat.GridTile
-                                                key={key.img}
-                                                title={key.title}
+                                                key={i}
+                                                title={v.title}
                                                 titleStyle={{ textAlign: 'left' }}
                                                 actionIcon={
                                                     <mat.FlatButton
-                                                        label='Open'
+                                                        label='View'
                                                         labelStyle={{ color: 'white' }}
-                                                        onClick={this.stars}
+                                                        onClick={this.stars.bind(this, i)}
                                                     />
 
                                                 }
                                             >
-                                                <img src={key.img} style={{ width: '100%' }} alt='' />
+                                                <img src={v.img} style={{ width: '100%' }} alt='' />
                                             </mat.GridTile>
                                         ))}
 
@@ -167,13 +170,19 @@ class Exclusive extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Feed Back"
+                            title="Big Image"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                         >
-                            here is the big images
+                            {this.BigImage.map((v, i) => {
+                                return (
+                        
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
+                                    
+                                )
+                            })}
                         </mat.Dialog>
                     </div>
                 </div>

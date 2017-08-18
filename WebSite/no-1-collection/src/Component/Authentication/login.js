@@ -97,7 +97,7 @@ class LogIn extends Component {
                     >
                         <mat.Card
                             zDepth={3}
-                            style={{ position: 'relative', marginTop: 80, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.9)' }}
+                            style={{ position: 'relative', marginTop: 80, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.8)' }}
                             className="text-left"
                         >
                             <mat.AppBar

@@ -161,7 +161,7 @@ class SignUp extends Component {
                         <mat.Card
                             className='text-center'
                             zDepth={3}
-                            style={{ position: 'relative',marginTop: 40, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.9)' }}
+                            style={{ position: 'relative',marginTop: 40, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.8)' }}
                         >
                             <mat.AppBar
                                 titleStyle={{ fontSize: 28, color: 'black', fontWeight: 500, textAlign: 'left' }}

@@ -30,7 +30,7 @@ class Home extends Component {
         return (
             <div>
                 <div className="container-flux " style={{ top: -20,position: 'relative', zIndex: 2, opacity: 0.9 }}>
-                    <div id="myCarousel" className="carousel slide " data-ride="carousel">
+                    <div id="myCarousel" className="carousel slide" data-ride="carousel">
                         {/*<!-- Indicators -->*/}
                         <ol className="carousel-indicators" >
                             <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
@@ -38,9 +38,7 @@ class Home extends Component {
                             <li data-target="#myCarousel" data-slide-to="2"></li>
                             <li data-target="#myCarousel" data-slide-to="3"></li>
                             <li data-target="#myCarousel" data-slide-to="4"></li>
-
                         </ol>
-
                         {/*<!-- Wrapper for slides -->*/}
                         <div className="carousel-inner">
                             <div className="item active">
@@ -62,7 +60,6 @@ class Home extends Component {
                                 <img src={Slide5} alt="slide5" style={{ width: '100%', height: '600px' }} />
                             </div>
                         </div>
-
                         {/*<!-- Left and right controls -->*/}
                         <a className="left carousel-control" href="#myCarousel" data-slide="prev">
                             <span className="glyphicon glyphicon-chevron-left"></span>
@@ -73,9 +70,7 @@ class Home extends Component {
                             <span className="sr-only">Next</span>
                         </a>
                     </div>
-
                 </div>
-
                 {/* <BrandsLogos /> */}
                 <div className="container"  style={{ position: 'relative'}}>
                     <h2 className="text-center h1" style={styles.wel}>

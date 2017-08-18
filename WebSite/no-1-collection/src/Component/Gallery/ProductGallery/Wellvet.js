@@ -144,7 +144,7 @@ class WellVet extends Component {
                                                 titleStyle={{ textAlign: 'left' }}
                                                 actionIcon={
                                                     <mat.FlatButton
-                                                        label='Open'
+                                                        label='View'
                                                         labelStyle={{ color: 'white' }}
                                                         onClick={this.stars.bind(this, i)}
                                                     />
