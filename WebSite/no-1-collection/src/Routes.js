@@ -17,7 +17,7 @@ import Exclusive from './Component/Gallery/ProductGallery/Exclusive';
 import JackWard from './Component/Gallery/ProductGallery/Jackward';
 import Jute from './Component/Gallery/ProductGallery/Jute';
 import Organza from './Component/Gallery/ProductGallery/Organza';
-import Others from './Component/Gallery/ProductGallery/Others';
+// import Others from './Component/Gallery/ProductGallery/Others';
 import Viscose from './Component/Gallery/ProductGallery/Viscose';
 import WellVet from './Component/Gallery/ProductGallery/Wellvet';
 
@@ -61,7 +61,7 @@ export default class Routes extends Component {
                         <Route path='/jute' component={Jute} />
                         <Route path='/exclusive' component={Exclusive} />
                         <Route path='/organza' component={Organza} />
-                        <Route path='/others' component={Others} />
+                        {/* <Route path='/others' component={Others} /> */}
                     </Route>
                     <Route path='/thefebricstore' component={TheFebricStore}>
                         <IndexRoute component={FebricHome} />

@@ -11,7 +11,7 @@ const style = {
     // margin: 30,
     textAlign: 'left',
     display: 'inline-block',
-    // position: 'relative',
+    position: 'relative',
     borderRadius: 4
 
 };

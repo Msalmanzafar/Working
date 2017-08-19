@@ -23,7 +23,7 @@ class NavBar extends Component {
         this.Jute = this.Jute.bind(this);
         this.Exclusive = this.Exclusive.bind(this);
         this.Organza = this.Organza.bind(this);
-        this.Others = this.Others.bind(this);
+        // this.Others = this.Others.bind(this);
 
 
 
@@ -57,9 +57,9 @@ class NavBar extends Component {
     Organza() {
         browserHistory.push('/organza');
     }
-    Others() {
-        browserHistory.push('/others');
-    }
+    // Others() {
+    //     browserHistory.push('/others');
+    // }
     
     Contact_Us() {
         browserHistory.push('/contactus');
@@ -163,11 +163,11 @@ class NavBar extends Component {
                                                         Organza
                                                     </a>
                                                 </li>
-                                                <li>
+                                                {/* <li>
                                                     <a id="link" onClick={this.Others}>
                                                         Others
                                                     </a>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </li>
                                         <li><a id="link" onClick={this.Contact_Us}>Contact Us</a></li>
