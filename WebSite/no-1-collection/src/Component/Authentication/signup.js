@@ -153,7 +153,7 @@ class SignUp extends Component {
         return (
 
             <div>
-                <div className='container-flux' id='imgBox'>
+                <div className='container-flux img-responsive' id='imgBox'>
                     <div
                         id="SignUpBox"
                         className="container col-md-8 col-md-offset-2 col-xs-12"
@@ -161,7 +161,7 @@ class SignUp extends Component {
                         <mat.Card
                             className='text-center'
                             zDepth={3}
-                            style={{ position: 'relative',marginTop: 40, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.8)' }}
+                            style={{ position: 'relative',marginTop: 40, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.9)' }}
                         >
                             <mat.AppBar
                                 titleStyle={{ fontSize: 28, color: 'black', fontWeight: 500, textAlign: 'left' }}

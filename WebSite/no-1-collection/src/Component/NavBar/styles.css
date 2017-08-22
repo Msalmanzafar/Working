@@ -71,7 +71,7 @@ ul li:hover {
     
 } 
 ul li:hover ul {
-    display: block;
+    display: block !important;
 } 
 ul li ul {
     position: absolute;
@@ -81,10 +81,10 @@ ul li ul {
 }
 ul li ul li { 
     background: #9f0500; 
-    display: block; 
+    display: block !important; 
 }
 ul li ul li a {
-    display:block !important;
+    display: block !important;
     color: black 
 } 
 ul li ul li:hover {

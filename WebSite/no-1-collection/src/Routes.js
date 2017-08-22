@@ -23,8 +23,7 @@ import WellVet from './Component/Gallery/ProductGallery/Wellvet';
 
 
 //The Febric sectiion
-import TheFebricStore from './Component/TheFebric/Index';
-import FebricHome from './Component/TheFebric/Home/febricHome'
+
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -62,10 +61,6 @@ export default class Routes extends Component {
                         <Route path='/exclusive' component={Exclusive} />
                         <Route path='/organza' component={Organza} />
                         {/* <Route path='/others' component={Others} /> */}
-                    </Route>
-                    <Route path='/thefebricstore' component={TheFebricStore}>
-                        <IndexRoute component={FebricHome} />
-                        <Route path='/febrichome' component={FebricHome} />
                     </Route>
                 </Router>
             </MuiThemeProvider>

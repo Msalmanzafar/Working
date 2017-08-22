@@ -17,7 +17,10 @@ export function CreateNewUserAction(newUserOption) {
                 let firebaseData = {
                     email: newUserOption.email,
                     fullName: newUserOption.fullName,
-                    cellNumber: newUserOption.cellNumber
+                    cellNumber: newUserOption.cellNumber,
+                    address: newUserOption.address,
+                    shopName: newUserOption.shopName,
+                    cityName: newUserOption.cityName
                 };
                 firebase.database().ref('No1Collection/' + user.uid).set(firebaseData)
                     .then(() => {

@@ -24,9 +24,9 @@ const styles = {
 }
 
 class Home extends Component {
-    componentDidMount() {
-        // window.location.reload();
-    }
+    // componentDidMount() {
+    //     $('#myCarousel').carousel();
+    // }
     render() {
         return (
             <div>
@@ -42,22 +42,22 @@ class Home extends Component {
                         </ol>
                         <div className="carousel-inner">
                             <div className="item active">
-                                <img src={Slide1} alt="slide1" style={{ width: '100%', height: '600px' }} />
+                                <img src={Slide1} alt="slide1" className = "img-responsive" />
                             </div>
 
                             <div className="item">
-                                <img src={Slide2} alt="slide2" style={{ width: '100%', height: '600px' }} />
+                                <img src={Slide2} alt="slide2" className = "img-responsive" />
                             </div>
 
                             <div className="item">
-                                <img src={Slide3} alt="slide3" style={{ width: '100%', height: '600px' }} />
+                                <img src={Slide3} alt="slide3" className = "img-responsive" />
                             </div>
 
                             <div className="item">
-                                <img src={Slide4} alt="slide4" style={{ width: '100%', height: '600px' }} />
+                                <img src={Slide4} alt="slide4" className = "img-responsive" />
                             </div>
                             <div className="item">
-                                <img src={Slide5} alt="slide5" style={{ width: '100%', height: '600px' }} />
+                                <img src={Slide5} alt="slide5" className = "img-responsive" />
                             </div>
                         </div>
                         <a className="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -70,7 +70,6 @@ class Home extends Component {
                         </a>
                     </div>
                 </div> 
-                {/* <BrandsLogos /> */}
                 <div className="container" style={{ position: 'relative' }}>
                     <h2 className="text-center h1" style={styles.wel}>
                         Welcome To <span>No.1 Collection</span>

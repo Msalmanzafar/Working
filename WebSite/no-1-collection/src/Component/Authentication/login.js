@@ -90,14 +90,14 @@ class LogIn extends Component {
         } = this.props;
         return (
             <div>
-                <div className='container-flux' id='imgBox'>
+                <div className='container-flux img-responsive' id='imgBox'>
                     <div
                         id="LoginBox"
                         className="container col-md-8 col-md-offset-2 col-xs-12"
                     >
                         <mat.Card
                             zDepth={3}
-                            style={{ position: 'relative', marginTop: 80, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.8)' }}
+                            style={{ position: 'relative', marginTop: 80, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.9)' }}
                             className="text-left"
                         >
                             <mat.AppBar

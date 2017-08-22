@@ -60,7 +60,7 @@ class NavBar extends Component {
     // Others() {
     //     browserHistory.push('/others');
     // }
-    
+
     Contact_Us() {
         browserHistory.push('/contactus');
     }
@@ -80,7 +80,7 @@ class NavBar extends Component {
         const {
             auth,
             SnackBars,
-            users,
+            // users,
         } = this.props;
         // console.log('user---',users.email)
         return (
@@ -183,17 +183,10 @@ class NavBar extends Component {
                                         </ul>
                                     ) : (
                                             <ul className="nav navbar-nav navbar-right">
-                                                <mat.Avatar
-                                                    style={{ marginTop: 10, cursor: 'pointer' }}
-                                                    size={40}
-                                                    data-toggle="dropdown"
-                                                    className="dropdown-toggle"
-                                                />
-                                                <ul className="dropdown-menu child">
-                                                    <li><a id="link">{users.email}</a></li>
-                                                    <li><a id="link">Setting</a></li>
-                                                    <li><a id="link" onClick={this.LogOut}>Log Out</a></li>
-                                                </ul>
+                                                <li><a id="link">Setting</a></li>
+                                                <li><a id="link" onClick={this.LogOut}>
+                                                    <span style={{ marginLeft: 8 }} className="glyphicon glyphicon-log-out"></span> Log Out</a>
+                                                </li>
                                             </ul>
 
                                         )}
@@ -220,7 +213,7 @@ const mapStateToProps = (state) => {
     return {
         auth: state.AuthReducer.authLogOut,
         SnackBars: state.AuthReducer.Visited,
-        users: state.AuthReducer.authSignIn,
+        // users: state.AuthReducer.authSignIn,
     };
 }
 const mapDispatchToProps = (dispatch) => {

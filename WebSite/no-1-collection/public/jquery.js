@@ -3,14 +3,19 @@
 // main page loading
 var myVar;
 
-function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-}
+$(window).on("load",function(){
+    $("#loader").hide("slow");
+    $("#myDiv").css("display","block");
+});
 
-function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
-}
+// function myFunction() {
+//     myVar = setTimeout(showPage, 3000);
+// }
+
+// function showPage() {
+//     document.getElementById("loader").style.display = "none";
+//     document.getElementById("myDiv").style.display = "block";
+// }
 //--------------------------------------------------------------------------------------//
 
 // main page top button 
@@ -32,4 +37,3 @@ function topFunction() {
 }
 
 // ---------------------------------------------------------------------------------------------
-
