@@ -114,7 +114,7 @@ class ContactUs extends Component {
                 <div className="container" style={styles.ContactContainer}>
                     <mat.Card style={style} zDepth={2} >
                         <mat.AppBar
-                            style={{ backgroundColor: '#b3b3b3' }}
+                            style={{ backgroundColor: '#9f0500' }}
                             title={
                                 <span style={styles.titles}>Contact Us</span>
                             }

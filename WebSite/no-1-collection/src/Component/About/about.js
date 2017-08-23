@@ -17,7 +17,7 @@ const style = {
 };
 const styles = {
     about: {
-        backgroundColor: '#b3b3b3',
+        backgroundColor: '#9f0500',
 
     },
     aboutCaontainer: {

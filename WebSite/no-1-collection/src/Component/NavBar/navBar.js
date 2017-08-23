@@ -4,7 +4,8 @@ import './styles.css';
 import * as mat from 'material-ui';
 import { LogOutAction } from '../../Actions/AuthActions';
 import { connect } from 'react-redux';
-import Logo1 from '../Images/main3.jpg';
+import logo from '../Images/logo1.png'
+import Logo1 from '../Images/The-Fabric-Store.png';
 import Logo2 from '../Images/Trendz.png';
 import Logo3 from '../Images/Vintage.png';
 
@@ -23,7 +24,7 @@ class NavBar extends Component {
         this.Jute = this.Jute.bind(this);
         this.Exclusive = this.Exclusive.bind(this);
         this.Organza = this.Organza.bind(this);
-        // this.Others = this.Others.bind(this);
+        this.Others = this.Others.bind(this);
 
 
 
@@ -57,9 +58,9 @@ class NavBar extends Component {
     Organza() {
         browserHistory.push('/organza');
     }
-    // Others() {
-    //     browserHistory.push('/others');
-    // }
+    Others() {
+        browserHistory.push('/others');
+    }
 
     Contact_Us() {
         browserHistory.push('/contactus');
@@ -87,7 +88,7 @@ class NavBar extends Component {
             <div>
                 <div>
                     <div>
-                        <nav className="navbar header" >
+                        <nav className="navbar header " >
                             <div className="container">
                                 <div className="navbar-header">
                                     <button type="button" className="navbar-toggle " data-toggle="collapse" data-target="#navbar-collapse">
@@ -95,7 +96,9 @@ class NavBar extends Component {
                                         <span className="icon-color icon-bar"></span>
                                         <span className="icon-color icon-bar"></span>
                                     </button>
-                                    <span className="navbar-brand" id="logo">No1Collection</span>
+                                    <span className="navbar-brand" id="logo">
+                                        <img src={logo} alt="logo" style={{width:70, marginTop: -3}}/>
+                                    </span>
                                 </div>
                                 <div className="collapse navbar-collapse text-left" id="navbar-collapse">
                                     <ul className="nav link1 navbar-nav">
@@ -163,11 +166,11 @@ class NavBar extends Component {
                                                         Organza
                                                     </a>
                                                 </li>
-                                                {/* <li>
+                                                 <li>
                                                     <a id="link" onClick={this.Others}>
                                                         Others
                                                     </a>
-                                                </li> */}
+                                                </li> 
                                             </ul>
                                         </li>
                                         <li><a id="link" onClick={this.Contact_Us}>Contact Us</a></li>

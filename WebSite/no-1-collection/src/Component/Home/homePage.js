@@ -76,7 +76,6 @@ class Home extends Component {
                     </h2>
                     <h5 className="text-center h4">LogIn for the best experience</h5>
                 </div>
-                <Sales />
                 <Subscribe />
                 <FooterOfCollection />
             </div>

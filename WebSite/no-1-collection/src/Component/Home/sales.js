@@ -17,7 +17,6 @@ class Sales extends Component {
             <div>
                 <div className='container' style={{ marginTop: 20, marginBottom: 20 }}>
                     <div className="col-xs-12 col-md-12 text-center">
-
                         <mat.Paper style={style} zDepth={2} >
                             <img src={BigSale} alt="demo" style={{ width: '50%', height: 'auto' }} />
                         </mat.Paper>

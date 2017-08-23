@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import * as mat from 'material-ui';
 
-import ProImage1 from '../../Images/20170712_142450.jpg';
-import ProImage2 from '../../Images/20170712_142855.jpg';
-import ProImage3 from '../../Images/20170712_142919.jpg';
-import ProImage4 from '../../Images/20170712_14250.jpg';
-import ProImage5 from '../../Images/20170712_1425.jpg';
-import ProImage6 from '../../Images/20170712_142523.jpg';
-import ProImage7 from '../../Images/20170712_142727.jpg';
-import ProImage8 from '../../Images/20170712_142755.jpg';
-import ProImage9 from '../../Images/20170712_142809.jpg';
-import ProImage10 from '../../Images/20170712_142820.jpg';
+import ProImage1 from '../../Images/Others/IMG_0572.JPG';
+import ProImage2 from '../../Images/Others/IMG_0573.JPG';
+import ProImage3 from '../../Images/Others/IMG_0574.JPG';
+import ProImage4 from '../../Images/Others/IMG_0575.JPG';
+import ProImage5 from '../../Images/Others/IMG_0576.JPG';
+import ProImage6 from '../../Images/Others/IMG_0577.JPG';
+import ProImage7 from '../../Images/Others/IMG_0578.JPG';
+import ProImage8 from '../../Images/Others/IMG_0579.JPG';
+import ProImage9 from '../../Images/Others/IMG_0580.JPG';
+import ProImage10 from '../../Images/Others/IMG_0581.JPG';
+import ProImage11 from '../../Images/Others/IMG_0582.JPG';
+import ProImage12 from '../../Images/Others/IMG_0583.JPG';
+import ProImage13 from '../../Images/Others/IMG_0584.JPG';
+import ProImage14 from '../../Images/Others/IMG_0585.JPG';
+import ProImage15 from '../../Images/Others/IMG_0586.JPG';
+import ProImage16 from '../../Images/Others/IMG_0587.JPG';
+import ProImage17 from '../../Images/Others/IMG_0588.JPG';
+import ProImage18 from '../../Images/Others/IMG_0589.JPG';
+
 
 // import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Subscribe from '../../Home/subscribe';
@@ -36,39 +45,30 @@ const tilesData = [
     {
         img: ProImage1,
         title: 'TheFabric',
-        id: '001'
-        // author: 'jill111',
     },
     {
         img: ProImage2,
         title: 'TheFabric',
-        id: '002'
-        // author: 'jill111',
     },
     {
         img: ProImage3,
         title: 'TheFabric',
-        id: '003'
     },
     {
         img: ProImage4,
         title: 'TheFabric',
-        id: '004'
     },
     {
         img: ProImage5,
         title: 'TheFabric',
-        id: '005'
     },
     {
         img: ProImage6,
         title: 'TheFabric',
-        id: '006'
     },
     {
         img: ProImage7,
         title: 'TheFabric',
-        id: '007'
     },
     {
         img: ProImage8,
@@ -78,31 +78,68 @@ const tilesData = [
     {
         img: ProImage9,
         title: 'TheFabric',
-        id: '009',
     },
     {
         img: ProImage10,
         title: 'TheFabric',
+    },
+    {
+        img: ProImage11,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage12,
+        title: 'TheFabric',
         id: '010'
     },
-
+    {
+        img: ProImage13,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage14,
+        title: 'TheFabric',
+        id: '010'
+    },
+    {
+        img: ProImage15,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage16,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage17,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage18,
+        title: 'TheFabric',
+    },
 
 ];
 
 class Others extends Component {
     constructor(props) {
         super(props);
-        this.stars = this.stars.bind(this);
-        this.state={
+        this.state = {
             open: false
+
         }
     }
-    stars = () => {
-        console.log("Big Images");
+    tempArray = []
+    stars = (key) => {
+        // console.log("Big Images", key);
+        this.tempArray = [];
         this.setState({ open: true });
-        
+        for (let i = 0; i < tilesData.length; i++) {
+            if (key === i) {
+                this.tempArray = this.tempArray.concat(tilesData[i]);
+            }
+        }
     }
-    
+
     handleClose = () => {
         this.setState({ open: false });
     };
@@ -115,6 +152,8 @@ class Others extends Component {
                 onTouchTap={this.handleClose}
             />,
         ];
+        // console.log("images", this.tempArray)
+
         return (
             <div>
                 <div className='container' style={styles.gallery}>
@@ -126,35 +165,34 @@ class Others extends Component {
                             titleStyle={{ fontSize: 28, textShadow: '2px 2px 5px black', fontWeight: 500, textAlign: 'left' }}
                             showMenuIconButton={false}
                             title='Others'
-                            style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#b3b3b3' }}
+                            style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#9f0500' }}
                         />
                         <mat.CardText>
                             <div className='container-flux'>
                                 <div style={styles.root}>
                                     <mat.GridList
-                                        cols={3}
+                                        cols={4}
                                         cellHeight={'auto'}
                                         padding={2}
                                         style={styles.gridList}
                                         className='col-xs-12 col-md-11'
                                     >
                                         <mat.Subheader>August 2017</mat.Subheader>
-                                        {tilesData.map((key) => (
-
+                                        {tilesData.map((v, i) => (
                                             <mat.GridTile
-                                                key={key.img}
-                                                title={key.title}
+                                                key={i}
+                                                title={v.title}
                                                 titleStyle={{ textAlign: 'left' }}
                                                 actionIcon={
                                                     <mat.FlatButton
-                                                        label='Open'
+                                                        label='View'
                                                         labelStyle={{ color: 'white' }}
-                                                        onClick={this.stars}
+                                                        onClick={this.stars.bind(this, i)}
                                                     />
 
                                                 }
                                             >
-                                                <img src={key.img} style={{ width: '100%' }} alt='' />
+                                                <img src={v.img} style={{ width: '100%' }} alt='' />
                                             </mat.GridTile>
                                         ))}
 
@@ -167,13 +205,17 @@ class Others extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Feed Back"
+                            title="Big Image"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                         >
-                            here is the big images
+                            {this.tempArray.map((v, i) => {
+                                return (
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
+                                )
+                            })}
                         </mat.Dialog>
                     </div>
                 </div>

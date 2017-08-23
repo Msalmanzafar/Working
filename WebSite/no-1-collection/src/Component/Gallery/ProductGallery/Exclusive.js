@@ -132,7 +132,7 @@ class Exclusive extends Component {
                             titleStyle={{ fontSize: 28, textShadow: '2px 2px 5px black', fontWeight: 500, textAlign: 'left' }}
                             showMenuIconButton={false}
                             title='Exclusive'
-                            style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#b3b3b3' }}
+                            style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#9f0500' }}
                         />
                         <mat.CardText>
                             <div className='container-flux'>

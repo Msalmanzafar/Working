@@ -1,0 +1,9 @@
+.icons{
+    font-Size: 34px;
+    cursor: pointer;
+    margin-Right: 4;
+    color: white;
+}
+.icons:hover{
+    color: #0693e3;
+}

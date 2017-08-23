@@ -7,9 +7,11 @@ import FaAndroid from 'react-icons/lib/fa/android';
 
 const styles = {
     box: {
-        backgroundColor: '#d9d9d9',
+        // backgroundColor: '#d9d9d9',
+        backgroundColor: '#e0e0e0',
         height: 'auto',
-        position: 'relative'
+        position: 'relative',
+        borderBottom: '1px solid gray'
     },
     div1: {
         padding: 0,
