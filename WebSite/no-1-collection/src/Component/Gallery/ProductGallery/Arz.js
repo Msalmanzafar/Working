@@ -120,7 +120,7 @@ class DoubleArz extends Component {
     tempArray = []
     stars = (key) => {
         // console.log("Big Images", key);
-        this.tempArray=[];
+        this.tempArray = [];
         this.setState({ open: true });
         for (let i = 0; i < tilesData.length; i++) {
             if (key === i) {
@@ -199,10 +199,12 @@ class DoubleArz extends Component {
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
+                            autoScrollBodyContent={true}
+                            contentStyle={{ width: '70%', maxWidth: 'none', }}
                         >
-                            {this.tempArray.map((v,i)=>{
-                                return(
-                                    <img key={i} src={v.img} alt="img" style={{width: '100%'}}/>
+                            {this.tempArray.map((v, i) => {
+                                return (
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
                                 )
                             })}
                         </mat.Dialog>

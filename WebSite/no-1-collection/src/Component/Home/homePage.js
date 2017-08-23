@@ -7,7 +7,7 @@ import Slide4 from '../Images/shof_b11ef8d8295230f.jpg';
 import Slide5 from '../Images/eei-645-exp-ora_3_.jpg';
 
 
-import Sales from './sales';
+// import Sales from './sales';
 // import BrandsLogos from './brands';
 import FooterOfCollection from './footer';
 import Subscribe from './subscribe';

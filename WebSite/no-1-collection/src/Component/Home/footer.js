@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 
 import FaFacebookSquare from 'react-icons/lib/fa/facebook-square';
 import FaGooglePlusSquare from 'react-icons/lib/fa/google-plus-square';

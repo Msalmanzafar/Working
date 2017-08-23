@@ -208,12 +208,14 @@ class Others extends Component {
                             title="Big Image"
                             actions={actions}
                             modal={false}
+                            contentStyle={{width: '70%',maxWidth: 'none',}}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
+                            autoScrollBodyContent={true}
                         >
                             {this.tempArray.map((v, i) => {
                                 return (
-                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%'}} />
                                 )
                             })}
                         </mat.Dialog>
