@@ -134,7 +134,6 @@ class Organza extends Component {
                                         cellHeight={'auto'}
                                         padding={2}
                                         style={styles.gridList}
-                                        className='col-xs-12 col-md-11'
                                     >
                                         <mat.Subheader>August 2017</mat.Subheader>
                                         {tilesData.map((v, i) => (

@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import * as mat from 'material-ui';
 
 import ProImage1 from '../../Images/Exculsive/20170818_154900.jpg';
-import ProImage2 from '../../Images/Exculsive/20170818_154928_001.jpg';
+import ProImage2 from '../../Images/Exculsive/20170818_154928.jpg';
 import ProImage3 from '../../Images/Exculsive/20170818_154940.jpg';
 import ProImage4 from '../../Images/Exculsive/20170818_155002.jpg';
-// import ProImage5 from '../../Images/20170712_1425.jpg';
-// import ProImage6 from '../../Images/20170712_142523.jpg';
-// import ProImage7 from '../../Images/20170712_142727.jpg';
-// import ProImage8 from '../../Images/20170712_142755.jpg';
-// import ProImage9 from '../../Images/20170712_142809.jpg';
-// import ProImage10 from '../../Images/20170712_142820.jpg';
+import ProImage5 from '../../Images/Exculsive/IMG_0412.JPG';
+import ProImage6 from '../../Images/Exculsive/IMG_0413.JPG';
+import ProImage7 from '../../Images/Exculsive/IMG_0414.JPG';
+import ProImage8 from '../../Images/Exculsive/IMG_0415.JPG';
+import ProImage9 from '../../Images/Exculsive/IMG_0416.JPG';
+import ProImage10 from '../../Images/Exculsive/IMG_0417.JPG';
+import ProImage11 from '../../Images/Exculsive/IMG_0418.JPG';
+import ProImage12 from '../../Images/Exculsive/IMG_0419.JPG';
+import ProImage13 from '../../Images/Exculsive/IMG_0420.JPG';
+
 
 // import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Subscribe from '../../Home/subscribe';
@@ -36,53 +40,55 @@ const tilesData = [
     {
         img: ProImage1,
         title: 'TheFabric',
-        id: '01'
     },
     {
         img: ProImage2,
         title: 'TheFabric',
-        id: '02'
     },
     {
         img: ProImage3,
         title: 'TheFabric',
-        id: '03'
     },
     {
         img: ProImage4,
         title: 'TheFabric',
-        id: '04'
     },
-    // {
-    //     img: ProImage5,
-    //     title: 'TheFabric',
-    //     id: '05'
-    // },
-    // {
-    //     img: ProImage6,
-    //     title: 'TheFabric',
-    //     id: '06'
-    // },
-    // {
-    //     img: ProImage7,
-    //     title: 'TheFabric',
-    //     id: '07'
-    // },
-    // {
-    //     img: ProImage8,
-    //     title: 'TheFabric',
-    //     id: '08'
-    // },
-    // {
-    //     img: ProImage9,
-    //     title: 'TheFabric',
-    //     id: '09'
-    // },
-    // {
-    //     img: ProImage10,
-    //     title: 'TheFabric',
-    //     id: '10'
-    // },
+    {
+        img: ProImage5,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage6,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage7,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage8,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage9,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage10,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage11,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage12,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage13,
+        title: 'TheFabric',
+    },
 ];
 
 
@@ -138,11 +144,10 @@ class Exclusive extends Component {
                             <div className='container-flux'>
                                 <div style={styles.root}>
                                     <mat.GridList
-                                        cols={3}
+                                        cols={4}
                                         cellHeight={200}
                                         padding={2}
                                         style={styles.gridList}
-                                        className='col-xs-12 col-md-11'
                                     >
                                         <mat.Subheader>August 2017</mat.Subheader>
                                         {tilesData.map((v, i) => (
@@ -159,7 +164,7 @@ class Exclusive extends Component {
 
                                                 }
                                             >
-                                                <img src={v.img} style={{ width: '100%' }} alt='' />
+                                                <img src={v.img} style={{ width: '100%' }} alt='img' />
                                             </mat.GridTile>
                                         ))}
 
@@ -177,6 +182,8 @@ class Exclusive extends Component {
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
+                            autoScrollBodyContent={true}
+                            contentStyle={{ width: '70%', maxWidth: 'none', }}
                         >
                             {this.BigImage.map((v, i) => {
                                 return(

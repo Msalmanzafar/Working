@@ -3,7 +3,7 @@ import * as mat from 'material-ui';
 import Logo from '../Images/no1Collection.png';
 import FaApple from 'react-icons/lib/fa/apple';
 import FaAndroid from 'react-icons/lib/fa/android';
-
+import './style.css';
 
 const styles = {
     box: {
@@ -46,14 +46,6 @@ const styles = {
     download: {
         margin: 9,
     },
-    native: {
-        height: 35,
-        color: 'gray',
-        cursor: 'pointer',
-        fontSize: 36,
-        marginRight: 4
-    }
-    ,
     subs: {
         fontSize: 12,
         fontWeight: 'bold',
@@ -90,8 +82,8 @@ class Subscribe extends Component {
                                                 More Deals, Faster Access, Better Shopping!
                                             </span><br />
                                             <mat.RaisedButton secondary={true} label="FREE DOWNLOAD" style={styles.download} />
-                                            <FaApple style={styles.native} />
-                                            <FaAndroid style={styles.native} />
+                                            <FaApple className='apple' />
+                                            <FaAndroid className='android' />
                                         </blockquote>
                                     </div>
                                 </div> 

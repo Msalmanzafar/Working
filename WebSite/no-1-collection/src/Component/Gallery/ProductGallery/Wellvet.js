@@ -1,16 +1,41 @@
 import React, { Component } from 'react';
 import * as mat from 'material-ui';
 
-import ProImage1 from '../../Images/20170712_142450.jpg';
-import ProImage2 from '../../Images/20170712_142855.jpg';
-import ProImage3 from '../../Images/20170712_142919.jpg';
-import ProImage4 from '../../Images/20170712_14250.jpg';
-import ProImage5 from '../../Images/20170712_1425.jpg';
-import ProImage6 from '../../Images/20170712_142523.jpg';
-import ProImage7 from '../../Images/20170712_142727.jpg';
-import ProImage8 from '../../Images/20170712_142755.jpg';
-import ProImage9 from '../../Images/20170712_142809.jpg';
-import ProImage10 from '../../Images/20170712_142820.jpg';
+import ProImage1 from '../../Images/Wellvet/IMG_0489.JPG';
+import ProImage2 from '../../Images/Wellvet/IMG_0459.JPG';
+import ProImage3 from '../../Images/Wellvet/IMG_0460.JPG';
+import ProImage4 from '../../Images/Wellvet/IMG_0461.JPG';
+import ProImage5 from '../../Images/Wellvet/IMG_0462.JPG';
+import ProImage6 from '../../Images/Wellvet/IMG_0463.JPG';
+import ProImage7 from '../../Images/Wellvet/IMG_0465.JPG';
+import ProImage8 from '../../Images/Wellvet/IMG_0466.JPG';
+import ProImage9 from '../../Images/Wellvet/IMG_0467.JPG';
+import ProImage10 from '../../Images/Wellvet/IMG_0468.JPG';
+import ProImage11 from '../../Images/Wellvet/IMG_0469.JPG';
+import ProImage12 from '../../Images/Wellvet/IMG_0470.JPG';
+import ProImage13 from '../../Images/Wellvet/IMG_0471.JPG';
+import ProImage14 from '../../Images/Wellvet/IMG_0472.JPG';
+import ProImage15 from '../../Images/Wellvet/IMG_0473.JPG';
+import ProImage16 from '../../Images/Wellvet/IMG_0474.JPG';
+import ProImage17 from '../../Images/Wellvet/IMG_0475.JPG';
+import ProImage18 from '../../Images/Wellvet/IMG_0476.JPG';
+import ProImage19 from '../../Images/Wellvet/IMG_0477.JPG';
+import ProImage20 from '../../Images/Wellvet/IMG_0478.JPG';
+import ProImage21 from '../../Images/Wellvet/IMG_0479.JPG';
+import ProImage22 from '../../Images/Wellvet/IMG_0480.JPG';
+import ProImage23 from '../../Images/Wellvet/IMG_0481.JPG';
+import ProImage24 from '../../Images/Wellvet/IMG_0482.JPG';
+import ProImage25 from '../../Images/Wellvet/IMG_0483.JPG';
+import ProImage26 from '../../Images/Wellvet/IMG_0484.JPG';
+import ProImage27 from '../../Images/Wellvet/IMG_0485.JPG';
+import ProImage28 from '../../Images/Wellvet/IMG_0486.JPG';
+import ProImage29 from '../../Images/Wellvet/IMG_0488.JPG';
+import ProImage30 from '../../Images/Wellvet/IMG_0456.JPG';
+
+
+
+
+
 
 // import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Subscribe from '../../Home/subscribe';
@@ -75,6 +100,86 @@ const tilesData = [
         img: ProImage10,
         title: 'TheFabric',
     },
+    {
+        img: ProImage11,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage12,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage13,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage14,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage15,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage16,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage17,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage18,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage19,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage20,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage21,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage22,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage23,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage24,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage25,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage26,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage27,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage28,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage29,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage30,
+        title: 'TheFabric',
+    },
 
 
 ];
@@ -130,13 +235,12 @@ class WellVet extends Component {
                             <div className='container-flux'>
                                 <div style={styles.root}>
                                     <mat.GridList
-                                        cols={3}
+                                        cols={4}
                                         cellHeight={'auto'}
                                         padding={2}
                                         style={styles.gridList}
-                                        className='col-xs-12 col-md-11'
                                     >
-                                        <mat.Subheader>August 2017</mat.Subheader>
+                                        <mat.Subheader>2017</mat.Subheader>
                                         {tilesData.map((v, i) => (
                                             <mat.GridTile
                                                 key={i}
@@ -169,6 +273,8 @@ class WellVet extends Component {
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
+                            autoScrollBodyContent={true}
+                            contentStyle={{ width: '70%', maxWidth: 'none', }}
                         >
                             {this.tempArray.map((v,i)=>{
                                 return(

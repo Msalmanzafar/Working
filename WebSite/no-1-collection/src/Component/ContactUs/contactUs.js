@@ -90,10 +90,12 @@ class ContactUs extends Component {
     constructor(props) {
         super(props);
         this.Email = this.Email.bind(this);
+        
     }
     Email() {
         // console.log('emailllllll');
         this.setState({ open: true });
+        
     }
     
     handleClose = () => {

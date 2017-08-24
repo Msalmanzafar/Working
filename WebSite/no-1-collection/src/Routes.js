@@ -10,8 +10,7 @@ import SignUp from './Component/Authentication/signup';
 import LogIn from './Component/Authentication/login';
 import ContactUs from './Component/ContactUs/contactUs';
 import AboutNo1Collection from './Component/About/about';
-//products Gallery
-// import ProductGallery from './Component/Gallery/Gallery';
+
 import DoubleArz from './Component/Gallery/ProductGallery/Arz';
 import Exclusive from './Component/Gallery/ProductGallery/Exclusive';
 import JackWard from './Component/Gallery/ProductGallery/Jackward';
