@@ -65,10 +65,10 @@ class AboutNo1Collection extends Component {
                                         <h2 style={styles.heading}>Company Introduction</h2>
                                         <p style={styles.text}>
                                             <span style={styles.impo}>No.1 group of Companies</span> was incorporated on August 2005. <span style={styles.impo}>No.1 Collection </span>
-                                            provides a full range of furnishing fabric to fulfill the needs of all of its cutomers
-                                                being wholesale & retail clinets. Sinece then the Company hase made progress in widely diverse fields.
-                                                At present, the Company is trendstter in furnishing fabric industries and also has a remarkable presence
-                                                in Viscose, Jute, Chaneel, Jacqard, Embroidery, Organza, Titanic, Digital Prints.
+                                            provides a full range of furnishing fabric to fulfill the needs of all of its customers
+                                                being wholesale & retail clients. Science then the Company has made progress in widely diverse fields.
+                                                At present, the Company is trendsetter in furnishing fabric industries and also has a remarkable presence
+                                                in Viscose, Jute, Chaneel, Jacquard, Embroidery, Organza, Titanic, Digital Prints.
                                                 <br />
                                             Our Collection harmonize interior design, sophistication, and excitement, with quality, richness,
                                                 and choices, and fully addresses their fashion needs. Our supplier belongs to round the globe from China,
@@ -86,7 +86,7 @@ class AboutNo1Collection extends Component {
                                         <p style={styles.text}>
                                             The Vision of <span style={styles.impo}>No.1 Group of Companies</span> is to be the largest
                                                 and best retail & whole sale organization in fabric industry, through offering
-                                                the best products not only on time but also provide efficent service.
+                                                the best products not only on time but also provide efficient service.
                                             </p>
                                     </blockquote>
                                 </div>
@@ -105,8 +105,8 @@ class AboutNo1Collection extends Component {
                                             Our Mission
                                             </h2>
                                         <p style={styles.text}>
-                                            <span style={styles.impo}>No.1 Group of companies</span> is devoted to achieve consistent
-                                                improvement in the system of providing products & service to the cutomers and explore new
+                                            <span style={styles.impo}>No.1 Group of Companies</span> is devoted to achieve consistent
+                                                improvement in the system of providing products & service to the customers and explore new
                                                 markets to promote / expand sales of the Company through good governance and foster a sound
                                                 and dynamic team, so as to achieve optimum prices of products of the Company of sustainable
                                                 and equitable growth and prosperity of the Company.

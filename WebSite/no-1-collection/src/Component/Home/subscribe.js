@@ -70,7 +70,7 @@ class Subscribe extends Component {
                                 <div className='col-xs-12 col-md-6' style={styles.div1}>
                                     <div className="col-xs-3 col-md-3" style={styles.div2}>
                                         <blockquote style={{ border: 'none' }}>
-                                           <img src={Logo} alt="LOGO" style={styles.logos} />
+                                            <img src={Logo} alt="LOGO" style={styles.logos} />
                                         </blockquote>
                                     </div>
                                     <div className="col-xs-12 col-md-9" style={styles.div2}>
@@ -81,12 +81,17 @@ class Subscribe extends Component {
                                             <span style={styles.info}>
                                                 More Deals, Faster Access, Better Shopping!
                                             </span><br />
-                                            <mat.RaisedButton secondary={true} label="FREE DOWNLOAD" style={styles.download} />
+                                            <mat.RaisedButton
+                                                secondary={true}
+                                                label="FREE DOWNLOAD"
+                                                style={styles.download}
+                                                onClick={() => alert('Under Construction')}
+                                            />
                                             <FaApple className='apple' />
                                             <FaAndroid className='android' />
                                         </blockquote>
                                     </div>
-                                </div> 
+                                </div>
                                 <div className='col-xs-12  col-md-4 col-md-pull-1' style={styles.div3}>
                                     <blockquote style={{ border: 'none' }}>
                                         <sapn style={styles.heading}>
@@ -101,7 +106,11 @@ class Subscribe extends Component {
                                             type='email'
                                             style={styles.subInput}
                                         /><br />
-                                        <mat.RaisedButton secondary={true} label='Subscribe' />
+                                        <mat.RaisedButton
+                                            secondary={true}
+                                            label='Subscribe'
+                                            onClick={()=> alert('Under Construction')}
+                                        />
                                     </blockquote>
                                 </div>
                             </div>

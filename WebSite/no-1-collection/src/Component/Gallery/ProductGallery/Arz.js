@@ -2,21 +2,20 @@ import React, { Component } from 'react';
 import * as mat from 'material-ui';
 
 import ProImage1 from '../../Images/DoubleArz/IMG_0431.JPG';
-import ProImage2 from '../../Images/DoubleArz/IMG_0435.JPG';
-import ProImage3 from '../../Images/DoubleArz/IMG_0437.JPG';
-import ProImage4 from '../../Images/DoubleArz/IMG_0444.JPG';
-import ProImage5 from '../../Images/DoubleArz/IMG_0445.JPG';
-import ProImage6 from '../../Images/DoubleArz/IMG_0448.JPG';
-import ProImage7 from '../../Images/DoubleArz/IMG_0449.JPG';
-import ProImage8 from '../../Images/DoubleArz/IMG_0518.JPG';
-import ProImage9 from '../../Images/DoubleArz/IMG_0519.JPG';
-import ProImage10 from '../../Images/DoubleArz/IMG_0520.JPG';
-import ProImage11 from '../../Images/DoubleArz/IMG_0521.JPG';
-import ProImage12 from '../../Images/DoubleArz/IMG_0522.JPG';
-import ProImage13 from '../../Images/DoubleArz/IMG_0523.JPG';
-import ProImage14 from '../../Images/DoubleArz/IMG_0524.JPG';
-import ProImage15 from '../../Images/DoubleArz/IMG_0525.JPG';
-import ProImage16 from '../../Images/DoubleArz/IMG_0526.JPG';
+import ProImage2 from '../../Images/DoubleArz/IMG_0437.JPG';
+import ProImage3 from '../../Images/DoubleArz/IMG_0444.JPG';
+import ProImage4 from '../../Images/DoubleArz/IMG_0445.JPG';
+import ProImage5 from '../../Images/DoubleArz/IMG_0448.JPG';
+import ProImage6 from '../../Images/DoubleArz/IMG_0449.JPG';
+import ProImage7 from '../../Images/DoubleArz/IMG_0518.JPG';
+import ProImage8 from '../../Images/DoubleArz/IMG_0519.JPG';
+import ProImage9 from '../../Images/DoubleArz/IMG_0520.JPG';
+import ProImage10 from '../../Images/DoubleArz/IMG_0521.JPG';
+import ProImage11 from '../../Images/DoubleArz/IMG_0522.JPG';
+import ProImage12 from '../../Images/DoubleArz/IMG_0523.JPG';
+import ProImage13 from '../../Images/DoubleArz/IMG_0524.JPG';
+import ProImage14 from '../../Images/DoubleArz/IMG_0525.JPG';
+import ProImage15 from '../../Images/DoubleArz/IMG_0526.JPG';
 
 
 
@@ -103,10 +102,7 @@ const tilesData = [
         img: ProImage15,
         title: 'TheFabric',
     },
-    {
-        img: ProImage16,
-        title: 'TheFabric',
-    },
+    
 ];
 
 class DoubleArz extends Component {

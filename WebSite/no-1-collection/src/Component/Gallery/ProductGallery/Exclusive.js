@@ -14,6 +14,41 @@ import ProImage10 from '../../Images/Exculsive/IMG_0417.JPG';
 import ProImage11 from '../../Images/Exculsive/IMG_0418.JPG';
 import ProImage12 from '../../Images/Exculsive/IMG_0419.JPG';
 import ProImage13 from '../../Images/Exculsive/IMG_0420.JPG';
+// style1
+import ProImage14 from '../../Images/Exculsive/IMG_0548.JPG';
+import ProImage15 from '../../Images/Exculsive/IMG_0549.JPG';
+import ProImage16 from '../../Images/Exculsive/IMG_0550.JPG';
+import ProImage17 from '../../Images/Exculsive/IMG_0551.JPG';
+// style2
+import ProImage18 from '../../Images/Exculsive/IMG_0552.JPG';
+import ProImage19 from '../../Images/Exculsive/IMG_0553.JPG';
+import ProImage20 from '../../Images/Exculsive/IMG_0554.JPG';
+import ProImage21 from '../../Images/Exculsive/IMG_0555.JPG';
+// style3
+import ProImage22 from '../../Images/Exculsive/IMG_0556.JPG';
+import ProImage23 from '../../Images/Exculsive/IMG_0558.JPG';
+import ProImage24 from '../../Images/Exculsive/IMG_0559.JPG';
+import ProImage25 from '../../Images/Exculsive/IMG_0560.JPG';
+// style4
+import ProImage26 from '../../Images/Exculsive/IMG_0561.JPG';
+import ProImage27 from '../../Images/Exculsive/IMG_0562.JPG';
+import ProImage28 from '../../Images/Exculsive/IMG_0563.JPG';
+import ProImage281 from '../../Images/Exculsive/IMG_0563.0.JPG';
+// style5
+import ProImage29 from '../../Images/Exculsive/IMG_0564.JPG';
+import ProImage30 from '../../Images/Exculsive/IMG_0565.JPG';
+import ProImage31 from '../../Images/Exculsive/IMG_0566.JPG';
+import ProImage311 from '../../Images/Exculsive/IMG_0566.0.JPG';
+// style6
+import ProImage32 from '../../Images/Exculsive/IMG_0567.JPG';
+import ProImage33 from '../../Images/Exculsive/IMG_0568.JPG';
+import ProImage34 from '../../Images/Exculsive/IMG_0569.JPG';
+import ProImage35 from '../../Images/Exculsive/IMG_0570.JPG';
+
+import ProImage36 from '../../Images/Exculsive/IMG_0595.JPG';
+
+
+
 
 
 // import StarBorder from 'material-ui/svg-icons/toggle/star-border';
@@ -87,6 +122,106 @@ const tilesData = [
     },
     {
         img: ProImage13,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage14,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage15,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage16,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage17,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage18,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage19,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage20,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage21,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage22,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage23,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage24,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage25,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage26,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage27,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage28,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage281,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage29,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage30,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage31,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage311,
+        title: 'TheFabric1',
+    },
+    {
+        img: ProImage32,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage33,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage34,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage35,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage36,
         title: 'TheFabric',
     },
 ];

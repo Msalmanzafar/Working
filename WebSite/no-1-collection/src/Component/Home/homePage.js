@@ -74,7 +74,7 @@ class Home extends Component {
                     <h2 className="text-center h1" style={styles.wel}>
                         Welcome To <span>No.1 Collection</span>
                     </h2>
-                    <h5 className="text-center h4">LogIn for the best experience</h5>
+                    <h5 className="text-center h4">Login for the best experience</h5>
                 </div>
                 <Subscribe />
                 <FooterOfCollection />

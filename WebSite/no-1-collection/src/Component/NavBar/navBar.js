@@ -111,7 +111,7 @@ class NavBar extends Component {
                                             <ul className="dropdown-menu child">
                                                 <li><a id="link" >
                                                     <img style={{ width: 40, marginRight: 6 }} src={Logo1} alt='FebricStore' />
-                                                    The Febric Store</a>
+                                                    The Fabric Store</a>
                                                 </li>
                                                 <li>
                                                     <a id="link" >
@@ -138,12 +138,12 @@ class NavBar extends Component {
                                                 </li>
                                                 <li>
                                                     <a id="link" onClick={this.Wellvet}>
-                                                        Wellvet
+                                                        Vellvet
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a id="link" onClick={this.Jackward}>
-                                                        Jackward
+                                                        Jacquard
                                                     </a>
                                                 </li>
                                                 <li>
