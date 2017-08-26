@@ -125,6 +125,12 @@ const tilesData = [
         title: 'TheFabric',
     },
     {
+        img: ProImage36,
+        title: 'TheFabric',
+    },
+];
+const tilesData1 = [
+    {
         img: ProImage14,
         title: 'TheFabric',
     },
@@ -140,6 +146,8 @@ const tilesData = [
         img: ProImage17,
         title: 'TheFabric',
     },
+]
+const tilesData2 = [
     {
         img: ProImage18,
         title: 'TheFabric',
@@ -156,6 +164,8 @@ const tilesData = [
         img: ProImage21,
         title: 'TheFabric',
     },
+]
+const tilesData3 = [
     {
         img: ProImage22,
         title: 'TheFabric',
@@ -172,6 +182,8 @@ const tilesData = [
         img: ProImage25,
         title: 'TheFabric',
     },
+]
+const tilesData4 = [
     {
         img: ProImage26,
         title: 'TheFabric',
@@ -188,6 +200,8 @@ const tilesData = [
         img: ProImage281,
         title: 'TheFabric',
     },
+]
+const tilesData5 = [
     {
         img: ProImage29,
         title: 'TheFabric',
@@ -204,6 +218,8 @@ const tilesData = [
         img: ProImage311,
         title: 'TheFabric1',
     },
+]
+const tilesData6 = [
     {
         img: ProImage32,
         title: 'TheFabric',
@@ -220,13 +236,7 @@ const tilesData = [
         img: ProImage35,
         title: 'TheFabric',
     },
-    {
-        img: ProImage36,
-        title: 'TheFabric',
-    },
-];
-
-
+]
 
 class Exclusive extends Component {
     constructor(props) {
@@ -237,7 +247,7 @@ class Exclusive extends Component {
         }
     }
     BigImage = []
-    stars = (key) => {
+    BigImages = (key) => {
         // console.log("Big Images", key);
         this.BigImage = [];
         this.setState({ open: true });
@@ -247,7 +257,66 @@ class Exclusive extends Component {
             }
         }
     }
-
+    BigImages1 = (key) => {
+        // console.log("Big Images", key);
+        this.BigImage = [];
+        this.setState({ open: true });
+        for (let i = 0; i < tilesData1.length; i++) {
+            if (key === i) {
+                this.BigImage = this.BigImage.concat(tilesData1[i]);
+            }
+        }
+    }
+    BigImages2 = (key) => {
+        // console.log("Big Images", key);
+        this.BigImage = [];
+        this.setState({ open: true });
+        for (let i = 0; i < tilesData2.length; i++) {
+            if (key === i) {
+                this.BigImage = this.BigImage.concat(tilesData2[i]);
+            }
+        }
+    }
+    BigImages3 = (key) => {
+        // console.log("Big Images", key);
+        this.BigImage = [];
+        this.setState({ open: true });
+        for (let i = 0; i < tilesData3.length; i++) {
+            if (key === i) {
+                this.BigImage = this.BigImage.concat(tilesData3[i]);
+            }
+        }
+    }
+    BigImages4 = (key) => {
+        // console.log("Big Images", key);
+        this.BigImage = [];
+        this.setState({ open: true });
+        for (let i = 0; i < tilesData4.length; i++) {
+            if (key === i) {
+                this.BigImage = this.BigImage.concat(tilesData4[i]);
+            }
+        }
+    }
+    BigImages5 = (key) => {
+        // console.log("Big Images", key);
+        this.BigImage = [];
+        this.setState({ open: true });
+        for (let i = 0; i < tilesData5.length; i++) {
+            if (key === i) {
+                this.BigImage = this.BigImage.concat(tilesData5[i]);
+            }
+        }
+    }
+    BigImages6 = (key) => {
+        // console.log("Big Images", key);
+        this.BigImage = [];
+        this.setState({ open: true });
+        for (let i = 0; i < tilesData6.length; i++) {
+            if (key === i) {
+                this.BigImage = this.BigImage.concat(tilesData6[i]);
+            }
+        }
+    }
     handleClose = () => {
         this.setState({ open: false });
     };
@@ -284,7 +353,7 @@ class Exclusive extends Component {
                                         padding={2}
                                         style={styles.gridList}
                                     >
-                                        <mat.Subheader>August 2017</mat.Subheader>
+                                        <mat.Subheader>2017</mat.Subheader>
                                         {tilesData.map((v, i) => (
                                             <mat.GridTile
                                                 key={i}
@@ -294,7 +363,7 @@ class Exclusive extends Component {
                                                     <mat.FlatButton
                                                         label='View'
                                                         labelStyle={{ color: 'white' }}
-                                                        onClick={this.stars.bind(this, i)}
+                                                        onClick={this.BigImages.bind(this, i)}
                                                     />
 
                                                 }
@@ -302,7 +371,114 @@ class Exclusive extends Component {
                                                 <img src={v.img} style={{ width: '100%' }} alt='img' />
                                             </mat.GridTile>
                                         ))}
+                                        <mat.Subheader>Complete Room Design</mat.Subheader>
+                                        {tilesData1.map((v, i) => (
+                                            <mat.GridTile
+                                                key={i}
+                                                title={v.title}
+                                                titleStyle={{ textAlign: 'left' }}
+                                                actionIcon={
+                                                    <mat.FlatButton
+                                                        label='View'
+                                                        labelStyle={{ color: 'white' }}
+                                                        onClick={this.BigImages1.bind(this, i)}
+                                                    />
 
+                                                }
+                                            >
+                                                <img src={v.img} style={{ width: '100%' }} alt='img' />
+                                            </mat.GridTile>
+                                        ))}
+                                        <mat.Subheader>Complete Room Design</mat.Subheader>
+                                        {tilesData2.map((v, i) => (
+                                            <mat.GridTile
+                                                key={i}
+                                                title={v.title}
+                                                titleStyle={{ textAlign: 'left' }}
+                                                actionIcon={
+                                                    <mat.FlatButton
+                                                        label='View'
+                                                        labelStyle={{ color: 'white' }}
+                                                        onClick={this.BigImages2.bind(this, i)}
+                                                    />
+
+                                                }
+                                            >
+                                                <img src={v.img} style={{ width: '100%' }} alt='img' />
+                                            </mat.GridTile>
+                                        ))}
+                                        <mat.Subheader>Complete Room Design</mat.Subheader>
+                                        {tilesData3.map((v, i) => (
+                                            <mat.GridTile
+                                                key={i}
+                                                title={v.title}
+                                                titleStyle={{ textAlign: 'left' }}
+                                                actionIcon={
+                                                    <mat.FlatButton
+                                                        label='View'
+                                                        labelStyle={{ color: 'white' }}
+                                                        onClick={this.BigImages3.bind(this, i)}
+                                                    />
+
+                                                }
+                                            >
+                                                <img src={v.img} style={{ width: '100%' }} alt='img' />
+                                            </mat.GridTile>
+                                        ))}
+                                        <mat.Subheader>Complete Room Design</mat.Subheader>
+                                        {tilesData4.map((v, i) => (
+                                            <mat.GridTile
+                                                key={i}
+                                                title={v.title}
+                                                titleStyle={{ textAlign: 'left' }}
+                                                actionIcon={
+                                                    <mat.FlatButton
+                                                        label='View'
+                                                        labelStyle={{ color: 'white' }}
+                                                        onClick={this.BigImages4.bind(this, i)}
+                                                    />
+
+                                                }
+                                            >
+                                                <img src={v.img} style={{ width: '100%' }} alt='img' />
+                                            </mat.GridTile>
+                                        ))}
+                                        <mat.Subheader>Complete Room Design</mat.Subheader>
+                                        {tilesData5.map((v, i) => (
+                                            <mat.GridTile
+                                                key={i}
+                                                title={v.title}
+                                                titleStyle={{ textAlign: 'left' }}
+                                                actionIcon={
+                                                    <mat.FlatButton
+                                                        label='View'
+                                                        labelStyle={{ color: 'white' }}
+                                                        onClick={this.BigImages5.bind(this, i)}
+                                                    />
+
+                                                }
+                                            >
+                                                <img src={v.img} style={{ width: '100%' }} alt='img' />
+                                            </mat.GridTile>
+                                        ))}
+                                        <mat.Subheader>Complete Room Design</mat.Subheader>
+                                        {tilesData6.map((v, i) => (
+                                            <mat.GridTile
+                                                key={i}
+                                                title={v.title}
+                                                titleStyle={{ textAlign: 'left' }}
+                                                actionIcon={
+                                                    <mat.FlatButton
+                                                        label='View'
+                                                        labelStyle={{ color: 'white' }}
+                                                        onClick={this.BigImages6.bind(this, i)}
+                                                    />
+
+                                                }
+                                            >
+                                                <img src={v.img} style={{ width: '100%' }} alt='img' />
+                                            </mat.GridTile>
+                                        ))}
                                     </mat.GridList>
                                 </div>
                             </div>
@@ -321,8 +497,8 @@ class Exclusive extends Component {
                             contentStyle={{ width: '70%', maxWidth: 'none', }}
                         >
                             {this.BigImage.map((v, i) => {
-                                return(
-                                <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
+                                return (
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
                                 )
                             })}
                         </mat.Dialog>

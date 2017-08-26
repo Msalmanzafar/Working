@@ -19,6 +19,12 @@ import ProImage15 from '../../Images/Others/IMG_0586.JPG';
 import ProImage16 from '../../Images/Others/IMG_0587.JPG';
 import ProImage17 from '../../Images/Others/IMG_0588.JPG';
 import ProImage18 from '../../Images/Others/IMG_0589.JPG';
+import ProImage19 from '../../Images/Others/IMG_0539.JPG';
+import ProImage20 from '../../Images/Others/IMG_0540.JPG';
+import ProImage21 from '../../Images/Others/IMG_0541.JPG';
+import ProImage22 from '../../Images/Others/IMG_0542.JPG';
+import ProImage23 from '../../Images/Others/IMG_0543.JPG';
+
 
 
 // import StarBorder from 'material-ui/svg-icons/toggle/star-border';
@@ -117,6 +123,27 @@ const tilesData = [
         img: ProImage18,
         title: 'TheFabric',
     },
+    {
+        img: ProImage19,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage20,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage21,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage22,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage23,
+        title: 'TheFabric',
+    },
+
 
 ];
 
@@ -207,14 +234,14 @@ class Others extends Component {
                             title="Big Image"
                             actions={actions}
                             modal={false}
-                            contentStyle={{width: '70%',maxWidth: 'none',}}
+                            contentStyle={{ width: '70%', maxWidth: 'none', }}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                             autoScrollBodyContent={true}
                         >
                             {this.tempArray.map((v, i) => {
                                 return (
-                                    <img key={i} src={v.img} alt="img" style={{ width: '100%'}} />
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
                                 )
                             })}
                         </mat.Dialog>
