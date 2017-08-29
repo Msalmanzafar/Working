@@ -10,6 +10,7 @@ import SignUp from './Component/Authentication/signup';
 import LogIn from './Component/Authentication/login';
 import ContactUs from './Component/ContactUs/contactUs';
 import AboutNo1Collection from './Component/About/about';
+import TheFabricStore from './Component/Brandz/thefebric'
 
 import DoubleArz from './Component/Gallery/ProductGallery/Arz';
 import Exclusive from './Component/Gallery/ProductGallery/Exclusive';
@@ -48,6 +49,7 @@ export default class Routes extends Component {
                 <Router history={browserHistory}>
                     <Route path="/" component={NavBar}>
                         <IndexRoute component={Home} />
+                        <Route path='/thefabric' component={TheFabricStore} />
                         <Route path='/signup' component={SignUp} />
                         <Route path='/login' component={LogIn} />
                         <Route path='/contactus' component={ContactUs} />
@@ -59,7 +61,7 @@ export default class Routes extends Component {
                         <Route path='/jute' component={Jute} />
                         <Route path='/exclusive' component={Exclusive} />
                         <Route path='/organza' component={Organza} />
-                         <Route path='/others' component={Others} /> 
+                        <Route path='/others' component={Others} />
                     </Route>
                 </Router>
             </MuiThemeProvider>

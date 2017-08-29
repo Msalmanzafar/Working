@@ -28,7 +28,7 @@ const styles = {
         justifyContent: 'space-around',
     },
     gridList: {
-        height: 550,
+        height: 'auto',
         overflowY: 'auto',
     },
 }
@@ -124,7 +124,7 @@ class JackWard extends Component {
                         <mat.AppBar
                             titleStyle={{ fontSize: 28, textShadow: '2px 2px 5px black', fontWeight: 500, textAlign: 'left' }}
                             showMenuIconButton={false}
-                            title='Jackward'
+                            title='Jacquard'
                             style={{ borderRadius: '5px 5px 0 0', backgroundColor: '#9f0500' }}
                         />
                         <mat.CardText>
@@ -132,11 +132,11 @@ class JackWard extends Component {
                                 <div style={styles.root}>
                                     <mat.GridList
                                         cols={4}
-                                        cellHeight={'auto'}
+                                        cellHeight={200}
                                         padding={2}
                                         style={styles.gridList}
                                     >
-                                        <mat.Subheader>August 2017</mat.Subheader>
+                                        <mat.Subheader>2017</mat.Subheader>
                                         {tilesData.map((v, i) => (
                                             <mat.GridTile
                                                 key={i}
@@ -164,7 +164,6 @@ class JackWard extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Big Image"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
@@ -174,7 +173,7 @@ class JackWard extends Component {
                         >
                             {this.tempArray.map((v, i) => {
                                 return (
-                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%',height: 430 }} />
                                 )
                             })}
                         </mat.Dialog>

@@ -66,7 +66,7 @@ const styles = {
         justifyContent: 'space-around',
     },
     gridList: {
-        height: 550,
+        height: 'auto',
         overflowY: 'auto',
     },
 }
@@ -488,17 +488,16 @@ class Exclusive extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Big Image"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                             autoScrollBodyContent={true}
-                            contentStyle={{ width: '70%', maxWidth: 'none', }}
+                            contentStyle={{ width: '65%', maxWidth: 'none', }}
                         >
                             {this.BigImage.map((v, i) => {
                                 return (
-                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%',height: 430 }} />
                                 )
                             })}
                         </mat.Dialog>

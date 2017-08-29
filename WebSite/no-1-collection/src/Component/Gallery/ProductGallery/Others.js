@@ -24,10 +24,18 @@ import ProImage20 from '../../Images/Others/IMG_0540.JPG';
 import ProImage21 from '../../Images/Others/IMG_0541.JPG';
 import ProImage22 from '../../Images/Others/IMG_0542.JPG';
 import ProImage23 from '../../Images/Others/IMG_0543.JPG';
+import ProImage24 from '../../Images/Others/IMG_0629.JPG';
+import ProImage25 from '../../Images/Others/IMG_0632.JPG';
+import ProImage26 from '../../Images/Others/IMG_0633.JPG';
+import ProImage27 from '../../Images/Others/IMG_0634.JPG';
+import ProImage28 from '../../Images/Others/IMG_0635.JPG';
+import ProImage29 from '../../Images/Others/IMG_0636.JPG';
+import ProImage30 from '../../Images/Others/IMG_0637.JPG';
+import ProImage31 from '../../Images/Others/IMG_0638.JPG';
+import ProImage32 from '../../Images/Others/IMG_0639.JPG';
 
 
 
-// import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Subscribe from '../../Home/subscribe';
 import FooterOfCollection from '../../Home/footer';
 
@@ -42,7 +50,7 @@ const styles = {
         justifyContent: 'space-around',
     },
     gridList: {
-        height: 550,
+        height: 'auto',
         overflowY: 'auto',
     },
 }
@@ -143,8 +151,42 @@ const tilesData = [
         img: ProImage23,
         title: 'TheFabric',
     },
-
-
+    {
+        img: ProImage24,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage25,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage26,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage27,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage28,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage29,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage30,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage31,
+        title: 'TheFabric',
+    },
+    {
+        img: ProImage32,
+        title: 'TheFabric',
+    },
 ];
 
 class Others extends Component {
@@ -199,7 +241,7 @@ class Others extends Component {
                                 <div style={styles.root}>
                                     <mat.GridList
                                         cols={4}
-                                        cellHeight={'auto'}
+                                        cellHeight={200}
                                         padding={2}
                                         style={styles.gridList}
                                     >
@@ -231,7 +273,6 @@ class Others extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Big Image"
                             actions={actions}
                             modal={false}
                             contentStyle={{ width: '70%', maxWidth: 'none', }}
@@ -241,7 +282,7 @@ class Others extends Component {
                         >
                             {this.tempArray.map((v, i) => {
                                 return (
-                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%',height: 430}} />
                                 )
                             })}
                         </mat.Dialog>

@@ -6,6 +6,8 @@ const ActionTypes = {
     SncakBar: 'SncakBar',
     LoadingAction: 'LoadingAction',
     VisitedAction: 'VisitedAction',
+
+    MoreDataFeatch: 'MoreDataFeatch',
 }
 
 export default ActionTypes;

@@ -142,7 +142,7 @@ class LogIn extends Component {
                                     <div className='text-left'>
                                         {(!Loading) ? (
                                             <mat.RaisedButton
-                                                label="Sign Up"
+                                                label="Log In"
                                                 secondary={true}
                                                 onClick={this.logIn}
                                                 type="button"

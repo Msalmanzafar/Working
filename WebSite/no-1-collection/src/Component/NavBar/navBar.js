@@ -8,6 +8,8 @@ import logo from '../Images/logo1.png'
 import Logo1 from '../Images/The-Fabric-Store.png';
 import Logo2 from '../Images/Trendz.png';
 import Logo3 from '../Images/Vintage.png';
+// import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+
 
 
 class NavBar extends Component {
@@ -16,7 +18,7 @@ class NavBar extends Component {
         this.Home = this.Home.bind(this);
         this.Contact_Us = this.Contact_Us.bind(this);
         this.About = this.About.bind(this);
-
+        this.thefebric = this.thefebric.bind(this);
         this.Viscose = this.Viscose.bind(this);
         this.Wellvet = this.Wellvet.bind(this);
         this.Jackward = this.Jackward.bind(this);
@@ -68,6 +70,9 @@ class NavBar extends Component {
     About() {
         browserHistory.push('/about');
     }
+    thefebric(){
+        browserHistory.push('/thefabric');
+    }
     SignUp() {
         browserHistory.push('/signup');
     }
@@ -88,7 +93,8 @@ class NavBar extends Component {
             <div>
                 <div>
                     <div>
-                        <nav className="navbar header " >
+                       
+                         <nav className="navbar header navbar-fixed-top" >
                             <div className="container">
                                 <div className="navbar-header">
                                     <button type="button" className="navbar-toggle " data-toggle="collapse" data-target="#navbar-collapse">
@@ -96,8 +102,8 @@ class NavBar extends Component {
                                         <span className="icon-color icon-bar"></span>
                                         <span className="icon-color icon-bar"></span>
                                     </button>
-                                    <span className="navbar-brand" id="logo">
-                                        <img src={logo} alt="logo" style={{width:70, marginTop: -3}}/>
+                                    <span className="navbar-brand" id="logo" style={{ marginTop: -3 }}>
+                                        <img src={logo} alt="logo" style={{ width: 70 }} />
                                     </span>
                                 </div>
                                 <div className="collapse navbar-collapse text-left" id="navbar-collapse">
@@ -109,7 +115,7 @@ class NavBar extends Component {
                                                 <span className="caret"></span>
                                             </a>
                                             <ul className="dropdown-menu child">
-                                                <li><a id="link" >
+                                                <li><a id="link" onClick={this.thefebric}>
                                                     <img style={{ width: 40, marginRight: 6 }} src={Logo1} alt='FebricStore' />
                                                     The Fabric Store</a>
                                                 </li>
@@ -166,11 +172,11 @@ class NavBar extends Component {
                                                         Organza
                                                     </a>
                                                 </li>
-                                                 <li>
+                                                <li>
                                                     <a id="link" onClick={this.Others}>
                                                         Others
                                                     </a>
-                                                </li> 
+                                                </li>
                                             </ul>
                                         </li>
                                         <li><a id="link" onClick={this.Contact_Us}>Contact Us</a></li>
@@ -196,7 +202,7 @@ class NavBar extends Component {
 
                                 </div>
                             </div>
-                        </nav>
+                        </nav> 
                     </div>
                     <div>
                         <mat.Snackbar
@@ -206,7 +212,9 @@ class NavBar extends Component {
                         />
                     </div>
                 </div>
-                {this.props.children}
+                <div style={{ marginTop: 90 }}>
+                    {this.props.children}
+                </div>
             </div>
         );
     }

@@ -3,19 +3,21 @@
 // main page loading
 var myVar;
 
-$(window).on("load",function(){
+$(window).on("load", function () {
     $("#loader").hide("slow");
-    $("#myDiv").css("display","block");
+    $("#myDiv").css("display", "block");
+});
+$(document).on('click', '.navbar-collapse.in', function (e) {
+    if ($(e.target).is('a')) {
+        $(this).collapse('hide');
+    }
 });
 
-// function myFunction() {
-//     myVar = setTimeout(showPage, 3000);
-// }
+// $(document).ready(function(){
+//     // Activate carousel
+//     $("#myCarousel").carousel();
+// });
 
-// function showPage() {
-//     document.getElementById("loader").style.display = "none";
-//     document.getElementById("myDiv").style.display = "block";
-// }
 //--------------------------------------------------------------------------------------//
 
 // main page top button 

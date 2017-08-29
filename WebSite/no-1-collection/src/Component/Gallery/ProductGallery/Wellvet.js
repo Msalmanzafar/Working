@@ -52,7 +52,7 @@ const styles = {
         justifyContent: 'space-around',
     },
     gridList: {
-        height: 550,
+        height: 'auto',
         overflowY: 'auto',
     },
 }
@@ -236,7 +236,7 @@ class WellVet extends Component {
                                 <div style={styles.root}>
                                     <mat.GridList
                                         cols={4}
-                                        cellHeight={'auto'}
+                                        cellHeight={200}
                                         padding={2}
                                         style={styles.gridList}
                                     >
@@ -268,7 +268,6 @@ class WellVet extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Big Image"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
@@ -278,7 +277,7 @@ class WellVet extends Component {
                         >
                             {this.tempArray.map((v,i)=>{
                                 return(
-                                    <img key={i} src={v.img} alt="img" style={{width: '100%'}}/>
+                                    <img key={i} src={v.img} alt="img" style={{width: '100%',height: 430}}/>
                                 )
                             })}
                         </mat.Dialog>

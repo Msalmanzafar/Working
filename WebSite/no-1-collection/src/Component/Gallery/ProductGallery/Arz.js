@@ -17,9 +17,6 @@ import ProImage13 from '../../Images/DoubleArz/IMG_0524.JPG';
 import ProImage14 from '../../Images/DoubleArz/IMG_0525.JPG';
 import ProImage15 from '../../Images/DoubleArz/IMG_0526.JPG';
 
-
-
-// import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Subscribe from '../../Home/subscribe';
 import FooterOfCollection from '../../Home/footer';
 
@@ -34,7 +31,7 @@ const styles = {
         justifyContent: 'space-around',
     },
     gridList: {
-        height: 550,
+        height: 'auto',
         overflowY: 'auto',
     },
 }
@@ -102,7 +99,7 @@ const tilesData = [
         img: ProImage15,
         title: 'TheFabric',
     },
-    
+
 ];
 
 class DoubleArz extends Component {
@@ -189,17 +186,17 @@ class DoubleArz extends Component {
                 <div>
                     <div>
                         <mat.Dialog
-                            title="Big Image"
                             actions={actions}
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                             autoScrollBodyContent={true}
-                            contentStyle={{ width: '70%', maxWidth: 'none', }}
-                        >
+                            contentStyle={{ width: '65%', maxWidth: 'none', }}
+                        >   
+                            
                             {this.tempArray.map((v, i) => {
                                 return (
-                                    <img key={i} src={v.img} alt="img" style={{ width: '100%' }} />
+                                    <img key={i} src={v.img} alt="img" style={{ width: '100%',height: 430 }} />
                                 )
                             })}
                         </mat.Dialog>
