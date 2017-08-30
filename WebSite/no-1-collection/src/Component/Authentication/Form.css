@@ -23,7 +23,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-repeat: no-repeat;
      background-position: center center; 
     position: relative;
-    top: -20px;
+    top: -30px;
     bottom: 0px;
     height: 100vh;
     z-index: 1;
