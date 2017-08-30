@@ -293,8 +293,6 @@ class SignUp extends Component {
                     />
                 </div>
 
-                <br />
-                <br />
                 <div style={{ position: 'relative' ,marginTop: -60}}>
                     <Subscribe />
                 </div>

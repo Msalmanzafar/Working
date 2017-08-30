@@ -8,6 +8,9 @@ const ActionTypes = {
     VisitedAction: 'VisitedAction',
 
     MoreDataFeatch: 'MoreDataFeatch',
+
+    AdminDisptch: 'AdminDisptch',
+    loaders: 'loaders'
 }
 
 export default ActionTypes;

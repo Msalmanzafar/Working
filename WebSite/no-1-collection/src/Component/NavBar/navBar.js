@@ -3,12 +3,12 @@ import { browserHistory } from 'react-router';
 import './styles.css';
 import * as mat from 'material-ui';
 import { LogOutAction } from '../../Actions/AuthActions';
+import { AdminAction } from '../../Actions/AdminAction';
 import { connect } from 'react-redux';
 import logo from '../Images/logo1.png'
 import Logo1 from '../Images/The-Fabric-Store.png';
 import Logo2 from '../Images/Trendz.png';
 import Logo3 from '../Images/Vintage.png';
-// import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 
 
 
@@ -19,6 +19,8 @@ class NavBar extends Component {
         this.Contact_Us = this.Contact_Us.bind(this);
         this.About = this.About.bind(this);
         this.thefebric = this.thefebric.bind(this);
+        this.trendzStore = this.trendzStore.bind(this);
+        this.Vintage = this.Vintage.bind(this);
         this.Viscose = this.Viscose.bind(this);
         this.Wellvet = this.Wellvet.bind(this);
         this.Jackward = this.Jackward.bind(this);
@@ -27,14 +29,15 @@ class NavBar extends Component {
         this.Exclusive = this.Exclusive.bind(this);
         this.Organza = this.Organza.bind(this);
         this.Others = this.Others.bind(this);
-
-
+        this.AdminPage = this.AdminPage.bind(this);
 
         this.SignUp = this.SignUp.bind(this);
         this.LogIn = this.LogIn.bind(this);
         this.LogOut = this.LogOut.bind(this);
-
-
+    }
+    AdminPage() {
+        this.props.AdminAction()
+        browserHistory.push('/admin');
     }
     Home() {
         browserHistory.push('/');
@@ -70,8 +73,14 @@ class NavBar extends Component {
     About() {
         browserHistory.push('/about');
     }
-    thefebric(){
+    thefebric() {
         browserHistory.push('/thefabric');
+    }
+    trendzStore() {
+        browserHistory.push('/trendz');
+    }
+    Vintage() {
+        alert("Fabric Available at all leading Outlets.")
     }
     SignUp() {
         browserHistory.push('/signup');
@@ -86,15 +95,15 @@ class NavBar extends Component {
         const {
             auth,
             SnackBars,
-            // users,
+            users,
         } = this.props;
         // console.log('user---',users.email)
         return (
             <div>
                 <div>
                     <div>
-                       
-                         <nav className="navbar header navbar-fixed-top" >
+
+                        <nav className="navbar header navbar-fixed-top" >
                             <div className="container">
                                 <div className="navbar-header">
                                     <button type="button" className="navbar-toggle " data-toggle="collapse" data-target="#navbar-collapse">
@@ -102,7 +111,7 @@ class NavBar extends Component {
                                         <span className="icon-color icon-bar"></span>
                                         <span className="icon-color icon-bar"></span>
                                     </button>
-                                    <span className="navbar-brand" id="logo" style={{ marginTop: -3 }}>
+                                    <span className="navbar-brand" id="logo" style={{ marginTop: -3, marginBottom: 10 }}>
                                         <img src={logo} alt="logo" style={{ width: 70 }} />
                                     </span>
                                 </div>
@@ -115,17 +124,18 @@ class NavBar extends Component {
                                                 <span className="caret"></span>
                                             </a>
                                             <ul className="dropdown-menu child">
-                                                <li><a id="link" onClick={this.thefebric}>
-                                                    <img style={{ width: 40, marginRight: 6 }} src={Logo1} alt='FebricStore' />
-                                                    The Fabric Store</a>
+                                                <li>
+                                                    <a id="link" onClick={this.thefebric}>
+                                                        <img style={{ width: 40, marginRight: 6 }} src={Logo1} alt='FebricStore' />
+                                                        The Fabric Store</a>
                                                 </li>
                                                 <li>
-                                                    <a id="link" >
+                                                    <a id="link" onClick={this.trendzStore}>
                                                         <img style={{ width: 40, marginRight: 6 }} src={Logo2} alt="Trendz" />
                                                         Trendz</a>
                                                 </li>
                                                 <li>
-                                                    <a id="link" >
+                                                    <a id="link" onClick={this.Vintage}>
                                                         <img style={{ width: 40, marginRight: 6 }} src={Logo3} alt="Vintage" />
                                                         Vintage</a>
                                                 </li>
@@ -191,18 +201,29 @@ class NavBar extends Component {
 
                                         </ul>
                                     ) : (
-                                            <ul className="nav navbar-nav navbar-right">
-                                                <li><a id="link">Setting</a></li>
-                                                <li><a id="link" onClick={this.LogOut}>
-                                                    <span style={{ marginLeft: 8 }} className="glyphicon glyphicon-log-out"></span> Log Out</a>
-                                                </li>
-                                            </ul>
+                                            <span>
+                                                {(users.email === 'hr.no1collection@gmail.com') ? (
+                                                    <ul className="nav navbar-nav navbar-right">
+                                                        <li><a id="link" onClick={this.AdminPage}>Customers</a></li>
+                                                        <li><a id="link" onClick={this.LogOut}>
+                                                            <span style={{ marginLeft: 8 }} className="glyphicon glyphicon-log-out"></span> Log Out</a>
+                                                        </li>
+                                                    </ul>
+                                                ) : (
+                                                        <ul className="nav navbar-nav navbar-right">
+                                                            <li><a id="link">Setting</a></li>
+                                                            <li><a id="link" onClick={this.LogOut}>
+                                                                <span style={{ marginLeft: 8 }} className="glyphicon glyphicon-log-out"></span> Log Out</a>
+                                                            </li>
+                                                        </ul>
+                                                    )}
+                                            </span>
 
                                         )}
 
                                 </div>
                             </div>
-                        </nav> 
+                        </nav>
                     </div>
                     <div>
                         <mat.Snackbar
@@ -224,13 +245,16 @@ const mapStateToProps = (state) => {
     return {
         auth: state.AuthReducer.authLogOut,
         SnackBars: state.AuthReducer.Visited,
-        // users: state.AuthReducer.authSignIn,
+        users: state.AuthReducer.authSignIn,
     };
 }
 const mapDispatchToProps = (dispatch) => {
     return {
         LogOutAction: () => {
             dispatch(LogOutAction());
+        },
+        AdminAction: () => {
+            dispatch(AdminAction())
         }
     }
 }

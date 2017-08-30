@@ -169,8 +169,6 @@ class LogIn extends Component {
                         bodyStyle={{ backgroundColor: '#b71c1c', color: '#ffffff' }}
                     />
                 </div>
-                <br />
-                <br />
                 <div style={{ position: 'relative', marginTop: -60 }}>
                     <Subscribe />
                 </div>

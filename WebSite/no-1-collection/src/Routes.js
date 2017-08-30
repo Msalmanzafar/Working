@@ -10,7 +10,9 @@ import SignUp from './Component/Authentication/signup';
 import LogIn from './Component/Authentication/login';
 import ContactUs from './Component/ContactUs/contactUs';
 import AboutNo1Collection from './Component/About/about';
-import TheFabricStore from './Component/Brandz/thefebric'
+import TheFabricStore from './Component/Brandz/thefebric';
+import TrendzStore from './Component/Brandz/trendz';
+import AdminPanel from './Component/Admin/admin';
 
 import DoubleArz from './Component/Gallery/ProductGallery/Arz';
 import Exclusive from './Component/Gallery/ProductGallery/Exclusive';
@@ -50,6 +52,8 @@ export default class Routes extends Component {
                     <Route path="/" component={NavBar}>
                         <IndexRoute component={Home} />
                         <Route path='/thefabric' component={TheFabricStore} />
+                        <Route path='/trendz' component={TrendzStore} />
+                        <Route path='/admin' component={AdminPanel} />
                         <Route path='/signup' component={SignUp} />
                         <Route path='/login' component={LogIn} />
                         <Route path='/contactus' component={ContactUs} />

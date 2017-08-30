@@ -78,6 +78,7 @@ export function LogOutAction() {
                 dispatch(UserLoginDispatch());
                 setTimeout(() => {
                     dispatch(VisitedDisptach());
+                    browserHistory.push('/');
                 }, 2000)
             })
             .catch((error) => {
