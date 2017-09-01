@@ -16,29 +16,33 @@ export function AdminAction() {
     }
 }
 export function CustomerDetails(IdKeys) {
-    const array = [];
     return dispatch => {
-        // console.log("key", IdKeys)
         firebase.database().ref('No1Collection/').once('value', (data) => {
             let obj = data.val()
-            // AllData.objKey = data.key;
-            // let SuposeArray = [];
+            // console.log("IdKeys", IdKeys);
+            let SuposeArray = [];
             let localArray = [];
-            // for (var prop in obj) {
-            //     obj[prop].prokey = prop;
-            //     SuposeArray.push(obj[prop])
-            // }
-            console.log('SuposeArray',obj);
-            
-            for (var i = 0; i < obj.length; i++) {
-                if (obj[i] === IdKeys) {
-                    localArray.push(obj[i])
+            for (var prop in obj) {
+                obj[prop].prokey = prop;
+                SuposeArray.push(obj[prop])
+            }
+            for (var i = 0; i < SuposeArray.length; i++) {
+                if (SuposeArray[i].key === IdKeys) {
+                    localArray.push(SuposeArray[i])
                 }
             }
-            console.log('localArray',localArray);
-            // console.log('SuposeArray',SuposeArray);
-          
+            // console.log("SuposeArray", SuposeArray);
+            // console.log("localArray", localArray);
+            dispatch(ViewDispatch(localArray));
+            
         })
+    }
+}
+
+function ViewDispatch(payload){
+    return{
+        type: ActionTypes.DataViewAction,
+        payload
     }
 }
 

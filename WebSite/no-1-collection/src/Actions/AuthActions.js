@@ -20,7 +20,8 @@ export function CreateNewUserAction(newUserOption) {
                     cellNumber: newUserOption.cellNumber,
                     address: newUserOption.address,
                     shopName: newUserOption.shopName,
-                    cityName: newUserOption.cityName
+                    cityName: newUserOption.cityName,
+                    key: user.uid
                 };
                 firebase.database().ref('No1Collection/' + user.uid).set(firebaseData)
                     .then(() => {

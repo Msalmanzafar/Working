@@ -54,18 +54,13 @@ class AdminPanel extends Component {
                 primary={true}
                 onClick={this.handleClose}
             />,
-            <mat.FlatButton
-                label="Submit"
-                primary={true}
-                keyboardFocused={true}
-                onClick={this.handleClose}
-            />,
         ];
         const {
             CustomerData,
-            Loader
+            Loader,
+            View
         } = this.props;
-
+        
         let CustomerLists = Object.keys(CustomerData).map((key, index) => {
             let val = CustomerData[key];
             let IdKeys = key;
@@ -81,7 +76,19 @@ class AdminPanel extends Component {
                 />
             )
         })
-
+        let ViewData = Object.keys(View).map((key, index) => {
+            let val = View[key];
+            return (
+                <mat.List key={index}>
+                    <mat.ListItem primaryText={<p><b>Name:</b> {val.fullName}</p>}/>
+                    <mat.ListItem primaryText={<p><b>City Name:</b> {val.cityName}</p>}/>
+                    <mat.ListItem primaryText={<p><b>Shop Name:</b> {val.shopName}</p>}/>
+                    <mat.ListItem primaryText={<p><b>Email:</b> {val.email}</p>}/>
+                    <mat.ListItem primaryText={<p><b>Address:</b> {val.address}</p>}/>
+                    <mat.ListItem primaryText={<p><b>Cell Number:</b> {val.cellNumber}</p>}/>
+                </mat.List>
+            )
+        })
         return (
             <div>
                 <div className="container" style={styles.ContactContainer}>
@@ -102,8 +109,8 @@ class AdminPanel extends Component {
                                 <div className='col-md-12' >
                                     {(Loader === true) ? (
                                         <div className='text-center'>
-                                            <br/>
-                                            <br/>
+                                            <br />
+                                            <br />
                                             <mat.CircularProgress />
                                         </div>
                                     ) : (
@@ -125,7 +132,7 @@ class AdminPanel extends Component {
                             open={this.state.open}
                             onRequestClose={this.handleClose}
                         >
-
+                                        {ViewData}
                         </mat.Dialog>
                     </div>
                 </div>
@@ -141,7 +148,8 @@ class AdminPanel extends Component {
 const mapStateToProps = (state) => {
     return {
         CustomerData: state.AdminReducers.AdminData,
-        Loader: state.AdminReducers.loader
+        Loader: state.AdminReducers.loader,
+        View: state.AdminReducers.AdminView,
     };
 }
 const mapDispatchToProps = (dispatch) => {

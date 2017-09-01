@@ -10,7 +10,8 @@ const ActionTypes = {
     MoreDataFeatch: 'MoreDataFeatch',
 
     AdminDisptch: 'AdminDisptch',
-    loaders: 'loaders'
+    loaders: 'loaders',
+    DataViewAction: 'DataViewAction',
 }
 
 export default ActionTypes;

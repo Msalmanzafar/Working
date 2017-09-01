@@ -112,7 +112,7 @@ class JackWard extends Component {
                 onTouchTap={this.handleClose}
             />,
         ];
-        // console.log("images", this.tempArray)
+        // console.log("images", tilesData)
 
         return (
             <div>

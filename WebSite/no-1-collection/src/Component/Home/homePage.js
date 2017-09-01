@@ -24,9 +24,8 @@ const styles = {
 
 class Home extends Component {
     // componentDidMount() {
-    //     $(document).ready(function () {
-    //         window.$("#myCarousel").carousel();
-    //     });
+        
+    //         $("#myCarousel").carousel("pause").removeData();
     // }
     render() {
         return (
