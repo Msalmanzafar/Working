@@ -3,7 +3,7 @@ import * as mat from 'material-ui';
 import Subscribe from '../Home/subscribe';
 import FooterOfCollection from '../Home/footer';
 
-import Vision from '../Images/OurVision.png'
+// import Vision from '../Images/OurVision.png'
 
 const style = {
     // height: 'auto',
@@ -78,45 +78,7 @@ class AboutNo1Collection extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-md-12'>
-                            <div className='row'>
-                                <div className='col-md-7'>
-                                    <blockquote style={{ border: 'none' }}>
-                                        <h2 style={styles.heading}>Our Vision</h2>
-                                        <p style={styles.text}>
-                                            The Vision of <span style={styles.impo}>No.1 Group of Companies</span> is to be the largest
-                                                and best retail & whole sale organization in fabric industry, through offering
-                                                the best products not only on time but also provide efficient service.
-                                            </p>
-                                    </blockquote>
-                                </div>
-                                <div className='col-md-4'>
-                                    <blockquote style={{ border: 'none' }}>
-                                        <img src={Vision} alt="Vision" style={{ width: 330 }} />
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='col-md-12'>
-                            <div className='row'>
-                                <div className='col-md-10'>
-                                    <blockquote style={{ border: 'none' }}>
-                                        <h2 style={styles.heading}>
-                                            Our Mission
-                                            </h2>
-                                        <p style={styles.text}>
-                                            <span style={styles.impo}>No.1 Group of Companies</span> is devoted to achieve consistent
-                                                improvement in the system of providing products & service to the customers and explore new
-                                                markets to promote / expand sales of the Company through good governance and foster a sound
-                                                and dynamic team, so as to achieve optimum prices of products of the Company of sustainable
-                                                and equitable growth and prosperity of the Company.
-                                            </p>
-                                        <br />
-                                        <br />
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </mat.Card>
                 </div>
                 <br />

@@ -15,21 +15,29 @@ export function AdminAction() {
         })
     }
 }
-export function CustomerDetails(key) {
+export function CustomerDetails(IdKeys) {
     const array = [];
     return dispatch => {
-        console.log("key", key)
+        // console.log("key", IdKeys)
         firebase.database().ref('No1Collection/').once('value', (data) => {
-            let AllData = data.val()
-
-            // console.log("data", key);
-            // console.log("data", AllData.id);
-
-            // if (AllData === key) {
-            //     // array.concat(AllData)
-            //     console.log('selected data');
-            //     // dispatch(MySatatusOfComplaints(complaint))
+            let obj = data.val()
+            // AllData.objKey = data.key;
+            // let SuposeArray = [];
+            let localArray = [];
+            // for (var prop in obj) {
+            //     obj[prop].prokey = prop;
+            //     SuposeArray.push(obj[prop])
             // }
+            console.log('SuposeArray',obj);
+            
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i] === IdKeys) {
+                    localArray.push(obj[i])
+                }
+            }
+            console.log('localArray',localArray);
+            // console.log('SuposeArray',SuposeArray);
+          
         })
     }
 }

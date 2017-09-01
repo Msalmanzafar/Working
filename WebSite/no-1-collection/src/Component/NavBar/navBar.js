@@ -30,10 +30,13 @@ class NavBar extends Component {
         this.Organza = this.Organza.bind(this);
         this.Others = this.Others.bind(this);
         this.AdminPage = this.AdminPage.bind(this);
-
+        this.Mission = this.Mission.bind(this);
         this.SignUp = this.SignUp.bind(this);
         this.LogIn = this.LogIn.bind(this);
         this.LogOut = this.LogOut.bind(this);
+    }
+    Mission(){
+        browserHistory.push('/mission');
     }
     AdminPage() {
         this.props.AdminAction()
@@ -191,6 +194,7 @@ class NavBar extends Component {
                                         </li>
                                         <li><a id="link" onClick={this.Contact_Us}>Contact Us</a></li>
                                         <li><a id="link" onClick={this.About}>About Us</a></li>
+                                        <li><a id="link" onClick={this.Mission}>Mission</a></li>
 
                                     </ul>
 

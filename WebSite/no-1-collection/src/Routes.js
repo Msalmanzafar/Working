@@ -10,6 +10,7 @@ import SignUp from './Component/Authentication/signup';
 import LogIn from './Component/Authentication/login';
 import ContactUs from './Component/ContactUs/contactUs';
 import AboutNo1Collection from './Component/About/about';
+import MissionNo1Collection from './Component/About/mission';
 import TheFabricStore from './Component/Brandz/thefebric';
 import TrendzStore from './Component/Brandz/trendz';
 import AdminPanel from './Component/Admin/admin';
@@ -58,6 +59,7 @@ export default class Routes extends Component {
                         <Route path='/login' component={LogIn} />
                         <Route path='/contactus' component={ContactUs} />
                         <Route path='/about' component={AboutNo1Collection} />
+                        <Route path='/mission' component={MissionNo1Collection} />
                         <Route path='/viscose' component={Viscose} />
                         <Route path='wellvet' component={WellVet} />
                         <Route path='/jackward' component={JackWard} />

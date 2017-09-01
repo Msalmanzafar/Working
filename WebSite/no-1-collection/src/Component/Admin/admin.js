@@ -38,9 +38,9 @@ class AdminPanel extends Component {
         open: false,
     };
 
-    Veiw = (key) => {
+    Veiw = (IdKeys) => {
         // console.log(IdKeys)
-        this.props.CustomerDetails(key);
+        this.props.CustomerDetails(IdKeys);
         this.setState({ open: true });
     };
 
@@ -146,8 +146,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        CustomerDetails: (key) => {
-            dispatch(CustomerDetails(key));
+        CustomerDetails: (IdKeys) => {
+            dispatch(CustomerDetails(IdKeys));
         },
     }
 }

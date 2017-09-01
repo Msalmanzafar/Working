@@ -23,11 +23,11 @@ const styles = {
 }
 
 class Home extends Component {
-    componentDidMount() {
-        $(document).ready(function () {
-            window.$("#myCarousel").carousel();
-        });
-    }
+    // componentDidMount() {
+    //     $(document).ready(function () {
+    //         window.$("#myCarousel").carousel();
+    //     });
+    // }
     render() {
         return (
             <div>
